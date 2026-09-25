@@ -185,8 +185,8 @@
   .printable h2 { font-size: 30px; }
   .fill { display: grid; grid-template-columns: 1fr; gap: 0; margin: 14px 0 18px; }
   .fill div { display: grid; grid-template-columns: 210px 1fr; gap: 12px; align-items: end; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
-  .fill div span:first-child { font-weight: 700; }
-  .fill div span:last-child { border-bottom: 1.5px solid var(--ink); height: 20px; }
+  .fill div label { font-weight: 700; }
+  
   .signup { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .slot { border: 1.5px solid var(--ink); border-radius: 12px; overflow: hidden; break-inside: avoid; }
   .slot header { background: var(--night); color: #fff; padding: 9px 14px; font: 800 13px/1 Inter, sans-serif; display: flex; justify-content: space-between; }
@@ -226,6 +226,22 @@
   .sess td { height: 24px; padding: 0 8px; border-top: 1px solid var(--line); }
   .sess td + td, .sess th + th { border-left: 1px solid var(--line); }
   .sess td.c::before { content: ""; display: inline-block; width: 12px; height: 12px; border: 1.5px solid var(--ink-3); border-radius: 3px; vertical-align: middle; }
+  a.res { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: inherit; text-decoration: none; border-color: var(--orange); }
+  a.res:hover { background: var(--orange-tint); }
+  a.res:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .res-go { font: 800 13px/1 Inter, sans-serif; color: var(--orange-deep); white-space: nowrap; }
+  .fillin { font: inherit; color: var(--ink); background: transparent; border: 0; border-bottom: 1.5px solid var(--ink); border-radius: 0; padding: 2px 4px; width: 100%; min-width: 0; }
+  .fillin:focus { outline: none; background: #fff4d6; }
+  .fillin.inline { width: 220px; max-width: 100%; font-weight: 700; }
+  .sess-h .fillin { color: #fff; border-bottom-color: rgba(255,255,255,.7); width: 110px; font-weight: 700; }
+  .sess-h .fillin.sm { width: 44px; }
+  .sess-h .fillin:focus { background: rgba(255,255,255,.12); }
+  .print-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: var(--night); color: #f3ebe3; border-radius: 12px; padding: 12px 16px; margin: 0 0 16px; font-size: 13.5px; }
+  .print-bar span { flex: 1 1 260px; }
+  .print-bar button { font: 800 13px/1 Inter, sans-serif; background: var(--orange); color: #fff; border: 0; border-radius: 8px; padding: 10px 14px; cursor: pointer; }
+  .print-bar button:hover { background: var(--orange-deep); }
+  .print-bar button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .print-bar .ghost-btn { background: transparent; border: 1px solid rgba(255,255,255,.4); }
   .ps { font-size: 15px; color: var(--ink-2); border-top: 1px solid var(--line); padding-top: 16px; margin-top: 18px; }
   .end { text-align: center; padding: 60px 0 70px; color: var(--ink-3); font-size: 13px; }
   .end .ghost { font-size: 44px; }
@@ -269,7 +285,13 @@
     h2, h3, h4, .kicker, .phase { break-after: avoid; }
     .printable { break-before: page; border: 0; padding: 0; margin: 0; }
     .end { display: none; }
-    .copy-btn { display: none; }
+    .copy-btn, .print-bar { display: none !important; }
+    body.print-one > .cover, body.print-one main > * { display: none !important; }
+    body.print-one.print-cheat main > #cheat, body.print-one.print-signup main > #signup { display: block !important; }
+    body.print-one main > section.pb, body.print-one .printable { break-before: auto; }
+    #cheat .fill div { padding: 8px 0; }
+    #cheat .fill { margin: 8px 0 12px; }
+    #cheat h4 { margin: 16px 0 8px; }
     h3.big { break-before: page; border-top: 0; padding-top: 0; margin-top: 0; }
     #signup .printable { padding-top: 0; }
     a { color: inherit; text-decoration: none; }
@@ -887,11 +909,11 @@
     <li>Boo Email 2 goes out ~2 weeks after to the ones who didn't join.</li>
   </ul>
 
-  <h4>Related resources</h4>
-  <div class="grid-2">
-    <div class="card"><h3>Referral Playbook</h3><p>Give/Get tiers, activation points, the advice script.</p></div>
-    <div class="card"><h3>Sell by Chat</h3><p>Working the replies.</p></div>
-  </div>
+  <h4>Related resource</h4>
+  <a class="card res" href="https://gmm.circle.so/c/referral-playbook/" target="_blank" rel="noopener">
+    <div><h3>Referral Playbook</h3><p>Give/Get tiers, activation points, the advice script.</p></div>
+    <span class="res-go">Open in Circle →</span>
+  </a>
 </section>
 
 <!-- ============ 15 CHEAT SHEET ============ -->
@@ -899,17 +921,18 @@
   <div class="printable">
     <div class="kicker"><b>15</b> Print + post · fill in the blanks first</div>
     <h2>Staff Cheat Sheet 👻</h2>
-    <p style="font-weight:700;margin-bottom:4px">BRING YOUR BOO · <span class="blank">[DATES]</span></p>
+    <div class="print-bar"><span>Type in your details (optional), then print. Leave anything blank to write it in by hand.</span><button type="button" data-print="cheat">Print cheat sheet</button><button type="button" class="ghost-btn" data-clear="cheat">Clear</button></div>
+    <p style="font-weight:700;margin-bottom:4px;display:flex;align-items:flex-end;gap:8px;flex-wrap:wrap"><label for="cheat-dates">BRING YOUR BOO · </label><input class="fillin inline" id="cheat-dates" type="text"></p>
     <p style="color:var(--ink-2)">Member perk, not a public promo. We're not advertising it.</p>
     <div class="fill">
-      <div><span>Guest cap per session</span><span></span></div>
-      <div><span>Member reward (if boo joins)</span><span></span></div>
-      <div><span>Boo offer (off first month)</span><span></span></div>
-      <div><span>Offer deadline</span><span></span></div>
-      <div><span>Membership after</span><span></span></div>
-      <div><span>Closes run by</span><span></span></div>
-      <div><span>Drawing prize</span><span></span></div>
-      <div><span>Questions → owner + phone</span><span></span></div>
+      <div><label for="cheat-0">Guest cap per session</label><input class="fillin" id="cheat-0" type="text"></div>
+      <div><label for="cheat-1">Member reward (if boo joins)</label><input class="fillin" id="cheat-1" type="text"></div>
+      <div><label for="cheat-2">Boo offer (off first month)</label><input class="fillin" id="cheat-2" type="text"></div>
+      <div><label for="cheat-3">Offer deadline</label><input class="fillin" id="cheat-3" type="text"></div>
+      <div><label for="cheat-4">Membership after</label><input class="fillin" id="cheat-4" type="text"></div>
+      <div><label for="cheat-5">Closes run by</label><input class="fillin" id="cheat-5" type="text"></div>
+      <div><label for="cheat-6">Drawing prize</label><input class="fillin" id="cheat-6" type="text"></div>
+      <div><label for="cheat-7">Questions → owner + phone</label><input class="fillin" id="cheat-7" type="text"></div>
     </div>
 
     <h4>Say to every member</h4>
@@ -931,15 +954,16 @@
 <!-- ============ 16 SIGN-UP SHEET ============ -->
 <section class="pb" id="signup">
   <div class="printable">
-    <div class="sheet-top"><h2 style="margin:0;font-size:26px">Bring Your Boo Sign-Up 👻</h2><div class="dayline">Day:<span></span></div></div>
+    <div class="print-bar"><span>Type the day, session times and caps (optional), then print one per day. Or leave it blank and print copies to fill in by hand.</span><button type="button" data-print="signup">Print sign-up sheet</button><button type="button" class="ghost-btn" data-clear="signup">Clear</button></div>
+    <div class="sheet-top"><h2 style="margin:0;font-size:26px">Bring Your Boo Sign-Up 👻</h2><div class="dayline" style="display:flex;align-items:flex-end;gap:6px"><label for="su-day">Day:</label><input class="fillin inline" id="su-day" type="text"></div></div>
     <p class="sheet-how">One sheet per day (print extras for more than 3 sessions). Members write their name + their boo's. Full lines = full session. Coaches tick the boxes all week; Saturday night it's your report and your Nov 13 call list.</p>
-      <div class="sess"><div class="sess-h"><span>Session time:<b></b></span><span>Boo cap:<b class="sm"></b></span><span style="opacity:.75">Cross out lines past your cap</span></div>
+      <div class="sess"><div class="sess-h"><span><label for="su-t0">Session time:</label> <input class="fillin" id="su-t0" type="text"></span><span><label for="su-c0">Boo cap:</label> <input class="fillin sm" id="su-c0" type="text" inputmode="numeric"></span><span style="opacity:.75">Cross out lines past your cap</span></div>
         <table><thead><tr><th>Member</th><th>Boo</th><th class="c">Showed</th><th class="c">Came back</th><th class="c">Talked to</th><th class="c">Joined</th></tr></thead>
         <tbody><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr></tbody></table></div>
-      <div class="sess"><div class="sess-h"><span>Session time:<b></b></span><span>Boo cap:<b class="sm"></b></span><span style="opacity:.75">Cross out lines past your cap</span></div>
+      <div class="sess"><div class="sess-h"><span><label for="su-t1">Session time:</label> <input class="fillin" id="su-t1" type="text"></span><span><label for="su-c1">Boo cap:</label> <input class="fillin sm" id="su-c1" type="text" inputmode="numeric"></span><span style="opacity:.75">Cross out lines past your cap</span></div>
         <table><thead><tr><th>Member</th><th>Boo</th><th class="c">Showed</th><th class="c">Came back</th><th class="c">Talked to</th><th class="c">Joined</th></tr></thead>
         <tbody><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr></tbody></table></div>
-      <div class="sess"><div class="sess-h"><span>Session time:<b></b></span><span>Boo cap:<b class="sm"></b></span><span style="opacity:.75">Cross out lines past your cap</span></div>
+      <div class="sess"><div class="sess-h"><span><label for="su-t2">Session time:</label> <input class="fillin" id="su-t2" type="text"></span><span><label for="su-c2">Boo cap:</label> <input class="fillin sm" id="su-c2" type="text" inputmode="numeric"></span><span style="opacity:.75">Cross out lines past your cap</span></div>
         <table><thead><tr><th>Member</th><th>Boo</th><th class="c">Showed</th><th class="c">Came back</th><th class="c">Talked to</th><th class="c">Joined</th></tr></thead>
         <tbody><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr></tbody></table></div>
   </div>
@@ -975,6 +999,22 @@
         ta.remove();
       }
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, fallback); else fallback();
+    });
+  });
+</script>
+<script>
+  // Print just one sheet; clear its typed-in fields.
+  document.querySelectorAll('[data-print]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var which = btn.getAttribute('data-print');
+      document.body.classList.add('print-one', 'print-' + which);
+      window.print();
+    });
+  });
+  window.addEventListener('afterprint', function () { document.body.classList.remove('print-one', 'print-cheat', 'print-signup'); });
+  document.querySelectorAll('[data-clear]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#' + btn.getAttribute('data-clear') + ' input').forEach(function (i) { i.value = ''; });
     });
   });
 </script>
