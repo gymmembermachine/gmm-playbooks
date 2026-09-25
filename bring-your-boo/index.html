@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Bring Your Boo Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #17130f;
+    --ink-2: #4a423a;
+    --ink-3: #847a70;
+    --paper: #fbf7f1;
+    --card: #ffffff;
+    --line: #e8dfd3;
+    --orange: #ee6a1f;
+    --orange-deep: #c9500f;
+    --orange-tint: #fdeee3;
+    --night: #1d1726;
+    --night-2: #2c2338;
+    --green: #2f7d4f;
+    --green-tint: #e6f3ea;
+    --red: #b3372b;
+    --red-tint: #fbe9e6;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 15px/1.6 Inter, system-ui, -apple-system, sans-serif;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  h1, h2, h3 { font-family: "Archivo Black", Inter, sans-serif; font-weight: 400; letter-spacing: -0.01em; line-height: 1.1; }
+  h2 { font-size: 34px; margin: 0 0 6px; text-transform: uppercase; }
+  h3 { font-size: 19px; margin: 28px 0 10px; }
+  h4 { font: 800 12px/1.3 Inter, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--orange-deep); margin: 26px 0 10px; }
+  p { margin: 0 0 12px; }
+  ul, ol { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  li::marker { color: var(--orange); font-weight: 700; }
+  strong { font-weight: 700; }
+  em { color: var(--ink-2); }
+
+  /* ---------- Cover ---------- */
+  .cover {
+    page: cover;
+    background: var(--night);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    min-height: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 56px 56px 48px;
+  }
+  .cover::before {
+    content: ""; position: absolute; right: -180px; top: -140px;
+    width: 620px; height: 620px; border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, #ff8a3d 0%, var(--orange) 45%, #a33d06 100%);
+    opacity: .95;
+  }
+  .cover::after {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 20% 110%, rgba(238,106,31,.25), transparent 60%);
+  }
+  .cover > * { position: relative; z-index: 1; }
+  .brand { font: 800 12px/1 Inter, sans-serif; letter-spacing: .22em; text-transform: uppercase; color: #fff; opacity: .85; }
+  .cover .ghost { font-size: 88px; line-height: 1; margin-bottom: 18px; }
+  .cover h1 { font-size: 92px; line-height: .92; margin: 0 0 18px; text-transform: uppercase; }
+  .cover h1 span { color: var(--orange); }
+  .cover .sub { font: 600 22px/1.35 Inter, sans-serif; max-width: 520px; color: #eee3d8; margin-bottom: 28px; }
+  .cover .pills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill { border: 1px solid rgba(255,255,255,.28); border-radius: 99px; padding: 7px 14px; font-size: 13px; font-weight: 600; color: #fff; }
+  .cover .foot { display: flex; justify-content: space-between; align-items: flex-end; font-size: 13px; color: #cbbfd6; gap: 24px; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 56px 0 8px; }
+  .kicker { font: 800 12px/1 Inter, sans-serif; letter-spacing: .18em; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+  .kicker b { background: var(--orange); color: #fff; border-radius: 4px; padding: 4px 7px; letter-spacing: .08em; }
+  .lede { font-size: 17px; color: var(--ink-2); max-width: 680px; margin-bottom: 22px; }
+
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin-bottom: 14px; break-inside: avoid; }
+  .card > :last-child { margin-bottom: 0; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .grid-2 > .card, .grid-3 > .card { margin-bottom: 0; }
+  .stack { display: grid; gap: 14px; margin-bottom: 14px; }
+
+  .num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--orange); color: #fff; font: 800 14px/1 Inter, sans-serif; margin-bottom: 10px; }
+  .card h3 { margin-top: 0; }
+  .rec { background: var(--orange-tint); border-left: 4px solid var(--orange); border-radius: 0 10px 10px 0; padding: 12px 16px; margin: 12px 0; break-inside: avoid; }
+  .rec .tag { font: 800 11px/1 Inter, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--orange-deep); display: block; margin-bottom: 6px; }
+  .rec > :last-child { margin-bottom: 0; }
+
+  .callout-dark { background: var(--night); color: #f3ebe3; border-radius: 14px; padding: 22px 24px; margin: 18px 0; break-inside: avoid; }
+  .callout-dark strong { color: #fff; }
+  .callout-dark .tag { font: 800 11px/1 Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 8px; }
+
+  .levers { counter-reset: lever; }
+  .levers .card { position: relative; padding-top: 22px; }
+  .levers .card::before { counter-increment: lever; content: counter(lever); font-family: "Archivo Black", sans-serif; font-size: 44px; color: var(--orange); line-height: 1; display: block; margin-bottom: 8px; }
+
+  /* scripts */
+  .script { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--night); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 10px 0 16px; font-size: 15px; break-inside: avoid; }
+  .script .who { font: 800 11px/1 Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); display: block; margin-bottom: 8px; }
+  .script p:last-child { margin-bottom: 0; }
+  .say { font-style: normal; color: var(--ink); }
+  .blank { background: #fff4d6; border-radius: 4px; padding: 0 5px; font-weight: 600; color: #7a5200; white-space: nowrap; }
+  .stage { color: var(--ink-3); font-style: italic; }
+
+  /* timeline */
+  .timeline { position: relative; margin: 8px 0 18px; padding-left: 0; list-style: none; }
+  .timeline li { display: grid; grid-template-columns: 92px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px dashed var(--line); margin: 0; break-inside: avoid; }
+  .timeline li:last-child { border-bottom: 0; }
+  .timeline .d { font: 800 14px/1.3 Inter, sans-serif; color: var(--ink); }
+  .timeline .d small { display: block; font-weight: 600; color: var(--ink-3); font-size: 12px; }
+  .timeline li.go { background: var(--orange-tint); border-radius: 10px; padding: 12px 12px; border-bottom: 0; margin: 4px 0; }
+  .timeline li.go .d { color: var(--orange-deep); }
+
+  /* messages */
+  .msg { background: #fff; border: 1px solid var(--line); border-radius: 14px; margin: 0 0 16px; overflow: hidden; break-inside: avoid; }
+  .msg-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 11px 18px; background: #f6efe6; border-bottom: 1px solid var(--line); }
+  .msg-head .type { font: 800 12px/1 Inter, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+  .msg-head .when { font-size: 12px; font-weight: 600; color: var(--ink-3); }
+  .msg-head .type i { font-style: normal; display: inline-block; border-radius: 4px; padding: 3px 6px; margin-right: 8px; color: #fff; background: var(--night); letter-spacing: .08em; }
+  .msg-head .type i.sms { background: var(--green); }
+  .msg-head .type i.post { background: var(--orange); }
+  .msg-body { padding: 16px 18px; font-size: 14.5px; }
+  .msg-body p:last-child { margin-bottom: 0; }
+  .subject { font-weight: 700; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+  .subject span { color: var(--ink-3); font-weight: 600; margin-right: 6px; }
+  .mt { font: 500 12.5px/1 "JetBrains Mono", ui-monospace, monospace; background: #efe9f7; color: #4b2f7a; border-radius: 4px; padding: 2px 5px; white-space: nowrap; }
+  .note { font-size: 13px; color: var(--ink-2); background: #f3ede5; border-radius: 10px; padding: 12px 14px; margin: 0 0 16px; }
+
+  /* tables */
+  table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 8px 0 18px; font-size: 14px; background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  th { text-align: left; font: 800 11px/1.2 Inter, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); background: #f6efe6; padding: 11px 14px; }
+  td { padding: 11px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+  tr { break-inside: avoid; }
+  td:first-child { font-weight: 700; }
+  .target { font-family: "Archivo Black", sans-serif; color: var(--orange-deep); white-space: nowrap; }
+
+  /* checklist */
+  .check { list-style: none; padding: 0; }
+  .check li { position: relative; padding-left: 30px; margin-bottom: 9px; break-inside: avoid; }
+  .check li::before { content: ""; position: absolute; left: 0; top: 3px; width: 17px; height: 17px; border: 2px solid var(--ink); border-radius: 4px; background: #fff; }
+  .check ul { margin-top: 8px; }
+  .phase { display: inline-block; font: 800 12px/1 Inter, sans-serif; letter-spacing: .12em; text-transform: uppercase; background: var(--night); color: #fff; border-radius: 6px; padding: 7px 11px; margin: 18px 0 12px; }
+
+  /* close steps */
+  .steps { list-style: none; padding: 0; counter-reset: step; }
+  .steps li { counter-increment: step; display: grid; grid-template-columns: 38px 1fr; gap: 12px; margin-bottom: 12px; break-inside: avoid; }
+  .steps li::before { content: counter(step); width: 30px; height: 30px; border-radius: 50%; background: var(--night); color: #fff; display: flex; align-items: center; justify-content: center; font: 800 13px/1 Inter, sans-serif; }
+
+  /* flow */
+  .flow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0 16px; }
+  .flow span { background: #fff; border: 1px solid var(--line); border-radius: 99px; padding: 6px 12px; font-size: 13px; font-weight: 600; }
+  .flow b { color: var(--orange); }
+
+  /* printable pages */
+  .printable { background: #fff; border: 2px solid var(--ink); border-radius: 16px; padding: 28px 30px; margin: 10px 0 18px; }
+  .printable h2 { font-size: 30px; }
+  .fill { display: grid; grid-template-columns: 1fr; gap: 0; margin: 14px 0 18px; }
+  .fill div { display: grid; grid-template-columns: 210px 1fr; gap: 12px; align-items: end; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .fill div span:first-child { font-weight: 700; }
+  .fill div span:last-child { border-bottom: 1.5px solid var(--ink); height: 20px; }
+  .signup { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .slot { border: 1.5px solid var(--ink); border-radius: 12px; overflow: hidden; break-inside: avoid; }
+  .slot header { background: var(--night); color: #fff; padding: 9px 14px; font: 800 13px/1 Inter, sans-serif; display: flex; justify-content: space-between; }
+  .slot header span:last-child { color: var(--orange); }
+  .slot .row { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); height: 34px; }
+  .slot .row.h { height: auto; background: #f6efe6; font: 800 10px/1 Inter, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+  .slot .row > div { padding: 8px 12px; }
+  .slot .row > div + div { border-left: 1px solid var(--line); }
+
+  .toc { columns: 2; column-gap: 36px; list-style: none; padding: 0; margin: 20px 0 0; }
+  .toc li { display: flex; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); break-inside: avoid; margin: 0; font-weight: 600; }
+  .toc li span { font-family: "Archivo Black", sans-serif; color: var(--orange); width: 24px; }
+  .toc a { color: inherit; text-decoration: none; }
+
+  h3.big { font-size: 26px; margin: 40px 0 12px; padding-top: 24px; border-top: 2px solid var(--line); }
+  .warn { background: #fff4d6; border: 1px solid #efd48a; border-radius: 10px; padding: 11px 14px; margin: 0 0 14px; font-size: 14.5px; }
+  .mode { display: inline-block; font: 800 10px/1 Inter, sans-serif; letter-spacing: .1em; text-transform: uppercase; border-radius: 4px; padding: 4px 6px; margin-left: 8px; vertical-align: 1px; }
+  .mode.hand { background: #fff4d6; color: #7a5200; }
+  .mode.auto { background: #efe9f7; color: #4b2f7a; }
+  .copy-btn { font: 700 12px/1 Inter, sans-serif; border: 1px solid var(--ink); background: #fff; color: var(--ink); border-radius: 6px; padding: 6px 10px; cursor: pointer; white-space: nowrap; }
+  .copy-btn:hover { background: var(--ink); color: #fff; }
+  .copy-btn:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .copy-btn.done { background: var(--green); border-color: var(--green); color: #fff; }
+  .msg-head .right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+  /* sign-up sheet (printable) */
+  .sheet-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 6px; }
+  .sheet-top .dayline { font: 800 15px/1 Inter, sans-serif; }
+  .sheet-top .dayline span { display: inline-block; width: 190px; border-bottom: 1.5px solid var(--ink); margin-left: 6px; }
+  .sheet-how { font-size: 12.5px; color: var(--ink-2); margin: 0 0 12px; }
+  .sess { border: 1.5px solid var(--ink); border-radius: 10px; overflow: hidden; margin-bottom: 10px; break-inside: avoid; }
+  .sess-h { background: var(--night); color: #fff; display: flex; justify-content: space-between; gap: 12px; padding: 6px 12px; font: 700 12.5px/1.2 Inter, sans-serif; flex-wrap: wrap; }
+  .sess-h span b { display: inline-block; width: 90px; border-bottom: 1px solid rgba(255,255,255,.7); margin-left: 4px; }
+  .sess-h span b.sm { width: 34px; }
+  .sess table { border: 0; border-radius: 0; margin: 0; font-size: 12px; table-layout: fixed; }
+  .sess th { padding: 4px 8px; font-size: 9.5px; text-align: left; }
+  .sess th.c, .sess td.c { text-align: center; width: 11%; }
+  .sess td { height: 24px; padding: 0 8px; border-top: 1px solid var(--line); }
+  .sess td + td, .sess th + th { border-left: 1px solid var(--line); }
+  .sess td.c::before { content: ""; display: inline-block; width: 12px; height: 12px; border: 1.5px solid var(--ink-3); border-radius: 3px; vertical-align: middle; }
+  .ps { font-size: 15px; color: var(--ink-2); border-top: 1px solid var(--line); padding-top: 16px; margin-top: 18px; }
+  .end { text-align: center; padding: 60px 0 70px; color: var(--ink-3); font-size: 13px; }
+  .end .ghost { font-size: 44px; }
+
+  @media (max-width: 720px) {
+    body { font-size: 15px; }
+    .wrap { padding: 0 16px; }
+    .cover { padding: 40px 24px 32px; min-height: 520px; }
+    .cover::before { width: 360px; height: 360px; right: -140px; top: -100px; }
+    .cover h1 { font-size: 56px; }
+    .cover .ghost { font-size: 60px; }
+    .cover .sub { font-size: 18px; }
+    .cover .foot { flex-direction: column; align-items: flex-start; }
+    h2 { font-size: 27px; }
+    .grid-2, .grid-3, .signup { grid-template-columns: 1fr; }
+    .toc { columns: 1; }
+    .timeline li { grid-template-columns: 72px 1fr; gap: 10px; }
+    .fill div { grid-template-columns: 1fr; gap: 4px; }
+    .printable { padding: 20px 16px; }
+    .mt { white-space: normal; word-break: break-all; }
+  }
+
+  /* ---------- Print ---------- */
+  @page { size: Letter; margin: 0.6in 0.65in 0.7in; @bottom-center { content: "Bring Your Boo  ·  Gym Member Machine  ·  " counter(page); font: 600 9px Inter, sans-serif; color: #847a70; letter-spacing: .08em; } }
+  @page cover { margin: 0; @bottom-center { content: none; } }
+  @media print {
+    body { background: #fff; font-size: 11pt; }
+    .wrap { max-width: none; padding: 0; }
+    .cover { height: 11in; min-height: 0; padding: 0.8in 0.75in 0.7in; }
+    section { padding: 0; }
+    section.pb { break-before: page; }
+    .timeline li { padding: 6px 0; }
+    .timeline li.go { padding: 8px 10px; }
+    .lede { margin-bottom: 14px; }
+    td, th { padding: 8px 12px; }
+    .check li { margin-bottom: 6px; }
+    .phase { margin: 12px 0 8px; }
+    #checklist .grid-2 .card { padding: 12px 16px; }
+    .card, .msg, .script, .rec, .callout-dark, .slot, table { box-shadow: none; }
+    .card, .msg, table { background: #fff; }
+    h2, h3, h4, .kicker, .phase { break-after: avoid; }
+    .printable { break-before: page; border: 0; padding: 0; margin: 0; }
+    .end { display: none; }
+    .copy-btn { display: none; }
+    h3.big { break-before: page; border-top: 0; padding-top: 0; margin-top: 0; }
+    #signup .printable { padding-top: 0; }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<header class="cover">
+  <div class="brand">Gym Member Machine · October Playbook</div>
+  <div>
+    <div class="ghost">👻</div>
+    <h1>Bring<br>Your <span>Boo</span></h1>
+    <div class="sub">The October buddy week that turns your best members into your best marketing channel.</div>
+    <div class="pills">
+      <span class="pill">Internal referral play</span>
+      <span class="pill">No ad spend</span>
+      <span class="pill">Oct 26 – 31, 2026</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Fills the October gap between Back to School<br>and the Holiday Window.</div>
+    <div>Scripts · Emails · Texts · Checklists</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ CONTENTS ============ -->
+<section class="pb" id="contents">
+  <div class="kicker">Inside</div>
+  <h2>What's in here</h2>
+  <ul class="toc">
+    <li><span>01</span><a href="#rundown">The Rundown</a></li>
+    <li><span>02</span><a href="#decide">Decide First</a></li>
+    <li><span>03</span><a href="#capacity">Capacity</a></li>
+    <li><span>04</span><a href="#timeline">Timeline</a></li>
+    <li><span>05</span><a href="#promotion">Promotion</a></li>
+    <li><span>06</span><a href="#talking">Talking Points &amp; Scripts</a></li>
+    <li><span>07</span><a href="#close">The Close</a></li>
+    <li><span>08</span><a href="#member-auto">Member Emails &amp; Texts</a></li>
+    <li><span>09</span><a href="#vip">VIP Group Posts</a></li>
+    <li><span>10</span><a href="#boo-auto">Boo Texts &amp; Emails</a></li>
+    <li><span>11</span><a href="#tracking">Tracking &amp; Targets</a></li>
+    <li><span>12</span><a href="#troubleshoot">If It's Not Working</a></li>
+    <li><span>13</span><a href="#edge">Edge Cases</a></li>
+    <li><span>14</span><a href="#checklist">Setup Checklist</a></li>
+    <li><span>15</span><a href="#cheat">Staff Cheat Sheet (printable)</a></li>
+    <li><span>16</span><a href="#signup">Sign-Up &amp; Tracking Sheet (printable)</a></li>
+  </ul>
+
+  <div class="callout-dark" style="margin-top:30px">
+    <span class="tag">Quick legend</span>
+    <p style="margin:0"><span class="blank">[BRACKETS]</span> = you fill it in by hand (posts, scripts, cheat sheet). &nbsp; <span class="mt">{{merge_tags}}</span> = fills itself automatically in your GMM / GHL account once your custom values are set.</p>
+  </div>
+</section>
+
+<!-- ============ 01 RUNDOWN ============ -->
+<section class="pb" id="rundown">
+  <div class="kicker"><b>01</b> The Rundown</div>
+  <h2>Bring-a-friend week,<br>Halloween edition</h2>
+  <p class="lede">Every active member can bring one person to train free all week. Run it the week before or the week of Halloween depending on where it falls. 2026 is perfect: the week leading up to Halloween. Bonus points for a little trunk-or-treat party to cap it all off.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>“Boo” = anybody</h3>
+      <p>Partner, friend, sibling, coworker, whoever. Keep it vague on purpose so single folks play too.</p>
+    </div>
+    <div class="card">
+      <h3>Internal only. No ads.</h3>
+      <p>You're asking your best customers for a favor and making it easy and fun to say yes.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Limited capacity = built-in urgency</h3>
+    <p>Capping guest spots per session lets you put real scarcity and urgency behind your registration deadlines.</p>
+  </div>
+
+  <h4>The party is the excuse. Here's what actually gets you members:</h4>
+  <div class="grid-3 levers">
+    <div class="card"><p><strong>You pick two numbers BEFORE announcing</strong>: the member reward and the boo offer.</p></div>
+    <div class="card"><p><strong>Members sign up a NAME + a SESSION TIME</strong> (not just a name), so your 5:30am doesn't turn into a zoo.</p></div>
+    <div class="card"><p><strong>Somebody sits down with every boo</strong> who comes in and walks them through the options before the referral offer expires.</p></div>
+  </div>
+
+  <p class="ps"><strong>PS:</strong> we've had clients CRUSH bring-a-friend weeks. Execute on this and you'll up the energy in your gym and drive sign-ups before you hit the holidays, all while making your members more likely to stay and pay because they have more friends training with them.</p>
+</section>
+
+<!-- ============ 02 DECIDE ============ -->
+<section class="pb" id="decide">
+  <div class="kicker"><b>02</b> Decide First</div>
+  <h2>4 decisions before you<br>touch the copy</h2>
+  <p class="lede">Lock these in first. Everything else (emails, scripts, cheat sheet) just plugs them in.</p>
+
+  <div class="card">
+    <div class="num">1</div>
+    <h3>Boo Day or Boo Week</h3>
+    <ul>
+      <li><strong>Week</strong> = Mon–Sat. More bodies, more moving parts. The default if you want more opportunities and have staffed a bring-a-friend before.</li>
+      <li><strong>Day</strong> = one Saturday session. Probably only the move if you've got a large group model with a ton of capacity, or you just want to do the absolute minimum.</li>
+    </ul>
+    <p><em>The rest of this playbook is written for the week. Boo Day = same thing: skip the mid-week emails and say “Saturday” where it says “all week.”</em></p>
+  </div>
+
+  <div class="card">
+    <div class="num">2</div>
+    <h3>Member reward <span style="font-family:Inter;font-weight:600;font-size:14px;color:var(--ink-3)">what they get if their boo joins</span></h3>
+    <div class="rec"><span class="tag">Our rec</span>
+      <p>Your existing referral reward, with a bonus for boo week. Give $50 → Give $100 for the week. Give $100 → Give $200 (or $150) if you've got the margin. Doubling it for one window pours some gas on your referral fire before the holidays.</p>
+    </div>
+    <ul>
+      <li><strong>No referral program?</strong> $50 if avg membership is under $200/mo, $100 if above.</li>
+      <li><strong>Alt that's worked:</strong> a $50–100 gift card to a local restaurant or coffee shop instead of account credit. Something they can't already buy from you, plus an excuse to ask that business to put your QR code by the register.</li>
+      <li><strong>PAY IT THE DAY THE BOO JOINS.</strong> Doing it in front of people is great social proof and incentive, if you're comfortable making a little show of it.</li>
+    </ul>
+    <div class="callout-dark">
+      <span class="tag">Optional (we'd do it): the drawing</span>
+      <p>Every boo who shows up = one slip with the member's name in a jar at the desk. Draw one the Monday after boo week for something bigger than the standard reward (free month, big gift card, hoodie + a month).</p>
+      <p style="margin:0">No tracking, no automation. It's a jar. Announce it at every session and in the member group.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="num">3</div>
+    <h3>Boo offer <span style="font-family:Inter;font-weight:600;font-size:14px;color:var(--ink-3)">what the guest gets if they join THIS week</span></h3>
+    <div class="rec"><span class="tag">Our rec</span>
+      <p>Same $ as the member reward off month one + waive your start-up fee if you charge one. An alternative is legacy member rates, but $50–150 off for someone pre-sold should be an easy sale. Bonus points for throwing in some supplements or light merch.</p>
+    </div>
+    <ul>
+      <li><strong>Set an expiration date:</strong> either Saturday (the 31st in '26), or Wednesday if you want a few more days for the “gotta ask my spouse” folks.</li>
+      <li>If you're going with Wednesday, <strong>say it from day one</strong>. Don't quietly extend it after, or the next deadline you send gets ignored.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="num">4</div>
+    <h3>Halloween or not</h3>
+    <p>If you're catching this at a different time of year, this is absolutely a valid play for other windows (e.g. Valentine's Day). The bring-a-friend concept still stands. We'd run 2–3 of these per year.</p>
+  </div>
+</section>
+
+<!-- ============ 03 CAPACITY ============ -->
+<section class="pb" id="capacity">
+  <div class="kicker"><b>03</b> Capacity</div>
+  <h2>Do this on paper<br>before you announce</h2>
+  <p class="lede">The one way this play hurts you is overloading your best sessions. Paying members get a worse session and guests get a bad first impression, at the same time. So yes, a little planning and some simple math.</p>
+
+  <div class="card">
+    <h3 style="color:var(--red)">✕ &nbsp;Option A: Wing it</h3>
+    <p>Hope you don't get that many people. Probably not the move, unless you've got huge capacity across all sessions or your member base isn't very engaged and you don't expect more than a handful of referrals.</p>
+  </div>
+  <div class="card">
+    <h3>Option B: Boo spots inside your normal capacity</h3>
+    <p>“We typically have two spots open in X session and three in Y, so we'll have two boo spots for X and three for Y.” Boo sign-up is tracked per session time, and once they're full, they're full.</p>
+  </div>
+  <div class="card" style="border-color:var(--orange)">
+    <h3>Option C: Extra boo spots on top <span style="font-family:Inter;font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--orange-deep);text-transform:uppercase;margin-left:6px">We like this one</span></h3>
+    <p>Leave normal registration as-is and build in additional spots per session based on your comfort level. If you normally run a 6:1 pod model, could you run a partner-workout format for a week, adjust programming slightly, and let everyone bring somebody? Probably. (Good problem to have.)</p>
+  </div>
+
+  <div class="callout-dark">
+    <span class="tag">Bottom line: pick one</span>
+    <ul style="margin-bottom:10px">
+      <li>Add up your normal capacity per session and set a limit for each (e.g. 2 in session A, 3 in session B), <strong>or</strong></li>
+      <li>Lock a flat number per session that either blocks normal registration or sits on top of it.</li>
+    </ul>
+    <p style="margin:0">Then put that cap in your member messaging to drive scarcity and urgency. <strong>Create an artificial cap even if you have theoretically unlimited capacity in a large group model.</strong></p>
+  </div>
+</section>
+
+<!-- ============ 04 TIMELINE ============ -->
+<section class="pb" id="timeline">
+  <div class="kicker"><b>04</b> Timeline</div>
+  <h2>2026 dates</h2>
+  <p class="lede">Halloween = Saturday, Oct 31. <strong>Boo week = Mon Oct 26 – Sat Oct 31.</strong></p>
+
+  <ul class="timeline">
+    <li><div class="d">Oct 5</div><div>Make the 4 decisions + do the capacity math.</div></li>
+    <li><div class="d">Oct 7</div><div>Staff meeting. Cheat sheet posted. Everybody practices the live announcement and talking points out loud once.</div></li>
+    <li><div class="d">Oct 12<small>Day −14</small></div><div><strong>Announce.</strong> Email 1, SMS 1, VIP post 1. Posters up, sign-up sheet on the whiteboard.</div></li>
+    <li><div class="d">Oct 19<small>Day −7</small></div><div>Email 2, SMS 2. Post which sessions are filling.</div></li>
+    <li><div class="d">Oct 21</div><div>Roster check. Steer people to open sessions.</div></li>
+    <li><div class="d">Oct 23</div><div>Waivers pre-loaded, jar out for the drawing, decorations up if you're doing them.</div></li>
+    <li><div class="d">Oct 24</div><div>Confirmation text to every registered boo.</div></li>
+    <li><div class="d">Oct 25</div><div>Email 3, SMS 3.</div></li>
+    <li class="go"><div class="d">Oct 26<small>GO</small></div><div><strong>Boo week starts.</strong> Morning-of text to that day's boos. Boo count on the whiteboard.</div></li>
+    <li><div class="d">Oct 29</div><div>Email 4, VIP post 3.</div></li>
+    <li class="go"><div class="d">Oct 31<small>Last day</small></div><div><strong>Last day + Halloween.</strong> Costume class if you vibe that way. Conversations. Photos. Buddy rate expires tonight.</div></li>
+    <li><div class="d">Nov 2</div><div>Wrap-up post, drawing winner, member rewards paid.</div></li>
+    <li><div class="d">Nov 13</div><div>Owner calls every boo who came in and didn't join: “You came in during boo week, wanted to hear what you thought.” About a third pick up and talk.</div></li>
+  </ul>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Not 2026?</h3>
+      <p>Pick the Mon–Sat week that includes Halloween. If the 31st lands on a Sunday, use the Mon–Sat right before it. Count back 14 days for the announcement. Everything else hangs off those two dates.</p>
+    </div>
+    <div class="card">
+      <h3>Found this late?</h3>
+      <p>Say it's Oct 19. Compress it: decide today, Email 1 + SMS 1 tomorrow, coaches ask every member in person, Email 3 on day 5, confirm boos day 6, go day 7.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 PROMOTION ============ -->
+<section id="promotion" style="padding-top:32px">
+  <div class="kicker"><b>05</b> Promotion</div>
+  <h2>One email is not a launch</h2>
+  <p class="lede">Multiple, multiple reminders. Every channel you already own, every session.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h4 style="margin-top:0">Internal (your members)</h4>
+      <ul>
+        <li>Email + text your member list (copy in section 08)</li>
+        <li>Sign-up sheet on the whiteboard with <strong>NAME + SESSION TIME</strong> columns</li>
+        <li>Announce at <strong>EVERY</strong> session (script in section 06)</li>
+        <li>VIP Facebook group / member community</li>
+        <li>Posters at the desk + in the bathroom</li>
+        <li>Boo count on the whiteboard during the week. Big number, updated every session.</li>
+        <li>The drawing: mention it at every session and in every member-group post. Slip in the jar every time a boo shows.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">Boos (the guests)</h4>
+      <ul>
+        <li><strong>Confirmation text</strong> when registered</li>
+        <li><strong>Morning-of text</strong> the day they come in</li>
+        <li>Nurture after visit 1 (copy in section 10)</li>
+      </ul>
+      <div class="rec"><span class="tag">Why it matters</span><p>Those two texts are what boost your show rate.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 TALKING POINTS ============ -->
+<section class="pb" id="talking">
+  <div class="kicker"><b>06</b> Talking Points</div>
+  <h2>What your team says</h2>
+
+  <h4>Announce at sessions · every session, starting 2 weeks out</h4>
+  <div class="script">
+    <span class="who">Coach, before warm-up</span>
+    <p>“Quick one before we get started. Week of <span class="blank">[DATES]</span> we're doing Bring Your Boo. Every one of you gets to bring somebody to train with you free all week: partner, friend, coworker, your mom, whoever. Just tell me their name and which session you're bringing them to so I can save the spot. We cap guests per session so it doesn't get crazy, so if you've got somebody, let us know ASAP. And if they end up joining, you get <span class="blank">[MEMBER REWARD]</span>. <span class="stage">[Only if doing the drawing:]</span> Plus every boo who shows up gets your name in the jar for <span class="blank">[PRIZE]</span> at the end of the week. So think about who you want to bring and let me know!”</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Individual sign-up convos</h3>
+      <p>When a member gives you a name, confirm the session time too: <em>“Love it, which session are you bringing them to?”</em> Then write both on the sign-up sheet in front of them.</p>
+    </div>
+    <div class="card">
+      <h3>The desk line</h3>
+      <p>Every member, every day: <em>“Who are you bringing to boo week?”</em> Not “did you see the email.” Assume they didn't. Get the name AND the session time and write both down.</p>
+    </div>
+  </div>
+
+  <div class="callout-dark">
+    <span class="tag">Get clear on the two numbers</span>
+    <p style="margin:0">Every coach says <strong>[MEMBER REWARD]</strong> and <strong>[BOO OFFER]</strong> the exact same way. Two people quoting different numbers is how you lose a sale you already had and have to awkwardly walk something back. Put both on the cheat sheet and have the team read them out loud at the staff meeting.</p>
+  </div>
+
+  <h3 class="big">When a boo asks “how much is it?” on Tuesday</h3>
+  <p>Candidly, the boo probably already knows what you charge, so pricing likely won't be a shock. But you <em>do</em> need to decide how your coaches handle it, and every coach handles it the same way.</p>
+
+  <div class="card">
+    <h3>Path 1: Give quick options on the floor</h3>
+    <div class="warn"><strong>⚠️ Only do this if</strong> you've got a simple sign-up process with a couple of options, your coaches have time between sessions, and you have a proven history of converting people with a quick options conversation. If that's not you, use Path 2.</div>
+    <div class="script" style="margin-bottom:0">
+      <span class="who">Coach</span>
+      <p>“Hey, thanks for asking! You loving it already?” <span class="stage">[wait for the yes]</span> “Awesome. So here are the options <span class="stage">[show the 2–3 options]</span>. Most folks get the best results with <span class="blank">[BEST OPTION]</span>, and as a referral you get <span class="blank">[BOO OFFER]</span> off your first month… Which one makes the most sense to ya?”</p>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Path 2: Book a quick call</h3>
+    <p>If your coaches are terrified of asking for money, your sales process is complicated, or there's just no time between sessions:</p>
+    <div class="script">
+      <span class="who">Coach</span>
+      <p>“Oh hey, you loving it here already?” <span class="stage">[wait for the yes]</span> “That's awesome. Hey, I've got to get set up for my next session, and there are lots of options. I want to make sure you have time to look at what you need. Can I get you booked for a quick call with our owner later today? They'll take you through everything, and because <span class="blank">[REFERRING MEMBER]</span> brought you in, you get <span class="blank">[BOO OFFER]</span> off your first month. You got any time later today for a quick call?”</p>
+    </div>
+    <p style="margin:0">Book the boo on the calendar right then. A call is ideal here: they've already been in once or twice and they're excited, or they wouldn't be asking about price. Making them drive back in for what's likely a quick sign-up isn't worth the headache. <strong>Book ASAP</strong>. Same day, or even catching them on the drive home.</p>
+  </div>
+
+  <h4>Day 1 for a boo</h4>
+  <div class="flow">
+    <span>Greet by name at the door</span><b>→</b>
+    <span>“You're here with [MEMBER], right?”</span><b>→</b>
+    <span>Waiver</span><b>→</b>
+    <span>60-sec tour</span><b>→</b>
+    <span>Intro to 2 members by name</span>
+  </div>
+  <ul>
+    <li><strong>The 60-second tour</strong> = the bathroom and where to put their stuff. The two things every new person is quietly worried about.</li>
+    <li><strong>Introduce them to two members by name</strong>, not just the coach.</li>
+    <li><strong>Mini consult + mini onboarding</strong> if you don't have much info on them: <em>“So, are you currently working out or just getting started?”</em> If they're active, get a feel for their routine and whether they need to be pushed or throttled back. If they're a rookie, use the “3–4 on a scale of 1 to 10” talk (walkthrough in the Circle course video) and follow up after the session.</li>
+    <li><strong>7-touch execution</strong> (in the Circle course): every member, boos included, gets a minimum of 7 individual interactions by name, every single session. Group cueing doesn't count. Coach your ass off.</li>
+  </ul>
+  <div class="script">
+    <span class="who">On the way out</span>
+    <p>“Hey <span class="blank">[NAME]</span>, great job! <span class="blank">[Specific compliment, e.g. you killed it on the PICK-A-MOVEMENT]</span>. Quick question, because we always touch base at the end of day one to customize how we're coaching everybody: how'd that feel intensity-wise? Too much? Too little? Or did we Goldilocks ya today? Because you're coming back Wednesday, right? We can make those adjustments based on how you're feeling.”</p>
+  </div>
+  <p><em>You're confirming visit 2 and giving yourself a chance to adjust to where they think they need to be to enjoy the experience.</em></p>
+</section>
+
+<!-- ============ 07 CLOSE ============ -->
+<section class="pb" id="close">
+  <div class="kicker"><b>07</b> The Close</div>
+  <h2>Last day: it's a sales<br>conversation</h2>
+  <p class="lede">Run it like one, even if it's abbreviated. We highly recommend whoever does your consults handles these, especially if your trainers are afraid of money conversations.</p>
+
+  <div class="rec"><span class="tag">The major point</span>
+    <p>Get everyone who attended at least twice on the calendar ASAP. Same two paths as the price question above: a convo on the floor if you have time, or a booked call. Worst case, coaches catch them on their last session and book the call.</p>
+  </div>
+
+  <h4>Possible scripting</h4>
+  <p style="color:var(--ink-2)">Your normal trial verbiage works great too if you're comfortable and successful with your own process.</p>
+  <ol class="steps">
+    <li><div><strong>Recap.</strong> “So you came in with <span class="blank">[REFERRING MEMBER]</span> Monday, you've been in 3 times, and <span class="blank">[the thing they did, e.g. you pulled a deadlift Wednesday you didn't think you had in you]</span>. How are you feeling about it?” <em>Let them talk.</em></div></li>
+    <li><div><strong>Future pace.</strong> “If you kept this up, what changes for you?” <em>Let THEM say it. Whatever they say here is what you say back to them at the close.</em></div></li>
+    <li><div><strong>The options.</strong> One boo offer, 2–3 memberships. Pull out your normal options sheet. “Here's the deal for folks who came in this week: <span class="blank">[BOO OFFER]</span> off your first month, good through <span class="blank">[DEADLINE]</span>. Most folks who train like you've been training this week go with <span class="blank">[OPTION]</span>, but here's what we've got <span class="stage">[walk the 2–3]</span>. Oh, and <span class="blank">[REFERRING MEMBER]</span> gets <span class="blank">[MEMBER REWARD]</span> when you sign up too, so you both win. Which one makes the most sense to ya?”</div></li>
+    <li><div><strong>Then stop talking.</strong></div></li>
+    <li><div><strong>Yes →</strong> phone, link, card. Book their first session as a member before they walk out.</div></li>
+    <li><div><strong>Objection →</strong> use the objection overcomes in the Sales Training Hub.</div></li>
+    <li><div><strong>No →</strong> be a cool person (they might come back later) and ask for feedback. If you didn't temp-check 'em earlier, this is a good spot to drop that in.</div></li>
+  </ol>
+</section>
+
+<!-- ============ 08 MEMBER AUTOMATIONS ============ -->
+<section class="pb" id="member-auto">
+  <div class="kicker"><b>08</b> Automations · Members</div>
+  <h2>Member emails &amp; texts</h2>
+  <div class="note">Merge tags are set for your GMM / Ops / GHL software. Set the custom values once per account (Settings › Custom Values, see the Setup Checklist) and every email and text fills itself in. Anything in <span class="blank">[BRACKETS]</span> is manual. That's for posts and scripts you type in the moment.</div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i>Email</i>Email 1</div><div class="when">14 days out</div></div>
+    <div class="msg-body">
+      <div class="subject"><span>Subject:</span>Bring your boo 👻</div>
+      <p>Hey <span class="mt">{{contact.first_name}}</span>,</p>
+      <p>Week of <span class="mt">{{custom_values.boo_dates}}</span> we're doing something fun at <span class="mt">{{location.name}}</span>: Bring Your Boo! Every one of you gets to bring somebody to train with you free, all week, any session you're already in.</p>
+      <p>Your boo is whoever you want it to be: partner, best friend, sister, the coworker who's asked about the gym four times and still never showed up :)</p>
+      <p>Two things:</p>
+      <ol>
+        <li>Reply with their name and which session you're bringing them to. We cap guests per session so it doesn't get crazy, so the sooner you tell me, the better your shot at the popular times.</li>
+        <li>If your boo joins by <span class="mt">{{custom_values.boo_deadline}}</span> after trying us out, you'll get <span class="mt">{{custom_values.boo_member_reward}}</span> and they'll get <span class="mt">{{custom_values.boo_offer}}</span> off their first month!</li>
+      </ol>
+      <p>So... who are you bringing?</p>
+      <p><span class="mt">{{user.first_name}}</span></p>
+    </div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="sms">SMS</i>SMS 1</div><div class="when">Same day, ~30 min after Email 1</div></div>
+    <div class="msg-body"><p>Hey <span class="mt">{{contact.first_name}}</span>, just sent over an email about Bring Your Boo (<span class="mt">{{custom_values.boo_dates}}</span>). You get to bring somebody to train free all week! Only catch is we'll have limited spots in each session, so it's first come, first served. Just reply with their name + which session and I'll save the spot for you :)</p></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i>Email</i>Email 2</div><div class="when">7 days out</div></div>
+    <div class="msg-body">
+      <div class="subject"><span>Subject:</span>You already know who</div>
+      <p>Hey <span class="mt">{{contact.first_name}}</span>,</p>
+      <p>Boo week starts next Monday and the #1 thing I hear is “I don't know who I'd bring.”</p>
+      <p>You do :) It's the person you thought of when you read the subject line and then talked yourself out of because you figured they'd say no.</p>
+      <p>Ask them anyway! Here's a text you can send them right now:</p>
+      <p style="padding-left:14px;border-left:3px solid var(--line)">“Hey, my gym does a free buddy week and I get to bring one person. Come with me Monday?”</p>
+      <p>Still stuck? Your partner, your mom, your grown kid, the friend who keeps saying they need to get back into something, or somebody going through it right now who could use a room full of people for an hour.</p>
+      <p>Reply with their name + session time and I'll hold the spot. A few sessions are close to full!</p>
+      <p>Fun bonus points? You get another friend to train with for a week, you look like a hero for introducing them to something that'll genuinely improve their life, AND you get <span class="mt">{{custom_values.boo_member_reward}}</span> if they end up joining after the free week (don't worry, they'll get <span class="mt">{{custom_values.boo_offer}}</span> off their first month, too!)</p>
+      <p><span class="mt">{{user.first_name}}</span></p>
+    </div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="sms">SMS</i>SMS 2</div><div class="when">7 days out</div></div>
+    <div class="msg-body"><p>Hey <span class="mt">{{contact.first_name}}</span>, boo week is next week and a couple sessions are filling up. Planning on bringing anyone? Reply name + session time so we can lock it in before spots are gone :)</p></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i>Email</i>Email 3</div><div class="when">Day before</div></div>
+    <div class="msg-body">
+      <div class="subject"><span>Subject:</span>Boo week starts tomorrow!</div>
+      <p>Hey <span class="mt">{{contact.first_name}}</span>,</p>
+      <p>Boo week starts in the morning and runs through Saturday!</p>
+      <p>If you haven't asked anybody yet, do it right now. Copy this: “Hey, my gym is doing a free buddy week and I get to bring one person on the house. Want to go with me tomorrow?”</p>
+      <p>Send it, then reply here with their name and the session and we'll get you guys taken care of!</p>
+      <p><span class="mt">{{user.first_name}}</span></p>
+    </div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="sms">SMS</i>SMS 3</div><div class="when">Day before</div></div>
+    <div class="msg-body"><p>Boo week starts tomorrow <span class="mt">{{contact.first_name}}</span>! Not too late. Text me a name + a session time and I'll get them set up to see what their awesome friend (that's YOU) has been up to 👻</p></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i>Email</i>Email 4</div><div class="when">Thursday of boo week</div></div>
+    <div class="msg-body">
+      <div class="subject"><span>Subject:</span>2 days left!</div>
+      <p>Hey <span class="mt">{{contact.first_name}}</span>,</p>
+      <p>Lots of BOOS (are we tired of the word “boo” yet?) have come through so far this week and it's been a blast!</p>
+      <p>Two days left. Saturday morning is the last session to bring somebody to, and there's still room.</p>
+      <p>And if you brought somebody earlier in the week: their chance to get the buddy rate ends <span class="mt">{{custom_values.boo_deadline}}</span>, so tell them to grab a coach before they leave!</p>
+      <p>Thanks for bringing your people in :)</p>
+      <p><span class="mt">{{user.first_name}}</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 VIP ============ -->
+<section class="pb" id="vip">
+  <div class="kicker"><b>09</b> VIP Group Posts</div>
+  <h2>Member community posts</h2>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="post">Post</i>Post 1 · Announce</div><div class="when">Day −14</div></div>
+    <div class="msg-body"><p>Bring Your Boo week is coming 👻 <span class="blank">[DATES]</span>, every one of you gets to bring somebody to train with you free, all week, any session you're already in! Partner, friend, sibling, coworker, your mom... your boo is whoever you want it to be. Comment their name + the session you're bringing them to and we'll save the spot (we cap guests per session so everybody still gets coached, and popular times go first!). If your boo joins by <span class="blank">[DEADLINE]</span> you get <span class="blank">[MEMBER REWARD]</span>. Every boo who shows up gets your name in the jar for <span class="blank">[PRIZE]</span> at the end of the week 🎃</p></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="post">Post</i>Post 2 · Capacity</div><div class="when">~Day −5</div></div>
+    <div class="msg-body"><p>Boo week update 👻 Filling up: <span class="blank">[FULL]</span>. Wide open: <span class="blank">[OPEN]</span>. If you've been meaning to bring somebody, the open ones are your best bet (quieter, more coach time on your person!). Comment a name + a time 👇</p></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="post">Post</i>Post 3 · Mid-week</div><div class="when">During boo week</div></div>
+    <div class="msg-body"><p><span class="blank">[COUNT]</span> boos in so far 👻 Still time! Thursday, Friday, Saturday all have room. Comment a name!</p></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="post">Post</i>Member spotlight</div><div class="when">When somebody brings a boo (with permission)</div></div>
+    <div class="msg-body"><p>Shoutout to <span class="blank">[MEMBER]</span>: <span class="blank">[MILESTONE]</span> and now bringing their people! Thanks for bringing <span class="blank">[BOO]</span> in this week 🙌</p></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="post">Post</i>Wrap-up</div><div class="when">Monday after</div></div>
+    <div class="msg-body">
+      <p>That's a wrap on Bring Your Boo 👻 <span class="blank">[COUNT]</span> guests came through this week! Thank you to everyone who brought somebody. It takes some nerve to invite a friend to the thing you care about. Welcome to <span class="blank">[NEW MEMBERS]</span> who decided to stick around 🎉 And congrats to <span class="blank">[WINNER]</span>, who takes <span class="blank">[PRIZE]</span> in the drawing for bringing in <span class="blank">[WINNER'S BOO]</span>! Same time next year.</p>
+      <p class="stage" style="margin:0">Post the costume photos with it. That's next year's announcement graphic.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10 BOO MESSAGES ============ -->
+<section class="pb" id="boo-auto">
+  <div class="kicker"><b>10</b> Messages · Boos</div>
+  <h2>Recommended boo texts<br>&amp; emails</h2>
+  <div class="note">The first three texts go out <strong>by hand</strong> from the gym phone (or a coach's), with the blanks filled in. The last-day email, last-day text and follow-up email <strong>can be automated</strong>: tag each boo <strong>BOO</strong> when the desk enters them and load those three into a workflow. Or send those by hand too.</div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="sms">SMS</i>Text 0 · Registered<span class="mode hand">By hand</span></div><div class="when">When they're signed up</div></div>
+    <div class="msg-body"><p>Hey <span class="blank">[BOO NAME]</span>, this is <span class="blank">[YOUR NAME]</span> from <span class="blank">[GYM NAME]</span>! <span class="blank">[MEMBER NAME]</span> signed you up to train with us free the week of <span class="blank">[DATES]</span>. You're in the <span class="blank">[SESSION TIME]</span> session. Nothing to do now, just show up 10 min early and I'll get you set up. Text me here if you have any questions at all :)</p></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="sms">SMS</i>Text 0.5 · Morning of<span class="mode hand">By hand</span></div><div class="when">Day of first visit</div></div>
+    <div class="msg-body"><p>Morning <span class="blank">[BOO NAME]</span>! See you at <span class="blank">[SESSION TIME]</span> today with <span class="blank">[MEMBER NAME]</span>. Come 10 min early, wear whatever you'd wear for a walk, bring water. See you soon!</p></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="sms">SMS</i>Text 1 · Check-in<span class="mode hand">By hand</span></div><div class="when">Same day, ~2 hrs after</div></div>
+    <div class="msg-body"><p>Hey <span class="blank">[BOO NAME]</span>, <span class="blank">[YOUR NAME]</span> from <span class="blank">[GYM NAME]</span>. Great having you in with <span class="blank">[MEMBER NAME]</span> today! Just wanted to check in and see how you're feeling after the first session. How's it going?</p></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i>Email</i>Email 1 · Last day<span class="mode auto">Can automate</span></div><div class="when">Last day</div></div>
+    <div class="msg-body">
+      <div class="subject"><span>Subject:</span>Last one</div>
+      <p>Hey <span class="mt">{{contact.first_name}}</span>,</p>
+      <p>Buddy week wraps today!</p>
+      <p>You don't need me to convince you of anything. You came in, you did the work, and you probably already know whether this is a place you want to be.</p>
+      <p>Hopefully you feel like you've found your new fitness “home” and you'd like to spend some more time with us…</p>
+      <p>If it's a yes, awesome! <span class="mt">{{custom_values.boo_offer}}</span> off your first month is good through <span class="mt">{{custom_values.boo_deadline}}</span>. Be sure to grab a coach before you leave, or reply to this email so we can lock down a quick chat to go over the options (just takes a few minutes!)</p>
+      <p>If it's not right now, we're still rootin' for ya and really appreciate you spending some time with us. You made the week better and the door stays open :)</p>
+      <p><span class="mt">{{user.first_name}}</span></p>
+    </div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="sms">SMS</i>Text 2 · Last day<span class="mode auto">Can automate</span></div><div class="when">Last day, AM</div></div>
+    <div class="msg-body"><p><span class="mt">{{contact.first_name}}</span>, last day of boo week! If you want to keep going, <span class="mt">{{custom_values.boo_offer}}</span> off your first month is good through <span class="mt">{{custom_values.boo_deadline}}</span>. Be sure to grab a coach before you leave, or reply to this text so we can lock down a quick chat to go over the options (just takes a few minutes!)</p><p>Either way, great having you in this week :)</p></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i>Email</i>Email 2 · Follow-up<span class="mode auto">Can automate</span></div><div class="when">~2 weeks later, non-joiners only</div></div>
+    <div class="msg-body">
+      <div class="subject"><span>Subject:</span>How's it going?</div>
+      <p>Hey <span class="mt">{{contact.first_name}}</span>,</p>
+      <p>No pitch, just curious: did you manage to keep anything going after boo week?</p>
+      <p>If yes, I want to hear about it! If it fell apart after about four days, that's what happens to almost everybody without a schedule and somebody expecting you.</p>
+      <p>Either way, reply and let me know. And if you ever want to come back in, you know where we are :)</p>
+      <p><span class="mt">{{user.first_name}}</span></p>
+    </div>
+  </div>
+  <div class="rec"><span class="tag">Don't skip this one</span><p>It gets more replies than anything else in the sequence, and a chunk of your boo-week joins show up here in November. Don't skip it just because the campaign feels over.</p></div>
+</section>
+
+<!-- ============ 11 TRACKING ============ -->
+<section class="pb" id="tracking">
+  <div class="kicker"><b>11</b> Tracking</div>
+  <h2>No new system</h2>
+  <p class="lede">Two things you already have:</p>
+  <div class="grid-2">
+    <div class="card"><h3>The sign-up sheet</h3><p>Who's coming, which session, and who brought them.</p></div>
+    <div class="card"><h3>Your booking / billing software</h3><p>Enter each boo as a guest the same way you'd do any drop-in (waiver, intake, your normal process). Put the referring member's name in the notes.</p></div>
+  </div>
+  <ul style="margin-top:16px">
+    <li><strong>During the week:</strong> boo count on the whiteboard, updated every session. Slip names in the jar every time a boo shows.</li>
+    <li><strong>Saturday night:</strong> go down the sign-up sheet and tick the columns: showed / came back / talked to / joined. That's your report, and your call list for Nov 13.</li>
+    <li><strong>On GMM / Ops / GHL?</strong> Tag every boo <strong>BOO</strong> when the desk enters them so the last-day and follow-up messages can fire. That's all the digital record you need. (Ask your CS rep if you want a Boo Week pipeline set up so the desk can drag a card instead.)</li>
+  </ul>
+
+  <h4>Targets</h4>
+  <table>
+    <thead><tr><th>Metric</th><th>Target</th><th>If you're under</th></tr></thead>
+    <tbody>
+      <tr><td>Participation<br><span style="font-weight:500;color:var(--ink-3);font-size:12.5px">brought a boo ÷ active members</span></td><td class="target">15%</td><td>Under 8% = coaches likely went light on announcements and on positive callouts when sign-ups happened.</td></tr>
+      <tr><td>Show rate</td><td class="target">75%+</td><td>Under 60% = confirmation texts didn't go out, or they got scared away (check your socials).</td></tr>
+      <tr><td>Repeat visit</td><td class="target">50%+</td><td>This one predicts everything after it.</td></tr>
+      <tr><td>Conversation rate</td><td class="target">70%+</td><td>Share of boos who got a sit-down about the options.</td></tr>
+      <tr><td>Joined ÷ showed</td><td class="target">15–25%</td><td></td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13px;color:var(--ink-3)">These are planning targets, not industry data. We're collecting real multi-gym buddy week numbers this October. Your year 1 is your baseline, and that's probably worth more to you than anybody else's benchmark anyway.</p>
+</section>
+
+<!-- ============ 12 TROUBLESHOOT ============ -->
+<section id="troubleshoot" style="padding-top:28px">
+  <div class="kicker"><b>12</b> If It's Not Working</div>
+  <h2>Symptom → fix</h2>
+  <table>
+    <thead><tr><th style="width:32%">What you're seeing</th><th>What's probably going on</th></tr></thead>
+    <tbody>
+      <tr><td>Day −7, nobody's registered</td><td>You announced it in writing and stopped. Coaches ask every member in person this week. Second guess: it read as a favor to you instead of a perk for them. Third guess: you got stingy with rewards.</td></tr>
+      <tr><td>Registered but not showing</td><td>Confirmation texts didn't go out, or came from a number they've never seen. Text from a coach's name 48 hours out + the morning of.</td></tr>
+      <tr><td>Came once, didn't come back</td><td>Experience problem. No email fixes it. Reread “Day 1 for a boo.”</td></tr>
+      <tr><td>Lots of boos, no joins</td><td>(1) The conversation didn't happen. Go down the sign-up sheet and count who actually got one. (2) The offer got muddy, with the team quoting different numbers. Or, worst one, (3) the experience didn't live up to expectations. Look hard at your new-client experience.</td></tr>
+      <tr><td>Day 14: 30 attended, 2 joined</td><td>Not over. The owner CALLS every boo who came in: “You came in during boo week, wanted to hear what you thought.” About a third pick up and talk. By day 30 it's mostly gone.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 13 EDGE CASES ============ -->
+<section class="pb" id="edge">
+  <div class="kicker"><b>13</b> Edge Cases</div>
+  <h2>Decide now, print for the desk</h2>
+  <table>
+    <tbody>
+      <tr><td style="width:32%">More than one boo per member?</td><td>Yes if there's capacity, but make it clear it's a favor so they really try to get their folks in.</td></tr>
+      <tr><td>Former member?</td><td>We'd say yes. Best odds in the building.</td></tr>
+      <tr><td>Under 18?</td><td>Only if you already train minors, and a parent signs in person. No minors policy = no.</td></tr>
+      <tr><td>Pregnant / post-op / PAR-Q flag?</td><td>Normal intake. Boo week doesn't change your screening.</td></tr>
+      <tr><td>No reservation?</td><td>Room = let 'em in and get them registered. At cap = “let's get you into the 6:30, better first session anyway.”</td></tr>
+      <tr><td>Wants to join in January?</td><td>Take the January start, with the buddy rate in writing and the January date on it. Note it on the sign-up sheet so they're on the Nov 13 list as a yes.</td></tr>
+      <tr><td>Waivers</td><td>Before they touch anything. No “after the session.”</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 14 CHECKLIST ============ -->
+<section class="pb" id="checklist">
+  <div class="kicker"><b>14</b> Setup Checklist</div>
+  <h2>Do these in order</h2>
+
+  <div class="phase">3 weeks out</div>
+  <ul class="check">
+    <li>Make the 4 decisions (Boo Day/Week, member reward, boo offer + expiry, Halloween or not). Write them on the cheat sheet.</li>
+    <li>Capacity: write your boo-week sessions on the sign-up sheets with the boo cap next to each, and cross out the lines past the cap. Add a session if the math says you're short.</li>
+    <li>Name who runs the closing convos. Block Saturday of boo week. Have them read the close out loud once.</li>
+    <li>Plan for extra staffing if you think you'll need it.</li>
+    <li>Pick the drawing prize. Get a jar.</li>
+  </ul>
+
+  <div class="phase">2 weeks out</div>
+  <ul class="check">
+    <li>Tech: set the custom values (Settings › Custom Values). Name them exactly like this and copy the tag GHL shows you:
+      <table style="margin-top:10px">
+        <thead><tr><th>Custom value</th><th>Merge tag</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Boo Dates</td><td><span class="mt">{{custom_values.boo_dates}}</span></td><td>Oct 26–31</td></tr>
+          <tr><td>Boo Start Day</td><td><span class="mt">{{custom_values.boo_start_day}}</span></td><td>Monday</td></tr>
+          <tr><td>Boo Deadline</td><td><span class="mt">{{custom_values.boo_deadline}}</span></td><td>Saturday Oct 31</td></tr>
+          <tr><td>Boo Member Reward</td><td><span class="mt">{{custom_values.boo_member_reward}}</span></td><td>$100 off next month</td></tr>
+          <tr><td>Boo Offer</td><td><span class="mt">{{custom_values.boo_offer}}</span></td><td>$100 off your first month</td></tr>
+        </tbody>
+      </table>
+    </li>
+    <li>Tech: load the member emails + SMS into a workflow on the timeline dates.</li>
+    <li>Tech: load the three automatable boo messages (last-day email, last-day text, follow-up email) into a workflow that fires on the BOO tag. (Or send them by hand.)</li>
+    <li>Know how you'll take the card on the spot in your billing software. The close is “phone, link, card,” so have the link ready.</li>
+    <li>Staff meeting. Cheat sheet printed + posted. Everybody says “Who are you bringing to boo week?” out loud once.</li>
+    <li>Posters up (desk + bathroom). Sign-up sheets printed (one per day, extra pages if you run more than 3 sessions) with session times + boo caps filled in.</li>
+  </ul>
+
+  <div class="phase">1 week out</div>
+  <ul class="check">
+    <li>Waivers pre-loaded.</li>
+    <li>Look at the sign-up sheet. Post which sessions are full / open (VIP Post 2).</li>
+    <li>Confirmation text to every registered boo.</li>
+    <li>Decorations if you're doing them. Jar at the desk.</li>
+  </ul>
+
+  <div class="phase">During</div>
+  <ul class="check">
+    <li>Morning-of text to that day's boos.</li>
+    <li>Every boo in the booking software as a guest, with who brought them. Slip in the jar.</li>
+    <li>Whiteboard count updated every session.</li>
+    <li>Closes booked for every boo who came in twice.</li>
+    <li>Member rewards paid the day a boo joins.</li>
+  </ul>
+
+  <div class="phase">After</div>
+  <ul class="check">
+    <li>Wrap-up post + draw the winner.</li>
+    <li>Put Nov 13 on your calendar NOW: call everybody on the sheet who didn't join.</li>
+    <li>Boo Email 2 goes out ~2 weeks after to the ones who didn't join.</li>
+  </ul>
+
+  <h4>Related resources</h4>
+  <div class="grid-2">
+    <div class="card"><h3>Referral Playbook</h3><p>Give/Get tiers, activation points, the advice script.</p></div>
+    <div class="card"><h3>Sell by Chat</h3><p>Working the replies.</p></div>
+  </div>
+</section>
+
+<!-- ============ 15 CHEAT SHEET ============ -->
+<section class="pb" id="cheat">
+  <div class="printable">
+    <div class="kicker"><b>15</b> Print + post · fill in the blanks first</div>
+    <h2>Staff Cheat Sheet 👻</h2>
+    <p style="font-weight:700;margin-bottom:4px">BRING YOUR BOO · <span class="blank">[DATES]</span></p>
+    <p style="color:var(--ink-2)">Member perk, not a public promo. We're not advertising it.</p>
+    <div class="fill">
+      <div><span>Guest cap per session</span><span></span></div>
+      <div><span>Member reward (if boo joins)</span><span></span></div>
+      <div><span>Boo offer (off first month)</span><span></span></div>
+      <div><span>Offer deadline</span><span></span></div>
+      <div><span>Membership after</span><span></span></div>
+      <div><span>Closes run by</span><span></span></div>
+      <div><span>Drawing prize</span><span></span></div>
+      <div><span>Questions → owner + phone</span><span></span></div>
+    </div>
+
+    <h4>Say to every member</h4>
+    <p style="font-size:18px;font-weight:700">“Who are you bringing to boo week?”</p>
+    <p>Get the name + session. Write both on the sheet.</p>
+
+    <h4>Boo walks in</h4>
+    <div class="flow">
+      <span>Name at the door</span><b>→</b><span>Waiver</span><b>→</b><span>60-sec tour</span><b>→</b><span>Intro to 2 members</span><b>→</b><span>Into booking software as guest (+ who brought them)</span><b>→</b><span>Slip in the jar</span>
+    </div>
+    <p>On the way out: <em>“How'd that feel intensity-wise? You're back Wednesday, right?”</em></p>
+
+    <h4>Boo asks about price · circle one</h4>
+    <p style="font-size:15px">◯ &nbsp;Walk them through the options &nbsp;&nbsp;&nbsp; ◯ &nbsp;Book them a call with owner / sales today</p>
+    <p><strong>Same answer from every coach.</strong></p>
+  </div>
+</section>
+
+<!-- ============ 16 SIGN-UP SHEET ============ -->
+<section class="pb" id="signup">
+  <div class="printable">
+    <div class="sheet-top"><h2 style="margin:0;font-size:26px">Bring Your Boo Sign-Up 👻</h2><div class="dayline">Day:<span></span></div></div>
+    <p class="sheet-how">One sheet per day (print extras for more than 3 sessions). Members write their name + their boo's. Full lines = full session. Coaches tick the boxes all week; Saturday night it's your report and your Nov 13 call list.</p>
+      <div class="sess"><div class="sess-h"><span>Session time:<b></b></span><span>Boo cap:<b class="sm"></b></span><span style="opacity:.75">Cross out lines past your cap</span></div>
+        <table><thead><tr><th>Member</th><th>Boo</th><th class="c">Showed</th><th class="c">Came back</th><th class="c">Talked to</th><th class="c">Joined</th></tr></thead>
+        <tbody><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr></tbody></table></div>
+      <div class="sess"><div class="sess-h"><span>Session time:<b></b></span><span>Boo cap:<b class="sm"></b></span><span style="opacity:.75">Cross out lines past your cap</span></div>
+        <table><thead><tr><th>Member</th><th>Boo</th><th class="c">Showed</th><th class="c">Came back</th><th class="c">Talked to</th><th class="c">Joined</th></tr></thead>
+        <tbody><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr></tbody></table></div>
+      <div class="sess"><div class="sess-h"><span>Session time:<b></b></span><span>Boo cap:<b class="sm"></b></span><span style="opacity:.75">Cross out lines past your cap</span></div>
+        <table><thead><tr><th>Member</th><th>Boo</th><th class="c">Showed</th><th class="c">Came back</th><th class="c">Talked to</th><th class="c">Joined</th></tr></thead>
+        <tbody><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr></tbody></table></div>
+  </div>
+</section>
+
+<div class="end"><div class="ghost">👻</div>Gym Member Machine · Bring Your Boo Playbook</div>
+</main>
+<script>
+  // "Copy email / text / post" buttons on every message card.
+  document.querySelectorAll('.msg').forEach(function (msg) {
+    var type = msg.querySelector('.msg-head .type i');
+    var label = type.classList.contains('sms') ? 'Copy text' : type.classList.contains('post') ? 'Copy post' : 'Copy email';
+    var when = msg.querySelector('.msg-head .when');
+    var wrap = document.createElement('div'); wrap.className = 'right';
+    when.parentNode.insertBefore(wrap, when); wrap.appendChild(when);
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'copy-btn'; btn.textContent = label;
+    wrap.appendChild(btn);
+    btn.addEventListener('click', function () {
+      var body = msg.querySelector('.msg-body');
+      var parts = [];
+      body.querySelectorAll(':scope > .subject, :scope > p, :scope > ol').forEach(function (el) {
+        if (el.classList.contains('subject')) parts.push('Subject: ' + el.lastChild.textContent.trim());
+        else if (el.tagName === 'OL') parts.push(Array.from(el.children).map(function (li, i) { return (i + 1) + '. ' + li.textContent.trim(); }).join('\n'));
+        else if (!el.classList.contains('stage')) parts.push(el.textContent.trim());
+      });
+      var text = parts.join('\n\n');
+      function ok() { btn.textContent = 'Copied ✓'; btn.classList.add('done'); setTimeout(function () { btn.textContent = label; btn.classList.remove('done'); }, 1600); }
+      function fallback() {
+        var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); ok(); } catch (e) {}
+        ta.remove();
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, fallback); else fallback();
+    });
+  });
+</script>
+</body>
+</html>
