@@ -168,6 +168,20 @@
   .check li { position: relative; padding-left: 30px; margin-bottom: 9px; break-inside: avoid; }
   .check li::before { content: ""; position: absolute; left: 0; top: 3px; width: 17px; height: 17px; border: 2px solid var(--ink); border-radius: 4px; background: #fff; }
   .check ul { margin-top: 8px; }
+  /* interactive checklist (JS adds .live) */
+  .check.live li { cursor: pointer; border-radius: 6px; transition: background .12s; }
+  .check.live li:hover { background: var(--orange-tint); }
+  .check.live li::before { display: none; }
+  .check.live li > input.cb { position: absolute; left: 0; top: 2px; width: 19px; height: 19px; margin: 0; accent-color: var(--green); cursor: pointer; }
+  .check.live li.done > .txt { color: var(--ink-3); text-decoration: line-through; text-decoration-color: rgba(0,0,0,.3); }
+  .progress { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 4px 0 8px; font-size: 13.5px; }
+  .progress .bar { flex: 1 1 160px; height: 8px; background: #efe7dc; border-radius: 99px; overflow: hidden; }
+  .progress .bar i { display: block; height: 100%; width: 0; background: var(--green); border-radius: 99px; transition: width .2s; }
+  .progress b { font-variant-numeric: tabular-nums; }
+  .progress small { color: var(--ink-3); flex-basis: 100%; }
+  .progress button { font: 700 12px/1 Inter, sans-serif; background: transparent; border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; cursor: pointer; color: var(--ink-2); }
+  .progress button:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { .progress .bar i, .check.live li { transition: none; } }
   .phase { display: inline-block; font: 800 12px/1 Inter, sans-serif; letter-spacing: .12em; text-transform: uppercase; background: var(--night); color: #fff; border-radius: 6px; padding: 7px 11px; margin: 18px 0 12px; }
 
   /* close steps */
@@ -285,7 +299,8 @@
     h2, h3, h4, .kicker, .phase { break-after: avoid; }
     .printable { break-before: page; border: 0; padding: 0; margin: 0; }
     .end { display: none; }
-    .copy-btn, .print-bar { display: none !important; }
+    .copy-btn, .print-bar, .progress { display: none !important; }
+    .check.live li:hover { background: none; }
     body.print-one > .cover, body.print-one main > * { display: none !important; }
     body.print-one.print-cheat main > #cheat, body.print-one.print-signup main > #signup { display: block !important; }
     body.print-one main > section.pb, body.print-one .printable { break-before: auto; }
@@ -854,6 +869,7 @@
 <section class="pb" id="checklist">
   <div class="kicker"><b>14</b> Setup Checklist</div>
   <h2>Do these in order</h2>
+  <div class="progress" id="ck-progress" hidden><span><b id="ck-count">0 of 0</b> done</span><div class="bar"><i id="ck-bar"></i></div><button type="button" id="ck-reset">Reset checklist</button><small>Your checks save in this browser only, so each gym owner has their own checklist.</small></div>
 
   <div class="phase">3 weeks out</div>
   <ul class="check">
@@ -1017,6 +1033,47 @@
       document.querySelectorAll('#' + btn.getAttribute('data-clear') + ' input').forEach(function (i) { i.value = ''; });
     });
   });
+</script>
+<script>
+  // Interactive setup checklist, saved per browser in localStorage.
+  (function () {
+    var KEY = 'gmm-boo-checklist-v1';
+    var items = Array.prototype.slice.call(document.querySelectorAll('#checklist ul.check > li'));
+    if (!items.length) return;
+    var saved = [];
+    try { saved = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) {}
+    function save() {
+      var on = items.map(function (li, i) { return li.classList.contains('done') ? i : -1; }).filter(function (i) { return i >= 0; });
+      try { localStorage.setItem(KEY, JSON.stringify(on)); } catch (e) {}
+    }
+    function update() {
+      var n = items.filter(function (li) { return li.classList.contains('done'); }).length;
+      document.getElementById('ck-count').textContent = n + ' of ' + items.length;
+      document.getElementById('ck-bar').style.width = (100 * n / items.length) + '%';
+    }
+    items.forEach(function (li, i) {
+      var txt = document.createElement('div'); txt.className = 'txt';
+      while (li.firstChild) txt.appendChild(li.firstChild);
+      var cb = document.createElement('input'); cb.type = 'checkbox'; cb.className = 'cb'; cb.id = 'ck-' + i;
+      cb.setAttribute('aria-label', txt.textContent.trim().slice(0, 80));
+      li.appendChild(cb); li.appendChild(txt);
+      function set(v) { cb.checked = v; li.classList.toggle('done', v); }
+      set(saved.indexOf(i) >= 0);
+      cb.addEventListener('change', function () { set(cb.checked); save(); update(); });
+      li.addEventListener('click', function (e) {
+        if (e.target === cb || e.target.closest('a, input, button')) return;
+        if (getSelection && String(getSelection()).length) return;
+        set(!cb.checked); save(); update();
+      });
+    });
+    document.querySelectorAll('#checklist ul.check').forEach(function (ul) { ul.classList.add('live'); });
+    document.getElementById('ck-reset').addEventListener('click', function () {
+      items.forEach(function (li) { li.classList.remove('done'); li.querySelector('.cb').checked = false; });
+      save(); update();
+    });
+    document.getElementById('ck-progress').hidden = false;
+    update();
+  })();
 </script>
 </body>
 </html>
