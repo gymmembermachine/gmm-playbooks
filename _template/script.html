@@ -1,0 +1,88 @@
+<script>
+  // "Copy email / text / post" buttons on every message card.
+  document.querySelectorAll('.msg').forEach(function (msg) {
+    var type = msg.querySelector('.msg-head .type i');
+    var label = type.classList.contains('sms') ? 'Copy text' : type.classList.contains('post') ? 'Copy post' : 'Copy email';
+    var when = msg.querySelector('.msg-head .when');
+    var wrap = document.createElement('div'); wrap.className = 'right';
+    when.parentNode.insertBefore(wrap, when); wrap.appendChild(when);
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'copy-btn'; btn.textContent = label;
+    wrap.appendChild(btn);
+    btn.addEventListener('click', function () {
+      var body = msg.querySelector('.msg-body');
+      var parts = [];
+      body.querySelectorAll(':scope > .subject, :scope > p, :scope > ol').forEach(function (el) {
+        if (el.classList.contains('subject')) parts.push('Subject: ' + el.lastChild.textContent.trim());
+        else if (el.tagName === 'OL') parts.push(Array.from(el.children).map(function (li, i) { return (i + 1) + '. ' + li.textContent.trim(); }).join('\n'));
+        else if (!el.classList.contains('stage')) parts.push(el.textContent.trim());
+      });
+      var text = parts.join('\n\n');
+      function ok() { btn.textContent = 'Copied ✓'; btn.classList.add('done'); setTimeout(function () { btn.textContent = label; btn.classList.remove('done'); }, 1600); }
+      function fallback() {
+        var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); ok(); } catch (e) {}
+        ta.remove();
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, fallback); else fallback();
+    });
+  });
+</script>
+<script>
+  // Print just one sheet; clear its typed-in fields.
+  document.querySelectorAll('[data-print]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var which = btn.getAttribute('data-print');
+      document.body.classList.add('print-one', 'print-' + which);
+      window.print();
+    });
+  });
+  window.addEventListener('afterprint', function () { document.body.classList.remove('print-one', 'print-cheat', 'print-signup'); });
+  document.querySelectorAll('[data-clear]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#' + btn.getAttribute('data-clear') + ' input').forEach(function (i) { i.value = ''; });
+    });
+  });
+</script>
+<script>
+  // Interactive setup checklist, saved per browser in localStorage.
+  (function () {
+    var KEY = 'gmm-boo-checklist-v1';
+    var items = Array.prototype.slice.call(document.querySelectorAll('#checklist ul.check > li'));
+    if (!items.length) return;
+    var saved = [];
+    try { saved = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) {}
+    function save() {
+      var on = items.map(function (li, i) { return li.classList.contains('done') ? i : -1; }).filter(function (i) { return i >= 0; });
+      try { localStorage.setItem(KEY, JSON.stringify(on)); } catch (e) {}
+    }
+    function update() {
+      var n = items.filter(function (li) { return li.classList.contains('done'); }).length;
+      document.getElementById('ck-count').textContent = n + ' of ' + items.length;
+      document.getElementById('ck-bar').style.width = (100 * n / items.length) + '%';
+    }
+    items.forEach(function (li, i) {
+      var txt = document.createElement('div'); txt.className = 'txt';
+      while (li.firstChild) txt.appendChild(li.firstChild);
+      var cb = document.createElement('input'); cb.type = 'checkbox'; cb.className = 'cb'; cb.id = 'ck-' + i;
+      cb.setAttribute('aria-label', txt.textContent.trim().slice(0, 80));
+      li.appendChild(cb); li.appendChild(txt);
+      function set(v) { cb.checked = v; li.classList.toggle('done', v); }
+      set(saved.indexOf(i) >= 0);
+      cb.addEventListener('change', function () { set(cb.checked); save(); update(); });
+      li.addEventListener('click', function (e) {
+        if (e.target === cb || e.target.closest('a, input, button')) return;
+        if (getSelection && String(getSelection()).length) return;
+        set(!cb.checked); save(); update();
+      });
+    });
+    document.querySelectorAll('#checklist ul.check').forEach(function (ul) { ul.classList.add('live'); });
+    document.getElementById('ck-reset').addEventListener('click', function () {
+      items.forEach(function (li) { li.classList.remove('done'); li.querySelector('.cb').checked = false; });
+      save(); update();
+    });
+    document.getElementById('ck-progress').hidden = false;
+    update();
+  })();
+</script>
