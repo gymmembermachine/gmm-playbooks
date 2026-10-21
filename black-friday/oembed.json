@@ -1,0 +1,12 @@
+{
+ "version": "1.0",
+ "type": "rich",
+ "title": "Black Friday Playbook",
+ "provider_name": "Gym Member Machine",
+ "width": 960,
+ "height": 1400,
+ "html": "<iframe src=\"https://gymmembermachine.github.io/gmm-playbooks/black-friday/\" width=\"960\" height=\"1400\" style=\"border:0;width:100%\" loading=\"lazy\"></iframe>",
+ "thumbnail_url": "https://gymmembermachine.github.io/gmm-playbooks/bring-your-boo/cover.png",
+ "thumbnail_width": 1200,
+ "thumbnail_height": 630
+}

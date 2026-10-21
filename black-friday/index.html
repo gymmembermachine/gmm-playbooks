@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="GMM's November Black Friday playbook: the curiosity reactivation to never-beens and past clients, decisions, timeline, emails, texts, reply scripts and a staff cheat sheet.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Black Friday Playbook">
+<meta property="og:description" content="GMM's November Black Friday reactivation playbook.">
+<meta property="og:url" content="https://gymmembermachine.github.io/gmm-playbooks/black-friday/">
+<meta property="og:image" content="https://gymmembermachine.github.io/gmm-playbooks/bring-your-boo/cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="player">
+<meta name="twitter:title" content="Black Friday Playbook">
+<meta name="twitter:image" content="https://gymmembermachine.github.io/gmm-playbooks/bring-your-boo/cover.png">
+<meta name="twitter:player" content="https://gymmembermachine.github.io/gmm-playbooks/black-friday/">
+<meta name="twitter:player:width" content="960">
+<meta name="twitter:player:height" content="1400">
+<link rel="alternate" type="application/json+oembed" href="https://gymmembermachine.github.io/gmm-playbooks/black-friday/oembed.json" title="Black Friday Playbook">
+
+<title>Black Friday Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<style>
+  :root {--orb-hi:#ff8a3d;--orb-mid:var(--orange);--orb-lo:#a33d06;--accent-rgb:238,106,31;--cover-sub:#eee3d8;--cover-foot:#cbbfd6;--dark-text:#f3ebe3;--paper-2:#f6efe6;--paper-3:#f3ede5;--paper-4:#efe7dc;
+    --ink: #17130f;
+    --ink-2: #4a423a;
+    --ink-3: #847a70;
+    --paper: #fbf7f1;
+    --card: #ffffff;
+    --line: #e8dfd3;
+    --orange: #ee6a1f;
+    --orange-deep: #c9500f;
+    --orange-tint: #fdeee3;
+    --night: #1d1726;
+    --night-2: #2c2338;
+    --green: #2f7d4f;
+    --green-tint: #e6f3ea;
+    --red: #b3372b;
+    --red-tint: #fbe9e6;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 15px/1.6 Inter, system-ui, -apple-system, sans-serif;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  h1, h2, h3 { font-family: "Archivo Black", Inter, sans-serif; font-weight: 400; letter-spacing: -0.01em; line-height: 1.1; }
+  h2 { font-size: 34px; margin: 0 0 6px; text-transform: uppercase; }
+  h3 { font-size: 19px; margin: 28px 0 10px; }
+  h4 { font: 800 12px/1.3 Inter, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--orange-deep); margin: 26px 0 10px; }
+  p { margin: 0 0 12px; }
+  ul, ol { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  li::marker { color: var(--orange); font-weight: 700; }
+  strong { font-weight: 700; }
+  em { color: var(--ink-2); }
+
+  /* ---------- Cover ---------- */
+  .cover {
+    page: cover;
+    background: var(--night);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    min-height: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 56px 56px 48px;
+  }
+  .cover::before {
+    content: ""; position: absolute; right: -180px; top: -140px;
+    width: 620px; height: 620px; border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, var(--orb-hi) 0%, var(--orb-mid) 45%, var(--orb-lo) 100%);
+    opacity: .95;
+  }
+  .cover::after {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 20% 110%, rgba(var(--accent-rgb),.25), transparent 60%);
+  }
+  .cover > * { position: relative; z-index: 1; }
+  .brand { font: 800 12px/1 Inter, sans-serif; letter-spacing: .22em; text-transform: uppercase; color: #fff; opacity: .85; }
+  .cover .ghost { font-size: 88px; line-height: 1; margin-bottom: 18px; }
+  .cover h1 { font-size: 92px; line-height: .92; margin: 0 0 18px; text-transform: uppercase; }
+  .cover h1 span { color: var(--orange); }
+  .cover .sub { font: 600 22px/1.35 Inter, sans-serif; max-width: 520px; color: var(--cover-sub); margin-bottom: 28px; }
+  .cover .pills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill { border: 1px solid rgba(255,255,255,.28); border-radius: 99px; padding: 7px 14px; font-size: 13px; font-weight: 600; color: #fff; }
+  .cover .foot { display: flex; justify-content: space-between; align-items: flex-end; font-size: 13px; color: var(--cover-foot); gap: 24px; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 56px 0 8px; }
+  .kicker { font: 800 12px/1 Inter, sans-serif; letter-spacing: .18em; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+  .kicker b { background: var(--orange); color: #fff; border-radius: 4px; padding: 4px 7px; letter-spacing: .08em; }
+  .lede { font-size: 17px; color: var(--ink-2); max-width: 680px; margin-bottom: 22px; }
+
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin-bottom: 14px; break-inside: avoid; }
+  .card > :last-child { margin-bottom: 0; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .grid-2 > .card, .grid-3 > .card { margin-bottom: 0; }
+  .stack { display: grid; gap: 14px; margin-bottom: 14px; }
+
+  .num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--orange); color: #fff; font: 800 14px/1 Inter, sans-serif; margin-bottom: 10px; }
+  .card h3 { margin-top: 0; }
+  .rec { background: var(--orange-tint); border-left: 4px solid var(--orange); border-radius: 0 10px 10px 0; padding: 12px 16px; margin: 12px 0; break-inside: avoid; }
+  .rec .tag { font: 800 11px/1 Inter, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--orange-deep); display: block; margin-bottom: 6px; }
+  .rec > :last-child { margin-bottom: 0; }
+
+  .callout-dark { background: var(--night); color: var(--dark-text); border-radius: 14px; padding: 22px 24px; margin: 18px 0; break-inside: avoid; }
+  .callout-dark strong { color: #fff; }
+  .callout-dark .tag { font: 800 11px/1 Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 8px; }
+
+  .levers { counter-reset: lever; }
+  .levers .card { position: relative; padding-top: 22px; }
+  .levers .card::before { counter-increment: lever; content: counter(lever); font-family: "Archivo Black", sans-serif; font-size: 44px; color: var(--orange); line-height: 1; display: block; margin-bottom: 8px; }
+
+  /* scripts */
+  .script { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--night); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 10px 0 16px; font-size: 15px; break-inside: avoid; }
+  .script .who { font: 800 11px/1 Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); display: block; margin-bottom: 8px; }
+  .script p:last-child { margin-bottom: 0; }
+  .say { font-style: normal; color: var(--ink); }
+  .blank { background: #fff4d6; border-radius: 4px; padding: 0 5px; font-weight: 600; color: #7a5200; white-space: nowrap; }
+  .stage { color: var(--ink-3); font-style: italic; }
+
+  /* timeline */
+  .timeline { position: relative; margin: 8px 0 18px; padding-left: 0; list-style: none; }
+  .timeline li { display: grid; grid-template-columns: 92px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px dashed var(--line); margin: 0; break-inside: avoid; }
+  .timeline li:last-child { border-bottom: 0; }
+  .timeline .d { font: 800 14px/1.3 Inter, sans-serif; color: var(--ink); }
+  .timeline .d small { display: block; font-weight: 600; color: var(--ink-3); font-size: 12px; }
+  .timeline li.go { background: var(--orange-tint); border-radius: 10px; padding: 12px 12px; border-bottom: 0; margin: 4px 0; }
+  .timeline li.go .d { color: var(--orange-deep); }
+
+  /* messages */
+  .msg { background: #fff; border: 1px solid var(--line); border-radius: 14px; margin: 0 0 16px; overflow: hidden; break-inside: avoid; }
+  .msg-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 11px 18px; background: var(--paper-2); border-bottom: 1px solid var(--line); }
+  .msg-head .type { font: 800 12px/1 Inter, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+  .msg-head .when { font-size: 12px; font-weight: 600; color: var(--ink-3); }
+  .msg-head .type i { font-style: normal; display: inline-block; border-radius: 4px; padding: 3px 6px; margin-right: 8px; color: #fff; background: var(--night); letter-spacing: .08em; }
+  .msg-head .type i.sms { background: var(--green); }
+  .msg-head .type i.post { background: var(--orange); }
+  .msg-body { padding: 16px 18px; font-size: 14.5px; }
+  .msg-body p:last-child { margin-bottom: 0; }
+  .subject { font-weight: 700; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+  .subject span { color: var(--ink-3); font-weight: 600; margin-right: 6px; }
+  .mt { font: 500 12.5px/1 "JetBrains Mono", ui-monospace, monospace; background: #efe9f7; color: #4b2f7a; border-radius: 4px; padding: 2px 5px; white-space: nowrap; }
+  .note { font-size: 13px; color: var(--ink-2); background: var(--paper-3); border-radius: 10px; padding: 12px 14px; margin: 0 0 16px; }
+
+  /* tables */
+  table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 8px 0 18px; font-size: 14px; background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  th { text-align: left; font: 800 11px/1.2 Inter, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); background: var(--paper-2); padding: 11px 14px; }
+  td { padding: 11px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+  tr { break-inside: avoid; }
+  td:first-child { font-weight: 700; }
+  .target { font-family: "Archivo Black", sans-serif; color: var(--orange-deep); white-space: nowrap; }
+
+  /* checklist */
+  .check { list-style: none; padding: 0; }
+  .check li { position: relative; padding-left: 30px; margin-bottom: 9px; break-inside: avoid; }
+  .check li::before { content: ""; position: absolute; left: 0; top: 3px; width: 17px; height: 17px; border: 2px solid var(--ink); border-radius: 4px; background: #fff; }
+  .check ul { margin-top: 8px; }
+  /* interactive checklist (JS adds .live) */
+  .check.live li { cursor: pointer; border-radius: 6px; transition: background .12s; }
+  .check.live li:hover { background: var(--orange-tint); }
+  .check.live li::before { display: none; }
+  .check.live li > input.cb { position: absolute; left: 0; top: 2px; width: 19px; height: 19px; margin: 0; accent-color: var(--green); cursor: pointer; }
+  .check.live li.done > .txt { color: var(--ink-3); text-decoration: line-through; text-decoration-color: rgba(0,0,0,.3); }
+  .progress { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 4px 0 8px; font-size: 13.5px; }
+  .progress .bar { flex: 1 1 160px; height: 8px; background: var(--paper-4); border-radius: 99px; overflow: hidden; }
+  .progress .bar i { display: block; height: 100%; width: 0; background: var(--green); border-radius: 99px; transition: width .2s; }
+  .progress b { font-variant-numeric: tabular-nums; }
+  .progress small { color: var(--ink-3); flex-basis: 100%; }
+  .progress button { font: 700 12px/1 Inter, sans-serif; background: transparent; border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; cursor: pointer; color: var(--ink-2); }
+  .progress button:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { .progress .bar i, .check.live li { transition: none; } }
+  .phase { display: inline-block; font: 800 12px/1 Inter, sans-serif; letter-spacing: .12em; text-transform: uppercase; background: var(--night); color: #fff; border-radius: 6px; padding: 7px 11px; margin: 18px 0 12px; }
+
+  /* close steps */
+  .steps { list-style: none; padding: 0; counter-reset: step; }
+  .steps li { counter-increment: step; display: grid; grid-template-columns: 38px 1fr; gap: 12px; margin-bottom: 12px; break-inside: avoid; }
+  .steps li::before { content: counter(step); width: 30px; height: 30px; border-radius: 50%; background: var(--night); color: #fff; display: flex; align-items: center; justify-content: center; font: 800 13px/1 Inter, sans-serif; }
+
+  /* flow */
+  .flow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0 16px; }
+  .flow span { background: #fff; border: 1px solid var(--line); border-radius: 99px; padding: 6px 12px; font-size: 13px; font-weight: 600; }
+  .flow b { color: var(--orange); }
+
+  /* printable pages */
+  .printable { background: #fff; border: 2px solid var(--ink); border-radius: 16px; padding: 28px 30px; margin: 10px 0 18px; }
+  .printable h2 { font-size: 30px; }
+  .fill { display: grid; grid-template-columns: 1fr; gap: 0; margin: 14px 0 18px; }
+  .fill div { display: grid; grid-template-columns: 210px 1fr; gap: 12px; align-items: end; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .fill div label { font-weight: 700; }
+  
+  .signup { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .slot { border: 1.5px solid var(--ink); border-radius: 12px; overflow: hidden; break-inside: avoid; }
+  .slot header { background: var(--night); color: #fff; padding: 9px 14px; font: 800 13px/1 Inter, sans-serif; display: flex; justify-content: space-between; }
+  .slot header span:last-child { color: var(--orange); }
+  .slot .row { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); height: 34px; }
+  .slot .row.h { height: auto; background: var(--paper-2); font: 800 10px/1 Inter, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+  .slot .row > div { padding: 8px 12px; }
+  .slot .row > div + div { border-left: 1px solid var(--line); }
+
+  .toc { columns: 2; column-gap: 36px; list-style: none; padding: 0; margin: 20px 0 0; }
+  .toc li { display: flex; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); break-inside: avoid; margin: 0; font-weight: 600; }
+  .toc li span { font-family: "Archivo Black", sans-serif; color: var(--orange); width: 24px; }
+  .toc a { color: inherit; text-decoration: none; }
+
+  h3.big { font-size: 26px; margin: 40px 0 12px; padding-top: 24px; border-top: 2px solid var(--line); }
+  .warn { background: #fff4d6; border: 1px solid #efd48a; border-radius: 10px; padding: 11px 14px; margin: 0 0 14px; font-size: 14.5px; }
+  .mode { display: inline-block; font: 800 10px/1 Inter, sans-serif; letter-spacing: .1em; text-transform: uppercase; border-radius: 4px; padding: 4px 6px; margin-left: 8px; vertical-align: 1px; }
+  .mode.hand { background: #fff4d6; color: #7a5200; }
+  .mode.auto { background: #efe9f7; color: #4b2f7a; }
+  .copy-btn { font: 700 12px/1 Inter, sans-serif; border: 1px solid var(--ink); background: #fff; color: var(--ink); border-radius: 6px; padding: 6px 10px; cursor: pointer; white-space: nowrap; }
+  .copy-btn:hover { background: var(--ink); color: #fff; }
+  .copy-btn:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .copy-btn.done { background: var(--green); border-color: var(--green); color: #fff; }
+  .msg-head .right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+  /* sign-up sheet (printable) */
+  .sheet-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 6px; }
+  .sheet-top .dayline { font: 800 15px/1 Inter, sans-serif; }
+  .sheet-top .dayline span { display: inline-block; width: 190px; border-bottom: 1.5px solid var(--ink); margin-left: 6px; }
+  .sheet-how { font-size: 12.5px; color: var(--ink-2); margin: 0 0 12px; }
+  .sess { border: 1.5px solid var(--ink); border-radius: 10px; overflow: hidden; margin-bottom: 10px; break-inside: avoid; }
+  .sess-h { background: var(--night); color: #fff; display: flex; justify-content: space-between; gap: 12px; padding: 6px 12px; font: 700 12.5px/1.2 Inter, sans-serif; flex-wrap: wrap; }
+  .sess-h span b { display: inline-block; width: 90px; border-bottom: 1px solid rgba(255,255,255,.7); margin-left: 4px; }
+  .sess-h span b.sm { width: 34px; }
+  .sess table { border: 0; border-radius: 0; margin: 0; font-size: 12px; table-layout: fixed; }
+  .sess th { padding: 4px 8px; font-size: 9.5px; text-align: left; }
+  .sess th.c, .sess td.c { text-align: center; width: 11%; }
+  .sess td { height: 24px; padding: 0 8px; border-top: 1px solid var(--line); }
+  .sess td + td, .sess th + th { border-left: 1px solid var(--line); }
+  .sess td.c::before { content: ""; display: inline-block; width: 12px; height: 12px; border: 1.5px solid var(--ink-3); border-radius: 3px; vertical-align: middle; }
+  a.res { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: inherit; text-decoration: none; border-color: var(--orange); }
+  a.res:hover { background: var(--orange-tint); }
+  a.res:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .res-go { font: 800 13px/1 Inter, sans-serif; color: var(--orange-deep); white-space: nowrap; }
+  .fillin { font: inherit; color: var(--ink); background: transparent; border: 0; border-bottom: 1.5px solid var(--ink); border-radius: 0; padding: 2px 4px; width: 100%; min-width: 0; }
+  .fillin:focus { outline: none; background: #fff4d6; }
+  .fillin.inline { width: 220px; max-width: 100%; font-weight: 700; }
+  .sess-h .fillin { color: #fff; border-bottom-color: rgba(255,255,255,.7); width: 110px; font-weight: 700; }
+  .sess-h .fillin.sm { width: 44px; }
+  .sess-h .fillin:focus { background: rgba(255,255,255,.12); }
+  .print-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: var(--night); color: var(--dark-text); border-radius: 12px; padding: 12px 16px; margin: 0 0 16px; font-size: 13.5px; }
+  .print-bar span { flex: 1 1 260px; }
+  .print-bar button { font: 800 13px/1 Inter, sans-serif; background: var(--orange); color: #fff; border: 0; border-radius: 8px; padding: 10px 14px; cursor: pointer; }
+  .print-bar button:hover { background: var(--orange-deep); }
+  .print-bar button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .print-bar .ghost-btn { background: transparent; border: 1px solid rgba(255,255,255,.4); }
+  .ps { font-size: 15px; color: var(--ink-2); border-top: 1px solid var(--line); padding-top: 16px; margin-top: 18px; }
+  .end { text-align: center; padding: 60px 0 70px; color: var(--ink-3); font-size: 13px; }
+  .end .ghost { font-size: 44px; }
+
+  @media (max-width: 720px) {
+    body { font-size: 15px; }
+    .wrap { padding: 0 16px; }
+    .cover { padding: 40px 24px 32px; min-height: 520px; }
+    .cover::before { width: 360px; height: 360px; right: -140px; top: -100px; }
+    .cover h1 { font-size: 56px; }
+    .cover .ghost { font-size: 60px; }
+    .cover .sub { font-size: 18px; }
+    .cover .foot { flex-direction: column; align-items: flex-start; }
+    h2 { font-size: 27px; }
+    .grid-2, .grid-3, .signup { grid-template-columns: 1fr; }
+    .toc { columns: 1; }
+    .timeline li { grid-template-columns: 72px 1fr; gap: 10px; }
+    .fill div { grid-template-columns: 1fr; gap: 4px; }
+    .printable { padding: 20px 16px; }
+    .mt { white-space: normal; word-break: break-all; }
+  }
+
+  /* ---------- Print ---------- */
+  @page { size: Letter; margin: 0.6in 0.65in 0.7in; @bottom-center { content: "Black Friday  ·  Gym Member Machine  ·  " counter(page); font: 600 9px Inter, sans-serif; color: #847a70; letter-spacing: .08em; } }
+  @page cover { margin: 0; @bottom-center { content: none; } }
+  @media print {
+    body { background: #fff; font-size: 11pt; }
+    .wrap { max-width: none; padding: 0; }
+    .cover { height: 11in; min-height: 0; padding: 0.8in 0.75in 0.7in; }
+    section { padding: 0; }
+    section.pb { break-before: page; }
+    .timeline li { padding: 6px 0; }
+    .timeline li.go { padding: 8px 10px; }
+    .lede { margin-bottom: 14px; }
+    td, th { padding: 8px 12px; }
+    .check li { margin-bottom: 6px; }
+    .phase { margin: 12px 0 8px; }
+    #checklist .grid-2 .card { padding: 12px 16px; }
+    .card, .msg, .script, .rec, .callout-dark, .slot, table { box-shadow: none; }
+    .card, .msg, table { background: #fff; }
+    h2, h3, h4, .kicker, .phase { break-after: avoid; }
+    .printable { break-before: page; border: 0; padding: 0; margin: 0; }
+    .end { display: none; }
+    .copy-btn, .print-bar, .progress { display: none !important; }
+    .check.live li:hover { background: none; }
+    body.print-one > .cover, body.print-one main > * { display: none !important; }
+    body.print-one.print-cheat main > #cheat, body.print-one.print-signup main > #signup { display: block !important; }
+    body.print-one main > section.pb, body.print-one .printable { break-before: auto; }
+    #cheat .fill div { padding: 8px 0; }
+    #cheat .fill { margin: 8px 0 12px; }
+    #cheat h4 { margin: 16px 0 8px; }
+    h3.big { break-before: page; border-top: 0; padding-top: 0; margin-top: 0; }
+    #signup .printable { padding-top: 0; }
+    a { color: inherit; text-decoration: none; }
+  }
+  /* DRAFT marker: content not in the source lessons, for G.R. to review */
+  
+  @media print { }
+
+
+
+
+
+
+
+
+
+/* theme:blackgold */:root{--night:#000000;--night-2:#171717;--orange:#b8860b;--orange-deep:#8a6508;--orange-tint:#fff4d6;--orb-hi:#ffe08a;--orb-mid:#d4a017;--orb-lo:#6b4f00;--accent-rgb:184,134,11;--paper:#f7f6f2;--line:#e3e0d6;--paper-2:#efece3;--paper-3:#f2f0e8;--paper-4:#e6e2d6;}.cover::before{background:url("../assets/gmm-gears.png") no-repeat center/contain;border-radius:0;opacity:.38;width:1040px;height:1040px;right:-300px;top:-250px;pointer-events:none}@media (max-width:720px){.cover::before{width:620px;height:620px;right:-230px;top:-120px}}@media print{.cover::before{opacity:.22}}
+.hl{background:#fff4d6;color:inherit;font-weight:700;padding:2px 6px;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<header class="cover">
+  <div class="brand">Gym Member Machine · November Playbook</div>
+  <div>
+    <h1>Black<br><span>Friday</span></h1>
+    <div class="sub">Simple, curiosity-driven messaging to your never-beens and past clients. Every reply turns into a sales convo.</div>
+    <div class="pills">
+      <span class="pill">Reactivation play</span>
+      <span class="pill">Your list (ads optional)</span>
+      <span class="pill">Nov 16 – 27, 2026</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Runs before the turkey coma hits.<br>Pairs with Project Zero for the holiday window.</div>
+    <div>Emails · Texts · Reply scripts · Checklist</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ CONTENTS ============ -->
+<section class="pb" id="contents">
+  <div class="kicker">Inside</div>
+  <h2>What's in here</h2>
+  <ul class="toc">
+    <li><span>01</span><a href="#rundown">The Rundown</a></li>
+    <li><span>02</span><a href="#discount">Before You Discount</a></li>
+    <li><span>03</span><a href="#decide">Decide First</a></li>
+    <li><span>04</span><a href="#timeline">Timeline</a></li>
+    <li><span>05</span><a href="#ads">Ads</a></li>
+    <li><span>06</span><a href="#list">List Setup</a></li>
+    <li><span>07</span><a href="#messages">Emails &amp; Texts</a></li>
+    <li><span>08</span><a href="#replies">Handling Replies</a></li>
+    <li><span>09</span><a href="#close">The Close</a></li>
+    <li><span>10</span><a href="#letter">Optional Add-On</a></li>
+    <li><span>11</span><a href="#checklist">Setup Checklist</a></li>
+    <li><span>12</span><a href="#cheat">Staff Cheat Sheet (printable)</a></li>
+  </ul>
+
+  <div class="callout-dark" style="margin-top:30px">
+    <span class="tag">Quick legend</span>
+    <p style="margin:0"><span class="blank">[BRACKETS]</span> = you fill it in by hand (scripts, cheat sheet). &nbsp; <span class="mt">{{merge_tags}}</span> = fills itself automatically in your GMM / GHL account once your custom values are set.</p>
+  </div>
+</section>
+
+<!-- ============ 01 RUNDOWN ============ -->
+<section class="pb" id="rundown">
+  <div class="kicker"><b>01</b> The Rundown</div>
+  <h2>Black Friday game plan<br>(even if you waited 'til now)</h2>
+  <p class="lede">We'll make this simple. If your churn's under 5%, skip the fancy funnels, crazy paid-in-full discounts, and “buy my Black Friday that doesn't work” goo-roo nonsense.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Curiosity wins</h3>
+      <p>In gyms like ours, simple, curiosity-driven messaging tends to outperform everything else when it comes to Black Friday. The emails and texts in here never say what the offer is (on purpose). The details go in the reply/conversations you have in your gym.</p>
+    </div>
+    <div class="card">
+      <h3>Your most powerful move: a reactivation</h3>
+      <p>With “never been” and “used to be” clients. A “curiosity” message driving to an actual sales convo has been our most effective method of getting new (and winning back past) clients by far.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>The audience</h3>
+    <ul>
+      <li>✅ Never been clients</li>
+      <li>✅ Past clients</li>
+    </ul>
+  </div>
+  <div class="rec"><span class="tag">On GMM / Alloy Ops?</span>
+    <p>Just let the team know if you'd like us to set this (or any) Black Friday reactivation up for you and we'll take it from there!</p>
+  </div>
+  <div class="rec"><span class="tag">Watch first</span>
+    <p>Two videos in Circle cover this whole window: <a href="https://gmm.circle.so/c/plug-play-marketing-calendar/sections/791224/lessons/3007969" target="_blank" rel="noopener">The Big Picture (Black Friday &amp; Holiday Fun)</a> and <a href="https://gmm.circle.so/c/plug-play-marketing-calendar/sections/791224/lessons/3012960" target="_blank" rel="noopener">Winter is Coming: how to think (and act) to grow in Q4</a> (watch that one on 1.5-2x, it's a beast). The written play is the lesson this page is built from: <a href="https://gmm.circle.so/c/plug-play-marketing-calendar/sections/791224/lessons/3012955" target="_blank" rel="noopener">Black Friday Summary + Reactivation Options</a>.</p>
+  </div>
+
+    <h4>What actually gets you members:</h4>
+  <div class="grid-3 levers">
+    <div class="card"><p><strong>You decide the actual offer BEFORE Email 1 goes out</strong>, because the first reply you send is the details.</p></div>
+    <div class="card"><p><strong>One person answers every reply, same day</strong>, and books the convo while they're hot.</p></div>
+    <div class="card"><p><strong>The offer ends when the last-call text says it ends.</strong> No quiet extensions.</p></div>
+  </div>
+  
+</section>
+
+<!-- ============ 02 DECIDE ============ -->
+<section class="pb" id="discount">
+  <div class="kicker"><b>02</b> Before You Discount</div>
+  <h2>Read this before you<br>give away a paid-in-full</h2>
+  <p class="lede">I hesitate to overuse the word <em>need</em>… but you should damn well probably do <em>something</em> :) People are in buying moods, have their credit cards out, ready to go, you might as well capitalize on it 🤷‍♂️</p>
+
+  <div class="card">
+    <h3>The most common (short sighted) crazy stuff</h3>
+    <p>We all know the most common thing you see is “Oh I gotta make a ton of money on Black Friday, better give away my memberships as a paid in full.” I don't hate you if you've done it, and there's a lot of good that can come of it, but also a lot of bad…</p>
+    <p>Most folks want a couple things on BF (let's be honest everyone wants this w/ everything in their lives): lots of money w/ as little effort as possible. This leads most folks down a rabbit hole of doing larger PIF packages with some fancy funnel so you don't have to actually talk to anyone to make the sale… you end up w/ 6m-12m options or 12-12-12 [access differentiated] options…</p>
+    <p>If you're not priced to go out of business you're probably looking at a bare minimum of $1200 (that should really be minimum $3k+ w/ most of you doing smaller group stuff). <strong>Who's gonna pay a $3k ticket price without talking to anybody beforehand? Your current members!</strong> So you run a deeply discounted PIFFY play to try to make it enticing for <i>them</i> so that <em>someone</em> buys on Black Friday and you can experience the (admittedly awesome) joy that comes from someone buying off a “funnel.” Sounds cool, but in practice...&nbsp;</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>This can be fine if…</h3>
+      <ul>
+        <li>You're desperate for cash and are gonna close the doors if you can't make rent in December</li>
+        <li>You've got a ton of renewals coming up b/c you've done this in past years and might have trouble w/ conversions w/o a PIFFY push</li>
+        <li>You're incredible at paid acquisition and you just need access to more cash to push more traffic through the system (e.g. you can predictably replace the lost EFT w/in 30-60 days)</li>
+        <li>You've been swindled by a guru company to run a PIF promo so you can pay their fee /sarcasm (don't get me started)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>The bad news?</h3>
+      <ul>
+        <li><mark class="hl">If your attrition % is lower than the discount %, you lose cash over time (if you discount 10%/m but you only lose 3% of members every month, you done lost money, amigos)</mark></li>
+        <li>If you're a bad steward of your cash (not an unlikely scenario if you ran this b/c you're desperate for it) you could just be speeding up the downfall of the biz</li>
+        <li>If the goal is new members, the likelihood of getting someone off the street to buy a big PIFFY package w/o speaking to you is incredibly low (so you miss out on new member growth &amp; cash that you could prob use this time of year)</li>
+      </ul>
+      <p>So while you might get to say “OMG I made $15k on Black Friday…” you mighta just lost a big ole hunk of money in the long run :(</p>
+    </div>
+  </div>
+
+  <div class="rec"><span class="tag">Gonna run a PIFFY campaign anyway? Do it smart</span>
+    <ul>
+      <li><strong>Externally,</strong> drive to a conversation (not a checkout page). Keep things vague until you can get prescriptive on exactly what that person needs and then present the PIFFY options.</li>
+      <li><strong>Internally,</strong> drive for <strong>bonuses and value-adds first</strong>, discounts second (or not at all). I'd MUCH rather eat a little payroll w/ some bonus 1-on-1s or free access to group/scalable bonuses, discounts on merch or supps, etc. than cannibalize cash flow w/ PIFFY discounts (PARTICULARLY if your retention is great).</li>
+      <li>Discounted <em>upgrades</em> for PIFs are muuuuch more fun than bread &amp; butter membership discounts and one of my favorite ways to leverage increased purchasing from current members on BF without hurting your current recurring revenue for said members.&nbsp;</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Summary: best bet for non-members is a curiosity-driven Black Friday offer leading to what is essentially your standard sales process in a Black Friday wrapper</h3>
+    <p>That's the reactivation on this page. Add bonuses or PIFFY deals on new traffic if you're "screw it" priced (most of you aren't) or you're well-versed in higher-ticket ($2k+) one-time sales + walk-downs. <i>If you don't know what that means, don't do it.&nbsp;</i></p>
+    <p>If you must "funnelize" your Black Friday, LBOs are probably your only bet to have any success externally (sorry). We can set up fun fancy pages and all the bells and whistles in the world, but none of you SHOULD be priced at “eh, screw it, let's try it” pricing, so you're better off driving to a conversation vs. driving to a checkout page. Have cash (if running ads), capacity, and proven conversion rates from your LBO to EFT? Then sure, but I'd MUCH prefer to have you run a <a href="https://gmm.circle.so/c/sales-training-hub/sections/222804/lessons/821644" target="_blank" rel="noopener">1-2-2</a> or 2-4-8 and funnelize <em>that</em>.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Easy options for members</h3>
+      <ul>
+        <li>½ price upgrade for X weeks/months [frequency, service level]</li>
+        <li>PIF discount on ancillary services you already have [nutrition, PT] [5-1; 10-3; 20-6]. Cash w/o hurting bread-and-butter cash flow.</li>
+        <li>Retail blowout sale</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Launch something new?</h3>
+      <p>Black Friday is a GREAT time to launch something new. If you've been looking for an excuse (and you're actually ready) to add a nutrition, online, or other new program, it can be a great way to get folks in. Ask yourself:</p>
+      <ul>
+        <li>Is your day to day already on point?</li>
+        <li>Do you have a “who” + process/systems to run the new thing <i>well</i>? Follow-up, sales, fulfillment.</li>
+        <li>Is the opportunity cost worth it? (e.g. if you just did more of the same for the next 6 months do you end up better off?) What's the risk of quality/attention decline if you add something new to your operation?</li>
+      </ul>
+    </div>
+  </div>
+
+  <h4 style="margin-top:22px">Bare minimum: if you only send one thing</h4>
+  <p>Let's say you don't want to do anything fancy, no new programs, no crazy PIF offers, nothing for your current clients, etc. <em>At least send this.</em> It works as a stand-alone one-off if you're not running the 3-email sequence below.</p>
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i>Email</i>One-off</div><div class="when">Any day of BF week</div></div>
+    <div class="msg-body">
+      <div class="subject"><span>Subject:</span>Black Friday at <span class="mt">{{location.name}}</span></div>
+      <p><span class="mt">{{contact.first_name}}</span>!</p>
+      <p>We're celebrating the holidays early by giving you exclusive access to our best ever Black Friday Specials here at <span class="mt">{{location.name}}</span>!</p>
+      <p>Ready to focus on YOU with a <span class="blank">[BENEFIT]</span> program designed specifically for you?</p>
+      <p>Good news? You'll get incredible results (guaranteed or MORE than your money back) and you won't have to wait in line or get in a fist fight in a Wally World aisle to do it :)</p>
+      <p>Bad news? We've only got a handful of spots for these or my team will kill me, so it's a very real first-come, first-serve situation, so get in while you can!</p>
+      <p>Just reply to this email if you want in!</p>
+      <p><span class="mt">{{user.first_name}}</span> @ <span class="mt">{{location.name}}</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="pb" id="decide">
+  <div class="kicker"><b>03</b> Decide First</div>
+  <h2>5 decisions before you<br>touch the copy</h2>
+  <p class="lede">The messages never say the offer, the date, or the number of spots. You still have to know all three, because the first person who replies EARLY is going to ask.</p>
+
+    <div class="card">
+    <div class="num">1</div>
+    <h3>The actual Black Friday offer</h3>
+    <div class="rec"><span class="tag">Our rec</span>
+      <p>One offer. Something w/ a real deadline that you'd be happy honoring through January. Examples include: your current offer that's working (with a Black Friday wrapper), a contrasting A-B, $X off month one w/ the start-up fee waived, a paid-in-full deal (3 or 6 months w/ a full sales conversation), or a short front-end package (free or paid) that rolls into your normal membership.</p>
+    </div>
+    <ul>
+      <li>The membership after the offer is your normal rate. No legacy rates.</li>
+      <li>Write it ONE way on the cheat sheet and everybody says it that way. Two people quoting two different deals is how you lose a sale you already had.</li>
+      <li>Goes in the <strong>BF Offer</strong> custom value as a thing, e.g. “$150 off a 3-month membership.” No “you” or “your,” the sentence around it does that.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="num">2</div>
+    <h3>When it goes live</h3>
+    <ul>
+      <li>= the day Email 2 (“It's live”) fires.</li>
+      <li><strong>Our rec for '26: Fri Nov 20</strong>, the Friday before Thanksgiving. Black Friday's shifted earlier anyway, and you want the convos happening before everybody leaves town.</li>
+      <li>Early access folks (anybody who replies to Email 1 / Text 1) get the details the day they reply. Don't make them wait for the live date.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="num">3</div>
+    <h3>When it ends</h3>
+    <ul>
+      <li>Email 3 says “ends tonight,” so pick the night. <strong>Our rec: Black Friday itself (Fri Nov 27) at midnight.</strong> Cyber Monday (Nov 30) if you want the weekend to close folks.</li>
+      <li>Say it once and mean it. Don't quietly extend it after, or the next deadline you send gets ignored.</li>
+      <li>Goes in the <strong>BF Offer End</strong> custom value as just the date + time, e.g. “Friday Nov 27 at midnight.”</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="num">4</div>
+    <h3>How many spots</h3>
+    <ul>
+      <li>“Very limited number” needs a real number behind it. Pick one you can actually onboard in December w/ your model (e.g. 10 for a small group gym, 20 if you've got the room and the coaches).</li>
+      <li>Create an artificial cap even if you've theoretically got unlimited capacity in a large group model.</li>
+      <li>Goes in the <strong>BF Spots</strong> custom value as just the number.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="num">5</div>
+    <h3>Who replies to the inbound</h3>
+    <ul>
+      <li>Replies land in your Conversations inbox in GMM / Ops / GHL. <strong>One person owns it</strong> (owner, or whoever runs your consults). Same day, ideally within the hour.</li>
+      <li>Decide now: sell by chat (our default, section 08). The offer comes up when they ask or at the VIP session. Or just call them the minute they reply (great if your list is small and you've got the time).</li>
+      <li>Put their name + cell on the cheat sheet so the desk knows where to send “what's the Black Friday deal?”</li>
+    </ul>
+  </div>
+  
+</section>
+
+<!-- ============ 03 TIMELINE ============ -->
+<section class="pb" id="timeline">
+  <div class="kicker"><b>04</b> Timeline</div>
+  <h2>2026 dates</h2>
+  <p class="lede">Black Friday = Fri Nov 27. <strong>The run = Mon Nov 16 to Fri Nov 27.</strong> Two weeks, w/ 3 emails + 3 texts.</p>
+
+  <div class="callout-dark">
+    <span class="tag">RE: timeline</span>
+    <p style="margin:0">Black Friday has shifted earlier and earlier in the month these days. If you need or want to do something earlier in the month it can absolutely be a viable strategy.</p>
+  </div>
+
+    <ul class="timeline">
+    <li><div class="d">Nov 9</div><div>Make the 5 decisions. Slack the squad about ads (section 05). On GMM / Alloy Ops? Ask the team to set the reactivation up.</div></li>
+    <li><div class="d">Nov 11</div><div>Custom values set. Smart list built. Workflow adjusted + published (section 06). Details reply saved as a snippet (section 08).</div></li>
+    <li><div class="d">Nov 12</div><div>Staff meeting. Cheat sheet posted. Everybody says the offer out loud the same way once.</div></li>
+    <li class="go"><div class="d">Nov 16<small>GO</small></div><div><strong>Email 1 + Text 1 (early access).</strong> Drip starts 9am. Answer every reply same day w/ the goal question, then sell by chat.</div></li>
+    <li><div class="d">Nov 17–19</div><div>Replies → details → convos booked. Spot count on the whiteboard in the office if it helps you (nobody else needs to see it).</div></li>
+    <li class="go"><div class="d">Nov 20<small>Live</small></div><div><strong>Email 2 + Text 2.</strong> The offer's officially open. Keep answering.</div></li>
+    <li><div class="d">Nov 23–25</div><div>Convos and closes. Thanksgiving week, so book calls early in the day.</div></li>
+    <li><div class="d">Nov 26</div><div>Thanksgiving. Nothing goes out.</div></li>
+    <li class="go"><div class="d">Nov 27<small>Last day</small></div><div><strong>Email 3 + Text 3 in the morning.</strong> Ends tonight. Every IN gets the details + a time to talk today.</div></li>
+    <li><div class="d">Nov 30</div><div>Close out everybody who replied IN and didn't get a convo yet. Pull anybody who joined out of the workflow.</div></li>
+    <li><div class="d">Dec 7</div><div>Owner calls everybody who replied and didn't join: “You asked about our Black Friday spots, wanted to see if you had any questions.”</div></li>
+  </ul>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Not 2026?</h3>
+      <p>Count back 11 days from Black Friday for Email 1 and 7 days for Email 2. Everything else hangs off those.</p>
+    </div>
+    <div class="card">
+      <h3>Found this late?</h3>
+      <p>Say it's Nov 20. Compress it: decide today, Email 1 + Text 1 Mon Nov 23, Email 2 + Text 2 Wed Nov 25, Email 3 + Text 3 Fri Nov 27. Same three messages, seven days.</p>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:14px"><strong>Drip math:</strong> drip mode sends 2 contacts a minute, Mon–Fri 9am–6pm (section 06). That's ~120 an hour, so a 1,000-person list takes most of a day. Fine for Email 1. For the last call, start it at 9am sharp or ask the team to bump the batch so “ends tonight” isn't landing at 5:45pm.</div>
+  
+</section>
+
+<!-- ============ 04 ADS ============ -->
+<section class="pb" id="ads">
+  <div class="kicker"><b>05</b> Ads</div>
+  <h2>3 situations</h2>
+  <p class="lede">There are essentially 3 situations you'll probably find yourself in:</p>
+
+  <div class="stack levers">
+    <div class="card">
+      <p><strong>Have an offer that's currently working for you and you don't really care to change things?</strong> KEEP RUNNING IT! Maaaybe talk to your CS team in Slack and see if the squad thinks adding Black Friday “wrappers” might keep things rolling for you, but otherwise, if something's working, keep doing it!</p>
+    </div>
+    <div class="card">
+      <p><strong>Have an offer that works but want to do something for Black Friday anyway?</strong> Again, the most effective answer here tends to be adding Black Friday “wrappers” to whatever's currently working for you. Just let the team know in Slack and we'll get those up for you ASAP!</p>
+    </div>
+    <div class="card">
+      <p><strong>Need something new, period?</strong> We got you! Talk to the squad in Slack about best options for this time of year. The most effective answer tends to be a “curiosity” Black Friday offer (e.g. an ad without mentioning specific discounts or parameters) but other options can work depending on you, your gym, and your market. Hit us up in Slack and we'll get you up and running with the new thing long before the turkey coma hits.</p>
+    </div>
+  </div>
+  <div class="flow">
+    <span>Pick your situation</span><b>→</b><span>Hit us up in Slack</span><b>→</b><span>Wrappers or a new curiosity ad go up</span>
+  </div>
+</section>
+
+<!-- ============ 05 LIST SETUP ============ -->
+<section class="pb" id="list">
+  <div class="kicker"><b>06</b> List Setup</div>
+  <h2>Build the list, publish<br>the workflow, launch</h2>
+  <div class="note">On GMM / Alloy Ops? Just let the team know if you'd like us to set this (or any) Black Friday reactivation up for you and we'll take it from there! Otherwise, three steps in your account:</div>
+
+  <div class="card">
+    <h4 style="margin-top:0">Step 1: Setting up your list(s)</h4>
+    <ul>
+      <li>Go to Contacts → More Filters to begin building your list</li>
+      <li>Make sure to add this criteria for any reactivation you launch
+        <ul>
+          <li>Phone is not empty</li>
+          <li>Email is not empty</li>
+          <li>DND is not enabled for SMS</li>
+          <li>DND is not enabled for Email</li>
+        </ul>
+      </li>
+      <li>Add additional filters to exclude members
+        <ul><li>i.e. Tag is NOT: member, active membership, etc.</li></ul>
+      </li>
+      <li>Once you add all necessary filters, click Save as smart list and title it so you know it's the one you want to use for the campaign you're looking to launch</li>
+    </ul>
+
+    <h4>Step 2: Adjusting your workflows</h4>
+    <ul>
+      <li>Go to Automation and find the Plug and Play Marketing Calendar folder</li>
+      <li>Go to the subfolder of the month you're looking to launch in and click the reactivation workflow i.e. <em>Reactivation: Dads Train Free June</em> or <em>August Back to School Challenge: Members</em></li>
+      <li>Once you click the workflow, this will bring you to the workflow builder/editor</li>
+      <li>If you do not want to make any edits to the copy, all you need to do is switch the workflow from draft to publish and click Save</li>
+      <li>Once the workflow is published and saved, it is ready to be launched!</li>
+      <li>If you do make edits, make sure to save each action you edit and save the entire workflow to keep any changes you make</li>
+      <li>Once you are done making changes, switch the workflow from Draft to Publish</li>
+      <li>Click Save and now your workflow is active and ready to be launched</li>
+    </ul>
+
+    <h4>Step 3: Launching your campaigns</h4>
+    <ul>
+      <li>Go to Contacts and click the Smartlist you created in step 1</li>
+      <li>Select all contacts on the page and then check the Select All box to select the entire list</li>
+      <li>Click the Add to Automation button ▶️</li>
+      <li>Action Name: Add to reactivation</li>
+      <li>Automation Type: Workflow</li>
+      <li>Workflow: (select the reactivation campaign you want to launch i.e. <em>Reactivation: Dads Train Free June</em>)</li>
+      <li>Send in <strong>drip mode</strong></li>
+      <li>Select desired start date and time</li>
+      <li>Batch Quantity: 2</li>
+      <li>Repeat After: 1 Minutes</li>
+      <li>Send on: Select desired days i.e. Monday-Friday</li>
+      <li>Process from: select desired start and end times i.e. Start 9AM, End 6PM</li>
+    </ul>
+  </div>
+
+    <div class="note">For this play: the November subfolder, the Black Friday reactivation workflow. The 3 emails + 3 texts in section 07 are what should be in it. If your account's copy looks different, paste these in (Step 2 is where you edit), set the waits to match your dates (4 days between Email 1 and Email 2, 7 days between Email 2 and Email 3 on the '26 timeline), and save each action.</div>
+  
+</section>
+
+<!-- ============ 06 MESSAGES ============ -->
+<section class="pb" id="messages">
+  <div class="kicker"><b>07</b> Automations · Reactivation</div>
+  <h2>3 emails + 3 texts</h2>
+  <div class="note">Merge tags are set for your GMM / Ops / GHL software. <span class="mt">{{contact.first_name}}</span>, <span class="mt">{{location.name}}</span> and <span class="mt">{{user.first_name}}</span> fill themselves in. None of these six say the offer (on purpose -&gt; curiosity). The offer comes up in the chat when they ask, or at the VIP session (section 08).</div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i>Email</i>Email 1</div><div class="when">Day 1 · Mon Nov 16</div></div>
+    <div class="msg-body">
+      <div class="subject"><span>Subject:</span>Should I save you a spot?</div>
+      <p>Hi <span class="mt">{{contact.first_name}}</span>,</p>
+      <p>Quick question for you…</p>
+      <p>We're opening a <em>very</em> limited number of Black Friday spots at <span class="mt">{{location.name}}</span> for people who want to:</p>
+      <ul>
+        <li>Feel stronger and more confident</li>
+        <li>Move better and have more energy</li>
+        <li>Get back into a consistent routine before the holidays hit</li>
+      </ul>
+      <p>We're giving our email list first dibs before we mention it anywhere else.</p>
+      <p>👉 If you'd like early access to our Black Friday specials, just reply here and I'll get you all the details early :)</p>
+      <p>No pressure, it just means you'll get the info before anyone else and first shot at a spot.</p>
+      <p><span class="mt">{{user.first_name}}</span>, <span class="mt">{{location.name}}</span></p>
+    </div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="sms">SMS</i>Text 1</div><div class="when">Day 1 · same day as Email 1</div></div>
+    <div class="msg-body"><p>Black Friday question 👀 We're opening a <em>very</em> limited number of training spots at <span class="mt">{{location.name}}</span> for Black Friday. Want early access before we share publicly? Reply <strong>EARLY</strong> and I'll put you on the priority list</p></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i>Email</i>Email 2</div><div class="when">Live day · Fri Nov 20</div></div>
+    <div class="msg-body">
+      <div class="subject"><span>Subject:</span>It's live: Black Friday at <span class="mt">{{location.name}}</span> 🥳</div>
+      <p>Hi <span class="mt">{{contact.first_name}}</span>,</p>
+      <p>Our Black Friday offer at <span class="mt">{{location.name}}</span> is officially live!</p>
+      <p>This is your chance to start feeling:</p>
+      <ul>
+        <li>Stronger 💪</li>
+        <li>More energized ⚡</li>
+        <li>Less stiff and achy 🙌</li>
+        <li>And let's be honest, start the new year without having to lose that 8 pounds it seems like the average American gains during the holidays 😉</li>
+      </ul>
+      <p>We only open a few of these spots each year because of our small-group model.</p>
+      <p>Want in?</p>
+      <p><span class="mt">{{user.first_name}}</span></p>
+    </div>
+  </div>
+    <div class="note">Email 2 ends on “Want in?” and leaves the reply to them. If you want it spelled out, add one line before the sign-off: “Just reply here and I'll send you the details.”</div>
+  
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="sms">SMS</i>Text 2</div><div class="when">Live day · same day as Email 2</div></div>
+    <div class="msg-body"><p>Hi <span class="mt">{{contact.first_name}}</span>, it's <span class="mt">{{user.first_name}}</span> at <span class="mt">{{location.name}}</span>. Our Black Friday offer just went live 🎉. We've only got a few spots open so if you'd like the details just let me know here :)</p></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i>Email</i>Email 3</div><div class="when">Last day · Fri Nov 27, morning</div></div>
+    <div class="msg-body">
+      <div class="subject"><span>Subject:</span>Last call: Black Friday ends tonight ⏰</div>
+      <p>Hi <span class="mt">{{contact.first_name}}</span>,</p>
+      <p>Quick reminder: <strong>Black Friday at <span class="mt">{{location.name}}</span> ends tonight.</strong></p>
+      <p>After tonight, pricing and availability go back to normal.</p>
+      <p>If you've been wanting to:</p>
+      <ul>
+        <li>Get stronger and build momentum before the new year</li>
+        <li>Feel better and move without pain</li>
+        <li>Finally commit to a program you can stick with</li>
+      </ul>
+      <p>…this is your sign.</p>
+      <p>👉 Reply <strong>“IN”</strong> if you want me to save one of the last spots and I'll send the details.</p>
+      <p>If not, no worries, I'll release your spot to the next person on the list. Just let me know!</p>
+      <p><span class="mt">{{user.first_name}}</span>, <span class="mt">{{location.name}}</span></p>
+    </div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="sms">SMS</i>Text 3</div><div class="when">Last day · afternoon</div></div>
+    <div class="msg-body"><p>Hey <span class="mt">{{contact.first_name}}</span>, <span class="mt">{{user.first_name}}</span> at <span class="mt">{{location.name}}</span> here, last few hours of our Black Friday spots being open ⏰ After tonight, we're back to normal pricing. Should I <strong>save a spot for you?</strong></p></div>
+  </div>
+</section>
+
+<!-- ============ 07 REPLIES ============ -->
+<section class="pb" id="replies">
+  <div class="kicker"><b>08</b> Handling Replies</div>
+  <h2>Every reply starts a<br>sell-by-chat convo</h2>
+  <p class="lede">EARLY, IN, “what is it?”, a thumbs up. Same move for all of them, same day: answer like a human, ask what they're working on, and run the <a href="https://docs.google.com/document/d/1B6_X2MXUMMSwpWAkT3i9e3Xb3rYO6DSugzqJEv_q5yQ/edit" target="_blank" rel="noopener">GMM Sell-By-Chat Playbook</a>. The offer does not lead. It comes up when they ask, or at the VIP session. That's the whole point of switching this to sell by chat.</p>
+
+  <div class="card">
+    <h3>The flow</h3>
+    <ol>
+      <li><strong>Pattern interrupt + the goal question.</strong> “Hey <span class="mt">{{contact.first_name}}</span>, <span class="mt">{{user.first_name}}</span> from <span class="mt">{{location.name}}</span> here. Saw your reply come through! What's the big goal, what are we working on?”</li>
+      <li><strong>Discovery.</strong> Let them talk. Short questions. “Have you been trying anything lately or just getting started?” Find the real friction (accountability, not knowing what to do, time, an injury).</li>
+      <li><strong>Relate.</strong> “Totally get that, we hear that all the time.” You're not selling yet.</li>
+      <li><strong>Position coaching</strong> in one line. “That's actually why most folks work with a coach here, structure and accountability instead of guessing.”</li>
+      <li><strong>Invite the VIP one-on-one.</strong> “Easiest next step is a VIP one-on-one with a coach. We'll talk through your goals and your situation and whittle the dozens of options we have down to the one or two that might make sense for you. Are mornings or evenings usually easier?”</li>
+      <li><strong>Two times, then confirm.</strong> “We could do tomorrow at 6 or Saturday at 9.” Then “Got you down for Thursday at 6. I'll text directions and a quick intro video so you know what to expect!”</li>
+    </ol>
+    <p><strong>Don't sell the membership in chat.</strong> Sell the session. The Black Friday deal gets presented at the session w/ your normal options (section 09).</p>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="sms">SMS</i>First reply</div><div class="when">Snippet · within the hour of any reply</div></div>
+    <div class="msg-body"><p>Hey <span class="mt">{{contact.first_name}}</span>! <span class="mt">{{user.first_name}}</span> from <span class="mt">{{location.name}}</span> here, saw your reply come through :) What's the big goal, what are we working on?</p></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i>Email</i>First reply</div><div class="when">Snippet · if they replied to the email</div></div>
+    <div class="msg-body">
+      <div class="subject"><span>Subject:</span>Saw your reply :)</div>
+      <p>Hi <span class="mt">{{contact.first_name}}</span>,</p>
+      <p><span class="mt">{{user.first_name}}</span> from <span class="mt">{{location.name}}</span> here. Saw your reply come through, you're on the early list!</p>
+      <p>Quick question so I can point you in the right direction: what's the big goal, what are we working on?</p>
+      <p>Just hit reply, or text me at <span class="blank">[GYM CELL]</span> (usually faster).</p>
+      <p><span class="mt">{{user.first_name}}</span></p>
+    </div>
+  </div>
+
+  <h4 style="margin-top:22px">They ask about price or the offer early</h4>
+  <p>Two branches. Pick yours in Decide First and everybody on staff uses the same one.</p>
+  <div class="grid-2">
+    <div class="card">
+      <h3>“Screw it” priced or free offer</h3>
+      <p>Just throw it out there. “It's <span class="mt">{{custom_values.bf_offer}}</span>, it ends <span class="mt">{{custom_values.bf_offer_end}}</span>, and we've got <span class="mt">{{custom_values.bf_spots}}</span> spots. Should I save a spot for you?” Then right back to the goal question so the convo keeps going.</p>
+    </div>
+    <div class="card">
+      <h3>Closer to normal rates, or a standard offer</h3>
+      <p>“We've got lots of options. We're offering a minimum of <span class="blank">[MINIMUM $ OR % OFF]</span> off our programs, but the first step is a free VIP one-on-one with a coach. We'll talk through where you're at now, where you're trying to go and whittle the dozens of options we have to help folks down to the one or two that might make sense for you. Quick question - what time were you planning on training with us? Mornings, evenings, etc.?”</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>They push on price a second time</h3>
+      <p>Doctor/mechanic frame from the playbook: “Good question. It depends a bit on what you're trying to accomplish, injury issues, scheduling, etc. Kind of like a doctor or mechanic, they need to see what's going on before recommending the right plan. That's what the first free session is for - zero pressure and the whole goal of that session is to point you in the right direction whether we ever work together 'officially' or not.” Don't dodge it a third time, be a human and give a range in the lowest increments you can (typically per session).&nbsp;</p>
+    </div>
+    <div class="card">
+      <h3>They go quiet</h3>
+      <p>Next day: “Hey <span class="blank">[NAME]</span>, just wanted to make sure you saw this.” Then: “Quick question, were you still looking for <span class="blank">[help w/ the thing they said]</span>?” Then: “If now's not the right time no worries, just let me know 🙂” That last one gets replies surprisingly often.</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Past client replied</h3>
+      <p>Swap the opener for “So good to hear from you!” and use their name like you remember them (you should). Ask what changed since they left. Same flow after that.</p>
+    </div>
+    <div class="card">
+      <h3>Last day replies</h3>
+      <p>Anybody who replies on <span class="blank">[END DATE]</span> gets the same opener plus “I can hold a spot till tonight. Got a few minutes to chat now?” Phone on you all day.</p>
+    </div>
+  </div>
+  <div class="rec"><span class="tag">Housekeeping</span>
+    <ul>
+      <li>Joined → pull them out of the workflow (or tag them so the exit condition kicks them out). Nobody who just paid should get “ends tonight.”</li>
+      <li>“Not right now” → “No worries at all! Want me to keep you on the list for January?” Door stays open, and they're on the Dec 7 call list.</li>
+      <li>Booking link is optional: <span class="mt">{{custom_values.bf_booking_link}}</span> if you'd rather they self-book than pick from two times.</li>
+    </ul>
+  </div>
+</section>
+<section class="pb" id="close">
+  <div class="kicker"><b>09</b> The Close</div>
+  <h2>Your normal sales process,<br>in a Black Friday wrapper</h2>
+  <p class="lede">Nothing new to learn here. The session is the same session you run every other week of the year. Whoever does your consults handles these.</p>
+  <div class="card">
+    <h3>Run it from the Sales Training Hub</h3>
+    <ul>
+      <li><a href="https://gmm.circle.so/c/sales-training-hub/sections/222791/lessons/814229" target="_blank" rel="noopener">The Sales Process</a>: Boot in the Door → Map the Journey → Origin Story → Ogre Onion → Transformation Vehicle → Build to Suit → Confirmation &amp; Consent → Prescription. Scripts sit next to each lesson.</li>
+      <li>Presenting the offer: <a href="https://gmm.circle.so/c/sales-training-hub/sections/222804/lessons/821644" target="_blank" rel="noopener">1-2-2</a> or <a href="https://gmm.circle.so/c/sales-training-hub/sections/222804/lessons/821645" target="_blank" rel="noopener">Contrasting A/B</a>. The Black Friday deal is the front end, your normal memberships are the options.</li>
+      <li>Pushback: <a href="https://gmm.circle.so/c/sales-training-hub/sections/222800/lessons/821643" target="_blank" rel="noopener">Objections</a> + script.</li>
+      <li>Everything else: <a href="https://gmm.circle.so/c/sales-training-hub/" target="_blank" rel="noopener">Sales Training Hub</a> in Circle.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Past clients</h3>
+    <p>Don't re-run the intro tour on somebody who trained w/ you for three years. Ask what changed since they left and what's different now. If they left over something you've since fixed (the schedule, a coach), say so. Then options.</p>
+  </div>
+</section>
+<section id="letter" style="padding-top:32px">
+  <div class="kicker"><b>10</b> Same Window</div>
+  <h2>The holiday letter + gift card</h2>
+  <p class="lede">Separate play, same window. A letter from you to your members w/ a gift card they can hand to a friend or family member. Thanksgiving through the first week of December. It has its own page now.</p>
+  <div class="card">
+    <h3><a href="../holiday-gift-card/">Holiday Letter + Gift Card playbook →</a></h3>
+    <p>The letter, the card spec, how to send it, the follow-up texts, and the front-desk script for when a card walks in.</p>
+  </div>
+</section>
+<section class="pb" id="checklist">
+  <div class="kicker"><b>11</b> Setup Checklist</div>
+  <h2>Do these in order</h2>
+  <div class="progress" id="ck-progress"><span><b id="ck-count">0 of 0</b> done</span><div class="bar"><i id="ck-bar"></i></div><button type="button" id="ck-reset">Reset checklist</button><small>Your checks save in this browser only, so each gym owner has their own checklist.</small></div>
+
+  <div class="phase">3 weeks out · Nov 9</div>
+  <ul class="check">
+    <li>Make the 5 decisions (offer, live date, end date + time, spots, who replies). Write them on the cheat sheet.</li>
+    <li>Ads: figure out which of the 3 situations you're in and hit us up in Slack (wrappers, or a new curiosity ad).</li>
+    <li>On GMM / Alloy Ops? Tell the team you want the Black Friday reactivation set up and skip the Tech steps below.</li>
+  </ul>
+
+  <div class="phase">2 weeks out · Nov 11</div>
+  <ul class="check">
+    <li>Tech: set the custom values (Settings › Custom Values). Name them exactly like this and copy the tag GHL shows you:
+      <table style="margin-top:10px">
+        <thead><tr><th>Custom value</th><th>Merge tag</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>BF Offer</td><td><span class="mt">{{custom_values.bf_offer}}</span></td><td>$150 off a 3-month membership (a thing, no "you" or "your": the details reply says "we're doing ___" around it)</td></tr>
+          <tr><td>BF Spots</td><td><span class="mt">{{custom_values.bf_spots}}</span></td><td>10 (just the number)</td></tr>
+          <tr><td>BF Offer End</td><td><span class="mt">{{custom_values.bf_offer_end}}</span></td><td>Friday Nov 27 at midnight (just the date + time, the reply says "it ends ___" around it)</td></tr>
+          <tr><td>BF Booking Link</td><td><span class="mt">{{custom_values.bf_booking_link}}</span></td><td>Your consult calendar link</td></tr>
+        </tbody>
+      </table>
+    </li>
+    <li>Tech: build the smart list (Step 1 in section 06). Never-beens + past clients, members excluded.</li>
+    <li>Tech: open the Black Friday reactivation workflow, check the 3 emails + 3 texts against section 07, set the waits to your dates, publish (Step 2).</li>
+    <li>Tech: save the details reply (section 08) as a snippet in Conversations.</li>
+    <li>Know how you take the card over the phone in your billing software. The close is “phone, link, card,” so have the link ready.</li>
+    <li>Staff meeting. Cheat sheet printed + posted. Everybody says the offer out loud the same way once.</li>
+  </ul>
+
+  <div class="phase">Go week · Nov 16</div>
+  <ul class="check">
+    <li>Mon 9am: add the smart list to the workflow in drip mode (Step 3). Email 1 + Text 1 start going.</li>
+    <li>Every reply answered same day w/ the goal question + a sell-by-chat convo going.</li>
+    <li>Fri: check Email 2 + Text 2 fired.</li>
+  </ul>
+
+  <div class="phase">Last week · Nov 23</div>
+  <ul class="check">
+    <li>Convos booked early in the day (Thanksgiving week).</li>
+    <li>Fri Nov 27: Email 3 + Text 3 out in the morning. Phone on you all day.</li>
+    <li>Pull anybody who joined out of the workflow.</li>
+  </ul>
+
+  <div class="phase">After</div>
+  <ul class="check">
+    <li>Mon Nov 30: close out everybody who replied IN and didn't get a convo.</li>
+    <li>Put Dec 7 on your calendar NOW: call everybody who replied and didn't join.</li>
+  </ul>
+
+  <h4>Related resources</h4>
+  <a class="card res" href="https://gmm.circle.so/c/plug-play-marketing-calendar/sections/791224/lessons/3012955" target="_blank" rel="noopener">
+    <div><h3>Black Friday Rundown &amp; Reactivation</h3><p>The Circle lesson this page is built from.</p></div>
+    <span class="res-go">Open in Circle →</span>
+  </a>
+  <a class="card res" href="https://gmm.circle.so/c/plug-play-marketing-calendar/sections/674164/lessons/2295923" target="_blank" rel="noopener">
+    <div><h3>Tech Help: how to send your Plug &amp; Play campaigns</h3><p>Steps 1 to 3, w/ screenshots.</p></div>
+    <span class="res-go">Open in Circle →</span>
+  </a>
+  <a class="card res" href="https://gmm.circle.so/c/project-zero/sections/307298/lessons/1134371" target="_blank" rel="noopener">
+    <div><h3>Project Zero Internal Play</h3><p>The holiday-window retention play that runs alongside this.</p></div>
+    <span class="res-go">Open in Circle →</span>
+  </a>
+</section>
+
+<!-- ============ 11 CHEAT SHEET ============ -->
+<section class="pb" id="cheat">
+    <div class="printable">
+    <div class="kicker"><b>12</b> Print + post · fill in the blanks first</div>
+    <h2>Staff Cheat Sheet</h2>
+    <div class="print-bar"><span>Type in your details (optional), then print. Leave anything blank to write it in by hand.</span><button type="button" data-print="cheat">Print cheat sheet</button><button type="button" class="ghost-btn" data-clear="cheat">Clear</button></div>
+    <p style="font-weight:700;margin-bottom:4px;display:flex;align-items:flex-end;gap:8px;flex-wrap:wrap"><label for="cheat-dates">BLACK FRIDAY · </label><input class="fillin inline" id="cheat-dates" type="text"></p>
+    <p style="color:var(--ink-2)">The emails and texts never say the offer. That's on purpose. The offer gets said in the reply and in the convo, and everybody says it the same way.</p>
+    <div class="fill">
+      <div><label for="cheat-0">The offer (say it exactly this way)</label><input class="fillin" id="cheat-0" type="text"></div>
+      <div><label for="cheat-1">Spots</label><input class="fillin" id="cheat-1" type="text"></div>
+      <div><label for="cheat-2">Goes live</label><input class="fillin" id="cheat-2" type="text"></div>
+      <div><label for="cheat-3">Ends (date + time)</label><input class="fillin" id="cheat-3" type="text"></div>
+      <div><label for="cheat-4">Replies handled by + cell</label><input class="fillin" id="cheat-4" type="text"></div>
+      <div><label for="cheat-5">Booking link</label><input class="fillin" id="cheat-5" type="text"></div>
+      <div><label for="cheat-6">Membership after (normal rates)</label><input class="fillin" id="cheat-6" type="text"></div>
+      <div><label for="cheat-7">Questions → owner + phone</label><input class="fillin" id="cheat-7" type="text"></div>
+    </div>
+
+    <h4>Somebody asks at the desk or on the phone</h4>
+    <div class="script">
+      <span class="who">Anybody on staff</span>
+      <p>“Yep! We've got a few Black Friday spots open, and we're doing a minimum of <span class="blank">[MINIMUM $ OR % OFF]</span> off our programs. First step is a free VIP one-on-one w/ a coach to talk through your goals and narrow down the options. <span class="blank">[NAME]</span> will text you to set it up. What's the best number for you?”</p>
+    </div>
+    <p>Get their name + cell. Text it to <span class="blank">[NAME]</span> right then.</p>
+
+    <h4>Past client walks in</h4>
+    <p>Welcome back, by name. Same offer, same convo. Current pricing after the offer (no legacy rates).</p>
+
+    <h4>The rule</h4>
+    <p style="font-size:18px;font-weight:700">Same offer, same end date, from every coach.</p>
+  </div>
+  
+</section>
+
+<div class="end">Gym Member Machine · Black Friday Playbook</div>
+</main>
+<!-- edit-mode: shown only on file://, localhost, or when the URL has #edit -->
+<style id="edit-css">
+.edit-ui{position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;align-items:center;gap:8px;background:#1c1726;color:#fff;border-radius:999px;padding:8px 10px 8px 12px;box-shadow:0 8px 30px rgba(0,0,0,.35);font:600 13px/1 Inter,system-ui,sans-serif;max-width:calc(100vw - 36px);flex-wrap:wrap}
+.edit-ui .eb{font:700 13px/1 Inter,system-ui,sans-serif;border:0;border-radius:999px;padding:9px 14px;cursor:pointer;background:#fff;color:#1c1726}
+.edit-ui .eb.primary{background:#ff7a1a;color:#111}
+.edit-ui .eb-tools{display:none;gap:6px}
+.edit-ui .eb-hint{display:none;font-weight:500;opacity:.8;padding:0 6px}
+body.editing .edit-ui .eb-tools,body.editing .edit-ui .eb-hint{display:inline-flex}
+body.editing [contenteditable="true"]{outline:1px dashed rgba(255,122,26,.45);outline-offset:3px;cursor:text;border-radius:3px}
+body.editing [contenteditable="true"]:hover,body.editing [contenteditable="true"]:focus{outline:2px solid rgba(255,122,26,.9)}
+body.editing .copy-btn,body.editing input.cb,body.editing .fillin{pointer-events:none;opacity:.35}
+body.editing a{pointer-events:none}
+.edit-restore{position:sticky;top:0;z-index:9998;background:#fff4d6;color:#7a5200;border-bottom:1px solid #efd48a;padding:10px 16px;font:600 14px/1.4 Inter,system-ui,sans-serif;text-align:center}
+.edit-restore button{font:700 13px/1 Inter,system-ui,sans-serif;border:1px solid #7a5200;background:#fff;color:#7a5200;border-radius:999px;padding:6px 12px;margin-left:6px;cursor:pointer}
+@media print{.edit-ui,.edit-restore{display:none!important}}
+</style>
+<script id="edit-js">
+(function(){
+  var show = location.protocol==='file:' || /^(localhost|127\.0\.0\.1)$/.test(location.hostname) || /(^|[?#&])edit\b/.test(location.search+location.hash);
+  if(!show) return;
+  var parts = location.pathname.split('/').filter(Boolean);
+  var slug = (parts[parts.length-1]==='index.html' ? parts[parts.length-2] : parts[parts.length-1]) || 'page';
+  var key = 'gmm-edit-' + slug;
+  // Only text blocks are editable, never the structure (sections, cards, kickers, buttons).
+  var SEL = '.cover h1, .cover .sub, .cover .foot span, main p, main li, main h2, main h3, main h4, main h5, main td, main th, main .subject, main blockquote';
+  var regions = Array.prototype.slice.call(document.querySelectorAll(SEL)).filter(function(el){ return !el.closest('.edit-ui, .edit-restore, #checklist ul.check, .toc, .kicker') && !el.querySelector('p, li, h2, h3, h4, table'); });
+  var editing = false;
+  var ck0 = { count: (document.getElementById('ck-count')||{}).textContent, bar: (document.getElementById('ck-bar')||{getAttribute:function(){return null;}}).getAttribute('style') };
+
+  // Restore unsaved edits BEFORE the page's own scripts wire up buttons/checklists.
+  try {
+    var saved = JSON.parse(localStorage.getItem(key) || 'null');
+    if (saved && saved.h && saved.h.length) {
+      if (sessionStorage.getItem(key + ':restore') === '1') {
+        regions.forEach(function(r, i){ if (saved.h[i] != null) r.innerHTML = saved.h[i]; });
+        sessionStorage.removeItem(key + ':restore');
+      } else {
+        var b = document.createElement('div'); b.className = 'edit-restore';
+        b.innerHTML = 'You have unsaved copy edits on this page from ' + new Date(saved.t).toLocaleString() + '. <button type="button" id="er-yes">Restore them</button><button type="button" id="er-no">Start fresh</button>';
+        document.body.insertBefore(b, document.body.firstChild);
+        b.querySelector('#er-yes').onclick = function(){ sessionStorage.setItem(key + ':restore', '1'); location.reload(); };
+        b.querySelector('#er-no').onclick = function(){ localStorage.removeItem(key); b.remove(); };
+      }
+    }
+  } catch (e) {}
+
+  var ui = document.createElement('div'); ui.className = 'edit-ui';
+  ui.innerHTML = '<button type="button" class="eb primary" id="eb-toggle">✏️ Edit copy</button>'
+    + '<span class="eb-tools"><button type="button" class="eb" id="eb-save">⬇ Save page</button><button type="button" class="eb" id="eb-discard">Discard edits</button></span>'
+    + '<span class="eb-hint">Click any text block and type (structure stays put). Save downloads this page w/ your edits.</span>';
+  document.body.appendChild(ui);
+
+  function setEditing(on){
+    editing = on;
+    regions.forEach(function(r){ if (on) r.setAttribute('contenteditable','true'); else r.removeAttribute('contenteditable'); });
+    document.body.classList.toggle('editing', on);
+    document.getElementById('eb-toggle').textContent = on ? '✓ Done editing' : '✏️ Edit copy';
+  }
+  function autosave(){
+    try { localStorage.setItem(key, JSON.stringify({ t: Date.now(), h: regions.map(function(r){ return r.innerHTML; }) })); } catch (e) {}
+  }
+  document.addEventListener('input', function(){ if (editing) autosave(); });
+  document.getElementById('eb-toggle').onclick = function(){ if (editing) autosave(); setEditing(!editing); };
+  document.getElementById('eb-discard').onclick = function(){
+    if (confirm('Throw away every edit you made on this page?')) { localStorage.removeItem(key); setEditing(false); location.reload(); }
+  };
+  // Build clean HTML: undo everything the page's own script added (copy buttons, checklist inputs) so the saved file loads like the original.
+  function exportHTML(){
+    var root = document.documentElement.cloneNode(true);
+    root.querySelectorAll('.edit-ui, .edit-restore').forEach(function(n){ n.remove(); });
+    root.querySelectorAll('[contenteditable]').forEach(function(n){ n.removeAttribute('contenteditable'); });
+    var body = root.querySelector('body'); if (body) { body.classList.remove('editing'); body.className = body.className.replace(/\bprint-\S+/g,'').trim(); if (!body.className) body.removeAttribute('class'); }
+    root.querySelectorAll('.msg-head .right').forEach(function(w){ var when = w.querySelector('.when'); if (when) w.parentNode.insertBefore(when, w); w.remove(); });
+    root.querySelectorAll('.copy-btn').forEach(function(n){ n.remove(); });
+    root.querySelectorAll('#checklist li').forEach(function(li){
+      li.querySelectorAll(':scope > input.cb').forEach(function(n){ n.remove(); });
+      var txt = li.querySelector(':scope > .txt'); if (txt) { while (txt.firstChild) li.insertBefore(txt.firstChild, txt); txt.remove(); }
+      li.classList.remove('done'); if (!li.className) li.removeAttribute('class');
+    });
+    root.querySelectorAll('#checklist ul.check').forEach(function(ul){ ul.classList.remove('live'); });
+    var c = root.querySelector('#ck-count'); if (c && ck0.count != null) c.textContent = ck0.count;
+    var b = root.querySelector('#ck-bar'); if (b) { if (ck0.bar) b.setAttribute('style', ck0.bar); else b.removeAttribute('style'); }
+    return '<!DOCTYPE html>\n' + root.outerHTML;
+  }
+  window.__gmmEditExport = exportHTML;
+  document.getElementById('eb-save').onclick = function(){
+    if (editing) autosave();
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([exportHTML()], { type: 'text/html' }));
+    a.download = slug + '-index.html'; document.body.appendChild(a); a.click(); a.remove();
+  };
+})();
+</script>
+
+
+
+<script>
+  // "Copy email / text / post" buttons on every message card.
+  document.querySelectorAll('.msg').forEach(function (msg) {
+    var type = msg.querySelector('.msg-head .type i');
+    var label = type.classList.contains('sms') ? 'Copy text' : type.classList.contains('post') ? 'Copy post' : 'Copy email';
+    var when = msg.querySelector('.msg-head .when');
+    var wrap = document.createElement('div'); wrap.className = 'right';
+    when.parentNode.insertBefore(wrap, when); wrap.appendChild(when);
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'copy-btn'; btn.textContent = label;
+    wrap.appendChild(btn);
+    btn.addEventListener('click', function () {
+      var body = msg.querySelector('.msg-body');
+      var parts = [];
+      body.querySelectorAll(':scope > .subject, :scope > p, :scope > ol, :scope > ul').forEach(function (el) {
+        if (el.classList.contains('subject')) parts.push('Subject: ' + el.lastChild.textContent.trim());
+        else if (el.tagName === 'OL') parts.push(Array.from(el.children).map(function (li, i) { return (i + 1) + '. ' + li.textContent.trim(); }).join('\n'));
+        else if (el.tagName === 'UL') parts.push(Array.from(el.children).map(function (li) { return '- ' + li.textContent.trim(); }).join('\n'));
+        else if (!el.classList.contains('stage')) parts.push(el.textContent.trim());
+      });
+      var text = parts.join('\n\n');
+      function ok() { btn.textContent = 'Copied ✓'; btn.classList.add('done'); setTimeout(function () { btn.textContent = label; btn.classList.remove('done'); }, 1600); }
+      function fallback() {
+        var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); ok(); } catch (e) {}
+        ta.remove();
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, fallback); else fallback();
+    });
+  });
+</script>
+<script>
+  // Print just one sheet; clear its typed-in fields.
+  document.querySelectorAll('[data-print]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var which = btn.getAttribute('data-print');
+      document.body.classList.add('print-one', 'print-' + which);
+      window.print();
+    });
+  });
+  window.addEventListener('afterprint', function () { document.body.classList.remove('print-one', 'print-cheat', 'print-signup'); });
+  document.querySelectorAll('[data-clear]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#' + btn.getAttribute('data-clear') + ' input').forEach(function (i) { i.value = ''; });
+    });
+  });
+</script>
+<script>
+  // Interactive setup checklist, saved per browser in localStorage.
+  (function () {
+    var KEY = 'gmm-bf-checklist-v1';
+    var items = Array.prototype.slice.call(document.querySelectorAll('#checklist ul.check > li'));
+    if (!items.length) return;
+    var saved = [];
+    try { saved = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) {}
+    function save() {
+      var on = items.map(function (li, i) { return li.classList.contains('done') ? i : -1; }).filter(function (i) { return i >= 0; });
+      try { localStorage.setItem(KEY, JSON.stringify(on)); } catch (e) {}
+    }
+    function update() {
+      var n = items.filter(function (li) { return li.classList.contains('done'); }).length;
+      document.getElementById('ck-count').textContent = n + ' of ' + items.length;
+      document.getElementById('ck-bar').style.width = (100 * n / items.length) + '%';
+    }
+    items.forEach(function (li, i) {
+      var txt = document.createElement('div'); txt.className = 'txt';
+      while (li.firstChild) txt.appendChild(li.firstChild);
+      var cb = document.createElement('input'); cb.type = 'checkbox'; cb.className = 'cb'; cb.id = 'ck-' + i;
+      cb.setAttribute('aria-label', txt.textContent.trim().slice(0, 80));
+      li.appendChild(cb); li.appendChild(txt);
+      function set(v) { cb.checked = v; li.classList.toggle('done', v); }
+      set(saved.indexOf(i) >= 0);
+      cb.addEventListener('change', function () { set(cb.checked); save(); update(); });
+      li.addEventListener('click', function (e) {
+        if (e.target === cb || e.target.closest('a, input, button')) return;
+        if (getSelection && String(getSelection()).length) return;
+        set(!cb.checked); save(); update();
+      });
+    });
+    document.querySelectorAll('#checklist ul.check').forEach(function (ul) { ul.classList.add('live'); });
+    document.getElementById('ck-reset').addEventListener('click', function () {
+      items.forEach(function (li) { li.classList.remove('done'); li.querySelector('.cb').checked = false; });
+      save(); update();
+    });
+    document.getElementById('ck-progress').hidden = false;
+    update();
+  })();
+</script>
+
+
+</body></html>
