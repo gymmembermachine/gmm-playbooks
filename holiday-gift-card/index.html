@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="GMM's Nov/Dec holiday letter + gift card playbook: the member letter, the gift card spec, how to send it, follow-up texts and emails, the front desk script and a staff cheat sheet.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Holiday Gift Card Playbook">
+<meta property="og:description" content="GMM's holiday letter + gift card referral playbook.">
+<meta property="og:url" content="https://gymmembermachine.github.io/gmm-playbooks/holiday-gift-card/">
+<meta property="og:image" content="https://gymmembermachine.github.io/gmm-playbooks/bring-your-boo/cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="player">
+<meta name="twitter:title" content="Holiday Gift Card Playbook">
+<meta name="twitter:image" content="https://gymmembermachine.github.io/gmm-playbooks/bring-your-boo/cover.png">
+<meta name="twitter:player" content="https://gymmembermachine.github.io/gmm-playbooks/holiday-gift-card/">
+<meta name="twitter:player:width" content="960">
+<meta name="twitter:player:height" content="1400">
+<link rel="alternate" type="application/json+oembed" href="https://gymmembermachine.github.io/gmm-playbooks/holiday-gift-card/oembed.json" title="Holiday Gift Card Playbook">
+
+<title>Holiday Gift Card Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<style>
+  :root {--orb-hi:#ff8a3d;--orb-mid:var(--orange);--orb-lo:#a33d06;--accent-rgb:238,106,31;--cover-sub:#eee3d8;--cover-foot:#cbbfd6;--dark-text:#f3ebe3;--paper-2:#f6efe6;--paper-3:#f3ede5;--paper-4:#efe7dc;
+    --ink: #17130f;
+    --ink-2: #4a423a;
+    --ink-3: #847a70;
+    --paper: #fbf7f1;
+    --card: #ffffff;
+    --line: #e8dfd3;
+    --orange: #ee6a1f;
+    --orange-deep: #c9500f;
+    --orange-tint: #fdeee3;
+    --night: #1d1726;
+    --night-2: #2c2338;
+    --green: #2f7d4f;
+    --green-tint: #e6f3ea;
+    --red: #b3372b;
+    --red-tint: #fbe9e6;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 15px/1.6 Inter, system-ui, -apple-system, sans-serif;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  h1, h2, h3 { font-family: "Archivo Black", Inter, sans-serif; font-weight: 400; letter-spacing: -0.01em; line-height: 1.1; }
+  h2 { font-size: 34px; margin: 0 0 6px; text-transform: uppercase; }
+  h3 { font-size: 19px; margin: 28px 0 10px; }
+  h4 { font: 800 12px/1.3 Inter, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--orange-deep); margin: 26px 0 10px; }
+  p { margin: 0 0 12px; }
+  ul, ol { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  li::marker { color: var(--orange); font-weight: 700; }
+  strong { font-weight: 700; }
+  em { color: var(--ink-2); }
+
+  /* ---------- Cover ---------- */
+  .cover {
+    page: cover;
+    background: var(--night);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    min-height: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 56px 56px 48px;
+  }
+  .cover::before {
+    content: ""; position: absolute; right: -180px; top: -140px;
+    width: 620px; height: 620px; border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, var(--orb-hi) 0%, var(--orb-mid) 45%, var(--orb-lo) 100%);
+    opacity: .95;
+  }
+  .cover::after {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 20% 110%, rgba(var(--accent-rgb),.25), transparent 60%);
+  }
+  .cover > * { position: relative; z-index: 1; }
+  .brand { font: 800 12px/1 Inter, sans-serif; letter-spacing: .22em; text-transform: uppercase; color: #fff; opacity: .85; }
+  .cover .ghost { font-size: 88px; line-height: 1; margin-bottom: 18px; }
+  .cover h1 { font-size: 92px; line-height: .92; margin: 0 0 18px; text-transform: uppercase; }
+  .cover h1 span { color: var(--orange); }
+  .cover .sub { font: 600 22px/1.35 Inter, sans-serif; max-width: 520px; color: var(--cover-sub); margin-bottom: 28px; }
+  .cover .pills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill { border: 1px solid rgba(255,255,255,.28); border-radius: 99px; padding: 7px 14px; font-size: 13px; font-weight: 600; color: #fff; }
+  .cover .foot { display: flex; justify-content: space-between; align-items: flex-end; font-size: 13px; color: var(--cover-foot); gap: 24px; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 56px 0 8px; }
+  .kicker { font: 800 12px/1 Inter, sans-serif; letter-spacing: .18em; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+  .kicker b { background: var(--orange); color: #fff; border-radius: 4px; padding: 4px 7px; letter-spacing: .08em; }
+  .lede { font-size: 17px; color: var(--ink-2); max-width: 680px; margin-bottom: 22px; }
+
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin-bottom: 14px; break-inside: avoid; }
+  .card > :last-child { margin-bottom: 0; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .grid-2 > .card, .grid-3 > .card { margin-bottom: 0; }
+  .stack { display: grid; gap: 14px; margin-bottom: 14px; }
+
+  .num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--orange); color: #fff; font: 800 14px/1 Inter, sans-serif; margin-bottom: 10px; }
+  .card h3 { margin-top: 0; }
+  .rec { background: var(--orange-tint); border-left: 4px solid var(--orange); border-radius: 0 10px 10px 0; padding: 12px 16px; margin: 12px 0; break-inside: avoid; }
+  .rec .tag { font: 800 11px/1 Inter, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--orange-deep); display: block; margin-bottom: 6px; }
+  .rec > :last-child { margin-bottom: 0; }
+
+  .callout-dark { background: var(--night); color: var(--dark-text); border-radius: 14px; padding: 22px 24px; margin: 18px 0; break-inside: avoid; }
+  .callout-dark strong { color: #fff; }
+  .callout-dark .tag { font: 800 11px/1 Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 8px; }
+
+  .levers { counter-reset: lever; }
+  .levers .card { position: relative; padding-top: 22px; }
+  .levers .card::before { counter-increment: lever; content: counter(lever); font-family: "Archivo Black", sans-serif; font-size: 44px; color: var(--orange); line-height: 1; display: block; margin-bottom: 8px; }
+
+  /* scripts */
+  .script { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--night); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 10px 0 16px; font-size: 15px; break-inside: avoid; }
+  .script .who { font: 800 11px/1 Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); display: block; margin-bottom: 8px; }
+  .script p:last-child { margin-bottom: 0; }
+  .say { font-style: normal; color: var(--ink); }
+  .blank { background: #fff4d6; border-radius: 4px; padding: 0 5px; font-weight: 600; color: #7a5200; white-space: nowrap; }
+  .stage { color: var(--ink-3); font-style: italic; }
+
+  /* timeline */
+  .timeline { position: relative; margin: 8px 0 18px; padding-left: 0; list-style: none; }
+  .timeline li { display: grid; grid-template-columns: 92px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px dashed var(--line); margin: 0; break-inside: avoid; }
+  .timeline li:last-child { border-bottom: 0; }
+  .timeline .d { font: 800 14px/1.3 Inter, sans-serif; color: var(--ink); }
+  .timeline .d small { display: block; font-weight: 600; color: var(--ink-3); font-size: 12px; }
+  .timeline li.go { background: var(--orange-tint); border-radius: 10px; padding: 12px 12px; border-bottom: 0; margin: 4px 0; }
+  .timeline li.go .d { color: var(--orange-deep); }
+
+  /* messages */
+  .msg { background: #fff; border: 1px solid var(--line); border-radius: 14px; margin: 0 0 16px; overflow: hidden; break-inside: avoid; }
+  .msg-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 11px 18px; background: var(--paper-2); border-bottom: 1px solid var(--line); }
+  .msg-head .type { font: 800 12px/1 Inter, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+  .msg-head .when { font-size: 12px; font-weight: 600; color: var(--ink-3); }
+  .msg-head .type i { font-style: normal; display: inline-block; border-radius: 4px; padding: 3px 6px; margin-right: 8px; color: #fff; background: var(--night); letter-spacing: .08em; }
+  .msg-head .type i.sms { background: var(--green); }
+  .msg-head .type i.post { background: var(--orange); }
+  .msg-body { padding: 16px 18px; font-size: 14.5px; }
+  .msg-body p:last-child { margin-bottom: 0; }
+  .subject { font-weight: 700; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+  .subject span { color: var(--ink-3); font-weight: 600; margin-right: 6px; }
+  .mt { font: 500 12.5px/1 "JetBrains Mono", ui-monospace, monospace; background: #efe9f7; color: #4b2f7a; border-radius: 4px; padding: 2px 5px; white-space: nowrap; }
+  .note { font-size: 13px; color: var(--ink-2); background: var(--paper-3); border-radius: 10px; padding: 12px 14px; margin: 0 0 16px; }
+
+  /* tables */
+  table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 8px 0 18px; font-size: 14px; background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  th { text-align: left; font: 800 11px/1.2 Inter, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); background: var(--paper-2); padding: 11px 14px; }
+  td { padding: 11px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+  tr { break-inside: avoid; }
+  td:first-child { font-weight: 700; }
+  .target { font-family: "Archivo Black", sans-serif; color: var(--orange-deep); white-space: nowrap; }
+
+  /* checklist */
+  .check { list-style: none; padding: 0; }
+  .check li { position: relative; padding-left: 30px; margin-bottom: 9px; break-inside: avoid; }
+  .check li::before { content: ""; position: absolute; left: 0; top: 3px; width: 17px; height: 17px; border: 2px solid var(--ink); border-radius: 4px; background: #fff; }
+  .check ul { margin-top: 8px; }
+  /* interactive checklist (JS adds .live) */
+  .check.live li { cursor: pointer; border-radius: 6px; transition: background .12s; }
+  .check.live li:hover { background: var(--orange-tint); }
+  .check.live li::before { display: none; }
+  .check.live li > input.cb { position: absolute; left: 0; top: 2px; width: 19px; height: 19px; margin: 0; accent-color: var(--green); cursor: pointer; }
+  .check.live li.done > .txt { color: var(--ink-3); text-decoration: line-through; text-decoration-color: rgba(0,0,0,.3); }
+  .progress { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 4px 0 8px; font-size: 13.5px; }
+  .progress .bar { flex: 1 1 160px; height: 8px; background: var(--paper-4); border-radius: 99px; overflow: hidden; }
+  .progress .bar i { display: block; height: 100%; width: 0; background: var(--green); border-radius: 99px; transition: width .2s; }
+  .progress b { font-variant-numeric: tabular-nums; }
+  .progress small { color: var(--ink-3); flex-basis: 100%; }
+  .progress button { font: 700 12px/1 Inter, sans-serif; background: transparent; border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; cursor: pointer; color: var(--ink-2); }
+  .progress button:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { .progress .bar i, .check.live li { transition: none; } }
+  .phase { display: inline-block; font: 800 12px/1 Inter, sans-serif; letter-spacing: .12em; text-transform: uppercase; background: var(--night); color: #fff; border-radius: 6px; padding: 7px 11px; margin: 18px 0 12px; }
+
+  /* close steps */
+  .steps { list-style: none; padding: 0; counter-reset: step; }
+  .steps li { counter-increment: step; display: grid; grid-template-columns: 38px 1fr; gap: 12px; margin-bottom: 12px; break-inside: avoid; }
+  .steps li::before { content: counter(step); width: 30px; height: 30px; border-radius: 50%; background: var(--night); color: #fff; display: flex; align-items: center; justify-content: center; font: 800 13px/1 Inter, sans-serif; }
+
+  /* flow */
+  .flow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0 16px; }
+  .flow span { background: #fff; border: 1px solid var(--line); border-radius: 99px; padding: 6px 12px; font-size: 13px; font-weight: 600; }
+  .flow b { color: var(--orange); }
+
+  /* printable pages */
+  .printable { background: #fff; border: 2px solid var(--ink); border-radius: 16px; padding: 28px 30px; margin: 10px 0 18px; }
+  .printable h2 { font-size: 30px; }
+  .fill { display: grid; grid-template-columns: 1fr; gap: 0; margin: 14px 0 18px; }
+  .fill div { display: grid; grid-template-columns: 210px 1fr; gap: 12px; align-items: end; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .fill div label { font-weight: 700; }
+  
+  .signup { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .slot { border: 1.5px solid var(--ink); border-radius: 12px; overflow: hidden; break-inside: avoid; }
+  .slot header { background: var(--night); color: #fff; padding: 9px 14px; font: 800 13px/1 Inter, sans-serif; display: flex; justify-content: space-between; }
+  .slot header span:last-child { color: var(--orange); }
+  .slot .row { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); height: 34px; }
+  .slot .row.h { height: auto; background: var(--paper-2); font: 800 10px/1 Inter, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+  .slot .row > div { padding: 8px 12px; }
+  .slot .row > div + div { border-left: 1px solid var(--line); }
+
+  .toc { columns: 2; column-gap: 36px; list-style: none; padding: 0; margin: 20px 0 0; }
+  .toc li { display: flex; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); break-inside: avoid; margin: 0; font-weight: 600; }
+  .toc li span { font-family: "Archivo Black", sans-serif; color: var(--orange); width: 24px; }
+  .toc a { color: inherit; text-decoration: none; }
+
+  h3.big { font-size: 26px; margin: 40px 0 12px; padding-top: 24px; border-top: 2px solid var(--line); }
+  .warn { background: #fff4d6; border: 1px solid #efd48a; border-radius: 10px; padding: 11px 14px; margin: 0 0 14px; font-size: 14.5px; }
+  .mode { display: inline-block; font: 800 10px/1 Inter, sans-serif; letter-spacing: .1em; text-transform: uppercase; border-radius: 4px; padding: 4px 6px; margin-left: 8px; vertical-align: 1px; }
+  .mode.hand { background: #fff4d6; color: #7a5200; }
+  .mode.auto { background: #efe9f7; color: #4b2f7a; }
+  .copy-btn { font: 700 12px/1 Inter, sans-serif; border: 1px solid var(--ink); background: #fff; color: var(--ink); border-radius: 6px; padding: 6px 10px; cursor: pointer; white-space: nowrap; }
+  .copy-btn:hover { background: var(--ink); color: #fff; }
+  .copy-btn:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .copy-btn.done { background: var(--green); border-color: var(--green); color: #fff; }
+  .msg-head .right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+  /* sign-up sheet (printable) */
+  .sheet-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 6px; }
+  .sheet-top .dayline { font: 800 15px/1 Inter, sans-serif; }
+  .sheet-top .dayline span { display: inline-block; width: 190px; border-bottom: 1.5px solid var(--ink); margin-left: 6px; }
+  .sheet-how { font-size: 12.5px; color: var(--ink-2); margin: 0 0 12px; }
+  .sess { border: 1.5px solid var(--ink); border-radius: 10px; overflow: hidden; margin-bottom: 10px; break-inside: avoid; }
+  .sess-h { background: var(--night); color: #fff; display: flex; justify-content: space-between; gap: 12px; padding: 6px 12px; font: 700 12.5px/1.2 Inter, sans-serif; flex-wrap: wrap; }
+  .sess-h span b { display: inline-block; width: 90px; border-bottom: 1px solid rgba(255,255,255,.7); margin-left: 4px; }
+  .sess-h span b.sm { width: 34px; }
+  .sess table { border: 0; border-radius: 0; margin: 0; font-size: 12px; table-layout: fixed; }
+  .sess th { padding: 4px 8px; font-size: 9.5px; text-align: left; }
+  .sess th.c, .sess td.c { text-align: center; width: 11%; }
+  .sess td { height: 24px; padding: 0 8px; border-top: 1px solid var(--line); }
+  .sess td + td, .sess th + th { border-left: 1px solid var(--line); }
+  .sess td.c::before { content: ""; display: inline-block; width: 12px; height: 12px; border: 1.5px solid var(--ink-3); border-radius: 3px; vertical-align: middle; }
+  a.res { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: inherit; text-decoration: none; border-color: var(--orange); }
+  a.res:hover { background: var(--orange-tint); }
+  a.res:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .res-go { font: 800 13px/1 Inter, sans-serif; color: var(--orange-deep); white-space: nowrap; }
+  .fillin { font: inherit; color: var(--ink); background: transparent; border: 0; border-bottom: 1.5px solid var(--ink); border-radius: 0; padding: 2px 4px; width: 100%; min-width: 0; }
+  .fillin:focus { outline: none; background: #fff4d6; }
+  .fillin.inline { width: 220px; max-width: 100%; font-weight: 700; }
+  .sess-h .fillin { color: #fff; border-bottom-color: rgba(255,255,255,.7); width: 110px; font-weight: 700; }
+  .sess-h .fillin.sm { width: 44px; }
+  .sess-h .fillin:focus { background: rgba(255,255,255,.12); }
+  .print-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: var(--night); color: var(--dark-text); border-radius: 12px; padding: 12px 16px; margin: 0 0 16px; font-size: 13.5px; }
+  .print-bar span { flex: 1 1 260px; }
+  .print-bar button { font: 800 13px/1 Inter, sans-serif; background: var(--orange); color: #fff; border: 0; border-radius: 8px; padding: 10px 14px; cursor: pointer; }
+  .print-bar button:hover { background: var(--orange-deep); }
+  .print-bar button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .print-bar .ghost-btn { background: transparent; border: 1px solid rgba(255,255,255,.4); }
+  .ps { font-size: 15px; color: var(--ink-2); border-top: 1px solid var(--line); padding-top: 16px; margin-top: 18px; }
+  .end { text-align: center; padding: 60px 0 70px; color: var(--ink-3); font-size: 13px; }
+  .end .ghost { font-size: 44px; }
+
+  @media (max-width: 720px) {
+    body { font-size: 15px; }
+    .wrap { padding: 0 16px; }
+    .cover { padding: 40px 24px 32px; min-height: 520px; }
+    .cover::before { width: 360px; height: 360px; right: -140px; top: -100px; }
+    .cover h1 { font-size: 56px; }
+    .cover .ghost { font-size: 60px; }
+    .cover .sub { font-size: 18px; }
+    .cover .foot { flex-direction: column; align-items: flex-start; }
+    h2 { font-size: 27px; }
+    .grid-2, .grid-3, .signup { grid-template-columns: 1fr; }
+    .toc { columns: 1; }
+    .timeline li { grid-template-columns: 72px 1fr; gap: 10px; }
+    .fill div { grid-template-columns: 1fr; gap: 4px; }
+    .printable { padding: 20px 16px; }
+    .mt { white-space: normal; word-break: break-all; }
+  }
+
+  /* ---------- Print ---------- */
+  @page { size: Letter; margin: 0.6in 0.65in 0.7in; @bottom-center { content: "Holiday Gift Card  ·  Gym Member Machine  ·  " counter(page); font: 600 9px Inter, sans-serif; color: #847a70; letter-spacing: .08em; } }
+  @page cover { margin: 0; @bottom-center { content: none; } }
+  @media print {
+    body { background: #fff; font-size: 11pt; }
+    .wrap { max-width: none; padding: 0; }
+    .cover { height: 11in; min-height: 0; padding: 0.8in 0.75in 0.7in; }
+    section { padding: 0; }
+    section.pb { break-before: page; }
+    .timeline li { padding: 6px 0; }
+    .timeline li.go { padding: 8px 10px; }
+    .lede { margin-bottom: 14px; }
+    td, th { padding: 8px 12px; }
+    .check li { margin-bottom: 6px; }
+    .phase { margin: 12px 0 8px; }
+    #checklist .grid-2 .card { padding: 12px 16px; }
+    .card, .msg, .script, .rec, .callout-dark, .slot, table { box-shadow: none; }
+    .card, .msg, table { background: #fff; }
+    h2, h3, h4, .kicker, .phase { break-after: avoid; }
+    .printable { break-before: page; border: 0; padding: 0; margin: 0; }
+    .end { display: none; }
+    .copy-btn, .print-bar, .progress { display: none !important; }
+    .check.live li:hover { background: none; }
+    body.print-one > .cover, body.print-one main > * { display: none !important; }
+    body.print-one.print-cheat main > #cheat, body.print-one.print-signup main > #signup, body.print-one.print-letter main > #letter { display: block !important; }
+    body.print-one.print-letter #letter > .kicker, body.print-one.print-letter #letter > h2, body.print-one.print-letter #letter > .lede, body.print-one.print-letter #letter .grid-2 { display: none !important; }
+    body.print-one main > section.pb, body.print-one .printable { break-before: auto; }
+    #cheat .fill div { padding: 8px 0; }
+    #cheat .fill { margin: 8px 0 12px; }
+    #cheat h4 { margin: 16px 0 8px; }
+    h3.big { break-before: page; border-top: 0; padding-top: 0; margin-top: 0; }
+    #signup .printable { padding-top: 0; }
+    a { color: inherit; text-decoration: none; }
+  }
+  /* the member letter (printable) */
+  .letter { max-width: 640px; margin: 0 auto; font-size: 15.5px; line-height: 1.7; }
+  .letter .sig { margin-top: 28px; }
+  .letter .ps { margin-top: 22px; }
+  /* DRAFT marker: content not in the source lessons, for G.R. to review */
+  
+  @media print { }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* theme:holiday */:root{--night:#0f2a1f;--night-2:#174032;--orange:#c62828;--orange-deep:#9a1f1f;--orange-tint:#fbe9e6;--orb-hi:#ff6b6b;--orb-mid:#c62828;--orb-lo:#7f0000;--accent-rgb:198,40,40;--paper:#fbf7f1;--line:#e8dfd3;--paper-2:#f6efe6;--paper-3:#f3ede5;--paper-4:#efe7dc;}
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<header class="cover">
+  <div class="brand">Gym Member Machine · Nov / Dec Playbook</div>
+  <div>
+    <div class="ghost">🎁</div>
+<h1>Holiday<br><span>Gift Card</span></h1>
+    <div class="sub">A hand-signed letter to your members w/ a gift card they hand to a friend. The gift of fitness, Thanksgiving to the first week of December.</div>
+    <div class="pills">
+      <span class="pill">Internal referral play</span>
+      <span class="pill">No ad spend</span>
+      <span class="pill">Send Nov 23 to Dec 4, 2026</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Runs alongside Black Friday and Project Zero.<br>The cards come back in January.</div>
+    <div>Letter · Card spec · Texts · Checklist</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ CONTENTS ============ -->
+<section class="pb" id="contents">
+  <div class="kicker">Inside</div>
+  <h2>What's in here</h2>
+  <ul class="toc">
+    <li><span>01</span><a href="#rundown">The Rundown</a></li>
+    <li><span>02</span><a href="#decide">Decide First</a></li>
+    <li><span>03</span><a href="#letter">The Letter (printable)</a></li>
+    <li><span>04</span><a href="#card">The Gift Card</a></li>
+    <li><span>05</span><a href="#send">How to Send</a></li>
+    <li><span>06</span><a href="#followup">The Follow-Up</a></li>
+    <li><span>07</span><a href="#redeem">When a Card Comes In</a></li>
+    <li><span>08</span><a href="#checklist">Setup Checklist</a></li>
+    <li><span>09</span><a href="#cheat">Staff Cheat Sheet (printable)</a></li>
+  </ul>
+
+  <div class="callout-dark" style="margin-top:30px">
+    <span class="tag">Quick legend</span>
+    <p style="margin:0"><span class="blank">[BRACKETS]</span> = you fill it in by hand (the letter, the card, scripts, cheat sheet). &nbsp; <span class="mt">{{merge_tags}}</span> = fills itself automatically in your GMM / GHL account once your custom values are set.</p>
+  </div>
+</section>
+
+<!-- ============ 01 RUNDOWN ============ -->
+<section class="pb" id="rundown">
+  <div class="kicker"><b>01</b> The Rundown</div>
+  <h2>The holiday letter +<br>gift card / gift of fitness</h2>
+  <p class="lede">This play is a great opportunity to drive both referrals and goodwill with your clients during the holidays.</p>
+
+  <div class="card">
+    <h3>The play, in 4 steps</h3>
+    <ol>
+      <li>Letter from you to your members (hand sign each one, if you've got a big team let them sign them)</li>
+      <li>Attach a nice gift card w/ dollar value &amp; expiration date clearly stated for them to give as gifts. Ideally send w/ a nice gift card envelope that's easy to give to a friend or a family member. Include the policy (new clients only) nicely in the letter.</li>
+      <li>Send or hand to clients in person. Ideally around Thanksgiving to 1st week of December.</li>
+      <li>Follow up: remind folks of the deadline for their friends and family to use their gift cards</li>
+    </ol>
+    <p style="margin:0"><a href="https://gmm.circle.so/c/plug-play-marketing-calendar/sections/791224/lessons/3012960" target="_blank" rel="noopener">Winter is Coming: how to think (and act) to grow in Q4 →</a></p>
+  </div>
+
+  <div class="rec"><span class="tag">Where it fits</span>
+    <p>There are diamonds in our own backyards. This is an awesome way to fill the pipeline for January and give your clients' friends and family an easy answer for what they're gonna do to tackle their resolutions this year.&nbsp;</p>
+  </div>
+
+    <h4>What actually gets you members:</h4>
+  <div class="grid-3 levers">
+    <div class="card"><p><strong>The letter is from YOU and it's hand signed.</strong> That's step 1 for a reason. Signed = read. A printed flyer in an envelope is junk mail.</p></div>
+    <div class="card"><p><strong>The card has a dollar value and a hard expiration date on it,</strong> in big type. Vague cards sit in a drawer.</p></div>
+    <div class="card"><p><strong>Somebody follows up and makes deadlines clear,</strong> and the desk knows exactly what to do the second a card walks in (book them).</p></div>
+  </div>
+  
+</section>
+
+<!-- ============ 02 DECIDE ============ -->
+<section class="pb" id="decide">
+  <div class="kicker"><b>02</b> Decide First</div>
+  <h2>5 decisions before you<br>print anything</h2>
+  <p class="lede">Lock these in first. The letter, the card, the texts and the cheat sheet just plug them in.</p>
+
+    <div class="card">
+    <div class="num">1</div>
+    <h3>Gift card value <span style="font-family:Inter;font-weight:600;font-size:14px;color:var(--ink-3)">what the friend gets</span></h3>
+    <div class="rec"><span class="tag">Our rec</span>
+      <p><b>A free month</b> is the strongest play you can make here assuming you're in a group training facility. Feels like a real gift, easy for the member to hand over. <b>Make the dollar value of your gift card match what a month of training looks like so gift card shows real value.&nbsp;<br></b><br>You can also plug your referral "bonuses" to clients in your letter to them RE: the gift card, e.g. "if your friend sticks around as a member afterwards, you'll get $100 off your next month so everybody wins!&nbsp;</p>
+    </div>
+    <ul>
+      <li><strong>2 weeks free</strong> is the trial version. Fine if your trial already converts and you want the card to feed your normal process. Gift card still needs to show real value here</li>
+      <li><strong>$100 off month one</strong> is another safe default. Real money, and they're paying something on day one.</li>
+      <li>Whatever you pick, it's a noun phrase on the card and in the custom value: “$100 off month one,” “a free month,” “2 weeks free.” No “you” or “your.” The letter and the texts in the automations put the sentence around it.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="num">2</div>
+    <h3>Expiration date</h3>
+    <div class="rec"><span class="tag">Our rec</span>
+      <p><strong>January 31 is the default.</strong>&nbsp;January is when fitness jumps back up the to-do list, so give them the whole month and then shut it. An end-of-January stop gives your follow-up something real to push against, and it keeps your reminders out of Christmas week.</p>
+    </div>
+    <ul>
+      <li>Don't go past January 31. Past that the card is just a coupon.</li>
+      <li>Put the date on the card in big type and in the letter. Say it once, mean it. If you quietly extend it, the next deadline you send gets ignored.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="num">3</div>
+    <h3>Cards per member: 1 or 2</h3>
+    <div class="rec"><span class="tag">Our rec</span>
+      <p><strong>2 cards per member.</strong> “Friends &amp; family” is plural, couples are a thing, and the second card costs you almost nothing. The odds of every member attempting to bring someone in is almost zero, and worst case if you're overrun with referrals is to honor the cards but place folks on a waitlist to "claim" their prizes in February (assuming the referred prospect reached out originally before your deadline.&nbsp;</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="num">4</div>
+    <h3>The policy: new clients only</h3>
+    <p>Clear is kind. Write the policy on the card AND in the letter, nicely, so nobody at the desk has to be the bad guy in January:</p>
+    <ul>
+      <li><strong>New clients only</strong> = folks who have never trained w/ you.</li>
+      <li><strong>Past members?</strong> Your call. I'd say yes if they've been gone a year or more (best odds in the building). Decide now and tell the desk.</li>
+      <li><strong>One card per referred person.</strong> Can't be combined w/ anything else. Not redeemable for cash (obviously, but say it).</li>
+      <li><strong>Members can't use it on themselves.</strong> It's a gift for somebody else, and the letter says so.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="num">5</div>
+    <h3>Member reward <span style="font-family:Inter;font-weight:600;font-size:14px;color:var(--ink-3)">what the member gets when their card gets used</span></h3>
+    <div class="rec"><span class="tag">Our rec</span>
+      <p><strong>Your normal referral reward.</strong> A card coming back is a referral. Give $X/Get $X, same as any other month. Pay it the day the friend pays or apply it to their next month's membership.</p>
+    </div>
+    <ul>
+      <li>No referral program yet? $50 off next month if avg membership is under $200/mo, $100 if above. Start one while you're at it (Referral Playbook linked in the checklist).</li>
+      <li>Say the reward in the letter so the member has a reason to actually hand the card over instead of meaning to.</li>
+    </ul>
+  </div>
+  
+</section>
+
+<!-- ============ 03 THE LETTER ============ -->
+<section class="pb" id="letter">
+  <div class="kicker"><b>03</b> The Letter</div>
+  <h2>One page, from you,<br>signed by hand</h2>
+  <p class="lede">Copy this into a Word doc or Canva on your letterhead, fill the brackets, print on decent paper. Edit it so it sounds like you, this is tough to templatize because frankly it should feel <i>and be</i>&nbsp;personal. Sign by hand.&nbsp;</p>
+
+    <div class="printable" id="letter-print">
+    <div class="print-bar"><span>This prints as a plain one-pager if you'd rather not retype it. Fill the brackets in Word or Canva first, or by hand.</span><button type="button" data-print="letter">Print the letter</button></div>
+    <div class="letter">
+      <p><span class="blank">[GYM NAME + LOGO]</span><br><span class="blank">[DATE]</span></p>
+      <p>Hey <span class="blank">[FIRST NAME]</span>,</p>
+      <p>Thanksgiving week always gets me thinking about the folks who make this place what it is, and that's you. Thank you for showing up. The early mornings, the “I almost didn't come today” days (those count double), all of it. Thank you for trusting us w/ something that actually matters.<br><br>It's been a great year here at <span class="blank">[GYM NAME]</span>, from <span class="blank">[STORIES, INSIDE JOKES, CLIENT SHOUTOUTS, UPGRADES, ETC.]</span><br><br>We couldn't have done it without you.&nbsp;</p>
+      <p>Our team wanted to put something together as a tiny thank you and we came up with something we thought might make your holiday shopping a little easier and yes, your experience with us even more fun (is that even possible!?).&nbsp;</p>
+      <p>Inside this envelope is a gift card for <span class="blank">[GIFT CARD VALUE]</span>&nbsp;here at&nbsp;<span class="blank">[GYM NAME]</span>. It's not for you (sorry!). It's for someone in your life who's been saying “I need to get back into something” for a while now. Your sister, your buddy from work, your partner, your mom. You know exactly who I mean :)</p>
+      <p>Here's how it works:</p>
+      <ul>
+        <li>Hand them the card (or snap a pic and text it to them, that works too!)</li>
+        <li>They text us at <span class="blank">[GYM NUMBER]</span>&nbsp;to book their first session &amp; claim their gift (you look like a hero - we won't tell them you didn't spend any money on it ;)&nbsp;</li>
+        <li>The card is good through <span class="blank">[EXPIRATION DATE]</span>, so don't let it sit in a drawer!</li>
+      </ul>
+      <p>A couple of quick house rules so it's fair to everybody: the card is for new clients only, one card per person, and it can't be combined with any other&nbsp;offers or promotions.</p>
+      <p><b>Big bonus for you?</b> If they join after their gift card is up, you get <span class="blank">[MEMBER REWARD]</span>, same as any referral. You win, they win, we win.</p>
+      <p>We hope this makes your holiday shopping a little easier, and again, thank you from the bottom of our hearts for being an amazing part of the <span class="blank">[GYM NAME]</span> family.&nbsp;<br><br><span class="blank">[SIGNOFF]</span>,&nbsp;</p>
+      <p class="sig"><span class="blank">[OWNER NAME, SIGNED BY HAND]</span><br><span class="blank">[GYM NAME]</span></p>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Keep</h3>
+      <ul>
+        <li>The thank-you up top. It's a holiday letter w/ a gift in it. Members can smell a promo.</li>
+        <li>The policy line and the expiration date. Clear is kind.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Cut</h3>
+      <ul>
+        <li>Anything about your pricing, your January programs, or Black Friday. One ask per letter.</li>
+        <li>“Limited time” language. The date does that job.</li>
+      </ul>
+    </div>
+  </div>
+  
+</section>
+
+<!-- ============ 04 THE GIFT CARD ============ -->
+<section class="pb" id="card">
+  <div class="kicker"><b>04</b> The Gift Card</div>
+  <h2>What goes on it</h2>
+  <p class="lede">Attach a nice gift card w/ dollar value &amp; expiration date clearly stated. That's the brief. We built the card for you. Copy the template, swap five things, send it to print.</p>
+
+  <div class="card">
+    <h3>Use the template</h3>
+    <p><a href="https://canva.link/8mzpggwuuptpck5" target="_blank" rel="noopener"><strong>Gift of Fitness card template (Canva) →</strong></a></p>
+    <ol>
+      <li>Open the link, click <strong>Edit template</strong>. It saves a copy to your Canva, the original stays put.</li>
+      <li>Swap the five placeholders: your logo, <span class="blank">[$ VALUE]</span>, <span class="blank">[EXP DATE]</span>, your gym number, and any verbiage you like</li>
+      <li>Leave the “From: ______” line on the back alone. That's how the desk knows who to thank.</li>
+      <li>Download as <strong>PDF Print</strong> w/ crop marks and bleed.</li>
+    </ol>
+    <div style="position: relative; padding-bottom: 64.92335437330928%; height: 0; margin-top:14px; border-radius:12px; overflow:hidden;"><iframe src="https://www.loom.com/embed/0f65cc4b08f74525b1b809dfba548ed5" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Where to print it</h3>
+      <ul>
+        <li><strong>Plastic cards (feels like a real gift card):</strong> the template is exact credit-card size (3.375 x 2.125 in), so the PDF goes to <a href="https://www.plasticprinters.com/" target="_blank" rel="noopener">Plastic Printers</a>, <a href="https://www.4over4.com/" target="_blank" rel="noopener">4over4</a>, or your local printer as-is. Roughly $0.25 to $1.50 a card depending on quantity; 4over4 starts around 25 to 50 cards.</li>
+        <li><strong>Timing:</strong> plastic runs 2 to 3 weeks (we've seen folks get them faster locally). Order 2 per member + 10% spare.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>If you'd rather build your own</h3>
+      <p>Fine. Use the spec below so it still has everything the desk needs. Already have a buddy pass design? That works too: <a href="https://www.canva.com/design/DAFOrLVtahE/CEt1VZiVo4iGS5CLCDYJ1A/view" target="_blank" rel="noopener">G.R.'s Quick n' Ugly buddy pass</a>.</p>
+    </div>
+  </div>
+
+  <h4 style="margin-top:22px">The spec (what's on the template, in case you change it)</h4>
+
+    <table>
+    <thead><tr><th style="width:26%">Where</th><th>What</th><th style="width:30%">Fill</th></tr></thead>
+    <tbody>
+      <tr><td>Front, top</td><td>Your logo + gym name</td><td><span class="blank">[GYM NAME]</span></td></tr>
+      <tr><td>Front, big</td><td>“GIFT CARD” or “THE GIFT OF FITNESS”</td><td>Pick one</td></tr>
+      <tr><td>Front, bigger</td><td>The value. Biggest thing on the card.</td><td><span class="blank">[GIFT CARD VALUE]</span></td></tr>
+      <tr><td>Front, bottom</td><td>“Good through <span class="blank">[DATE]</span>” in plain type you can read w/o glasses</td><td><span class="blank">[EXPIRATION DATE]</span></td></tr>
+      <tr><td>Back, top</td><td>“To redeem: text <span class="blank">[GYM NUMBER]</span> or scan to book your first session” + a QR code to your booking link</td><td><span class="blank">[GYM NUMBER]</span> + QR → <span class="blank">[BOOKING LINK]</span></td></tr>
+      <tr><td>Back, middle</td><td>“New clients only. One card per person. Not combinable w/ other offers or redeemable for cash.”</td><td>Verbatim is fine</td></tr>
+      <tr><td>Back, bottom</td><td><strong>“From: ________________”</strong> line. The member writes their own name. This is how the desk knows who to thank, so don't skip it.</td><td>Blank line</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Size + stock</h3>
+      <ul>
+        <li>The template is 3.375 x 2.125 in (credit-card size). Heavy stock so it feels like an actual gift card, rounded corners if the printer offers it.</li>
+        <li>Order 3 weeks out. Plastic takes longer than card stock (see Where to print it, above).</li>
+        <li>Envelopes: real gift card envelopes (the small ones w/ a slot), or a nice #10 if you're mailing. That's step 2 of the play: easy to hand to a friend.</li>
+      </ul>
+    </div>
+  </div>
+  
+</section>
+
+<!-- ============ 05 HOW TO SEND ============ -->
+<section class="pb" id="send">
+  <div class="kicker"><b>05</b> How to Send</div>
+  <h2>Mail it or hand it over</h2>
+  <p class="lede">Send. Ideally around Thanksgiving to 1st week of December. In 2026 that's <strong>Mon Nov 23 to Fri Dec 4.</strong></p>
+
+    <div class="grid-2">
+    <div class="card">
+      <h3>Hand out at the front desk</h3>
+      <ul>
+        <li>Envelopes behind the desk, sorted by name. Every member who walks in Nov 23 to Dec 4 gets theirs, by name, w/ one sentence: <em>“Got something for you, open it when you get home.”</em></li>
+        <li>Free. And you get the moment, which is the whole reason the letter works.</li>
+        <li>Downside: you miss anybody who doesn't come in those two weeks, which is exactly the folks you want engaged in December. So...</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Mail the rest</h3>
+      <ul>
+        <li>Fri Dec 4: whatever's still behind the desk goes in the mail. Hand-addressed if you can swing it, a real stamp (not metered). Lands the next week.</li>
+        <li>Roughly $1.50 to $2 per member all in (card, envelope, stamp). 150 members = under $300 for a play that lands in January.</li>
+        <li>Mailing everything is fine too if your desk/coaches are slammed. Then the envelope is doing the handshake, so make it a nice one.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="rec"><span class="tag">Our rec</span>
+    <p>Hand out first, mail the rest Dec 4. And the signing: hand sign each one. If you've got a big team let them sign them. Do it at the staff meeting the week before, pizza optional. Fifteen minutes for 150 letters w/ four people signing.</p>
+  </div>
+
+  <div class="callout-dark">
+    <span class="tag">The tracker</span>
+    <p>A sign-out sheet on the whiteboard (or a clipboard at the desk). Three columns: <strong>Member · # cards · Date handed over / mailed.</strong> When a card comes back, write the friend's name next to the member who sent it.</p>
+    <p style="margin:0">That's the tracker. Nothing else to maintain. In January you read down the sheet and you know who to pay.</p>
+  </div>
+  
+</section>
+
+<!-- ============ 06 FOLLOW-UP ============ -->
+<section class="pb" id="followup">
+  <div class="kicker"><b>06</b> The Follow-Up</div>
+  <h2>Follow the YOU-KNOW-WHAT up</h2>
+  <p class="lede">Remind folks of the deadline for their friends and family to use their gift cards. Two reminders to members, one text to the friend when a card comes in.</p>
+  <div class="note">Merge tags are set for your GMM / Ops / GHL software. Set the four custom values once (Settings › Custom Values, see the Setup Checklist) and the member messages fill themselves in. The friend text is sent by hand from the gym phone the day their card shows up.</div>
+
+    <div class="msg">
+    <div class="msg-head"><div class="type"><i class="sms">SMS</i>Member Text 1 · Reminder<span class="mode auto">Can automate</span></div><div class="when">Mon Jan 4 (~4 weeks before deadline)</div></div>
+    <div class="msg-body"><p>Hey <span class="mt">{{contact.first_name}}</span>, quick one from <span class="mt">{{location.name}}</span>! The gift card in your holiday letter is good through <span class="mt">{{custom_values.hgc_deadline}}</span>. If you haven't handed it off yet, this week is perfect (everybody's thinking about January right now!). Snap a pic and text it to them if that's easier. Any Qs, just reply here :)</p></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i>Email</i>Member Email 1 · Last call<span class="mode auto">Can automate</span></div><div class="when">Mon Jan 18 (~2 weeks before deadline)</div></div>
+    <div class="msg-body">
+      <div class="subject"><span>Subject:</span>Your gift card has about 2 weeks left</div>
+      <p>Hey <span class="mt">{{contact.first_name}}</span>,</p>
+      <p>Quick one: the gift card we tucked in your holiday letter (<span class="mt">{{custom_values.hgc_value}}</span> for a friend or family member) is good through <span class="mt">{{custom_values.hgc_deadline}}</span>.</p>
+      <p>If you already handed it off, awesome, thank you! Tell them to get booked this week so they don't miss it.</p>
+      <p>If it's still sitting on the counter, you know who it's for :) Easiest way to do it is snap a pic of the card and text it with something like:</p>
+      <p style="padding-left:14px;border-left:3px solid var(--line)">“Hey! My gym gave me a gift card to pass along to a friend and I thought of you. It's <span class="mt">{{custom_values.hgc_value}}</span> and it's good through <span class="mt">{{custom_values.hgc_deadline}}</span>. Want it?”</p>
+      <p>They can grab their first session right here: <span class="mt">{{custom_values.hgc_redeem_link}}</span></p>
+      <p>And when they join, you get <span class="mt">{{custom_values.hgc_member_reward}}</span>, same as any referral. You win, they win, we win.</p>
+      <p>Thanks for being part of this place. Let me know if you have any questions at all!</p>
+      <p><span class="mt">{{user.first_name}}</span></p>
+    </div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><div class="type"><i class="sms">SMS</i>Friend Text · Booked<span class="mode hand">By hand</span></div><div class="when">The day their card comes in, right after you book them</div></div>
+    <div class="msg-body"><p>Hey <span class="mt">{{contact.first_name}}</span>, this is <span class="mt">{{user.first_name}}</span> from <span class="mt">{{location.name}}</span>! So glad <span class="blank">[MEMBER NAME]</span> passed their gift card to you :) You're all set for <span class="blank">[SESSION DAY + TIME]</span> and your <span class="mt">{{custom_values.hgc_value}}</span> is locked in. Nothing to do before then, just come 10 min early, wear whatever you'd wear for a walk, bring water. Need to move it? Reply here anytime!</p></div>
+  </div>
+
+  <div class="note" style="margin-top:4px"><strong>If they text the gym number instead of scanning:</strong> same text, but swap the middle for “Grab a time that works here: <span class="mt">{{custom_values.hgc_redeem_link}}</span>” and book them the second they pick one. Don't let a card sit in a text thread for three days.</div>
+  
+</section>
+
+<!-- ============ 07 WHEN A CARD COMES IN ============ -->
+<section class="pb" id="redeem">
+  <div class="kicker"><b>07</b> When a Card Comes In</div>
+  <h2>Front desk: book them<br>before they leave</h2>
+  <p class="lede">A card walking in is a pre-sold referral. Book them on the spot. “Somebody will call you” is how you lose one.</p>
+
+    <ol class="steps">
+    <li><div><strong>Take the card.</strong> Look at the From line. That's your member.</div></li>
+    <li><div><strong>Book the first session right then.</strong> Phone, calendar, done. Same as any intro. Tell them the <span class="blank">[GIFT CARD VALUE]</span> is locked in for them.</div></li>
+    <li><div><strong>Ask who sent them</strong> if the From line is blank: <em>“Who do we get to thank for this?”</em></div></li>
+    <li><div><strong>Write the friend's name</strong> next to the member on the sign-out sheet. Put the member's name in the notes on the friend's profile too.</div></li>
+    <li><div><strong>Thank the member the same day.</strong> One text: <em>“<span class="blank">[FRIEND]</span> just came in w/ your gift card! Love it. You'll get <span class="blank">[MEMBER REWARD]</span> the day they sign up.”</em> Then pay it the day they join.</div></li>
+    <li><div><strong>Normal onboarding from there.</strong> The card value comes off at sign-up, nothing else changes.</div></li>
+  </ol>
+
+  <h4>The desk script</h4>
+  <div class="script">
+    <span class="who">Anybody on staff</span>
+    <p>“Oh awesome, <span class="blank">[MEMBER]</span> gave you one of these! Love it. Let's get your first session on the books while you're here. What does your week look like, mornings or evenings?” <span class="stage">[book it]</span> “Perfect. You're in for <span class="blank">[DAY + TIME]</span>, and your <span class="blank">[GIFT CARD VALUE]</span> is locked in. I'll text you the details right now. Can I grab your cell?”</p>
+  </div>
+
+  <h4>Edge cases · decide now, tell the desk</h4>
+  <table>
+    <tbody>
+      <tr><td style="width:34%">Card expired last week?</td><td>Honor it, once, and say so: “It's a little past the date but I'll take care of it.” Nobody gets turned away for a week.</td></tr>
+      <tr><td>Past member w/ a card?</td><td>Whatever you decided in Decide First #4. Same answer from every coach.</td></tr>
+      <tr><td>Friend wants to start in February?</td><td>Take the February start w/ the card value in writing and the start date on it. Write it on the sheet as a yes.</td></tr>
+      <tr><td>No From line, no idea who sent them?</td><td>Still a new client. Book them, ask again at session one. Somebody will remember.</td></tr>
+    </tbody>
+  </table>
+  
+</section>
+
+<!-- ============ 08 CHECKLIST ============ -->
+<section class="pb" id="checklist">
+  <div class="kicker"><b>08</b> Setup Checklist</div>
+  <h2>Do these in order</h2>
+  <div class="progress" id="ck-progress"><span><b id="ck-count">0 of 0</b> done</span><div class="bar"><i id="ck-bar"></i></div><button type="button" id="ck-reset">Reset checklist</button><small>Your checks save in this browser only, so each gym owner has their own checklist.</small></div>
+
+    <div class="phase">3 weeks out · Nov 2</div>
+  <ul class="check">
+    <li>Make the 5 decisions (value, expiration date, cards per member, policy incl. past members, member reward). Write them on the cheat sheet.</li>
+    <li>Copy the <a href="https://canva.link/8mzpggwuuptpck5" target="_blank" rel="noopener">Canva gift card template</a>, swap logo / value / date / number / QR, download PDF Print. (<a href="https://www.loom.com/share/0f65cc4b08f74525b1b809dfba548ed5" target="_blank" rel="noopener">Loom walkthrough</a>.)</li>
+    <li>Order the cards + envelopes. 2 per member + 10% spare. Scan the QR code on the proof from your own phone before you approve it.</li>
+  </ul>
+
+  <div class="phase">2 weeks out · Nov 9</div>
+  <ul class="check">
+    <li>Write the letter (section 03) on your letterhead. One page. Read it out loud once. Print one and make sure it folds into the envelope w/ the card.</li>
+    <li>Tech: set the custom values (Settings › Custom Values). Name them exactly like this and copy the tag GHL shows you:
+      <table style="margin-top:10px">
+        <thead><tr><th>Custom value</th><th>Merge tag</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>HGC Value</td><td><span class="mt">{{custom_values.hgc_value}}</span></td><td>$100 off month one (a noun phrase: “$100 off month one,” “a free month,” “2 weeks free.” No “you” or “your,” the messages say “your ___ is locked in” around it)</td></tr>
+          <tr><td>HGC Deadline</td><td><span class="mt">{{custom_values.hgc_deadline}}</span></td><td>Sunday, January 31 (just the date, the messages say “good through ___” around it)</td></tr>
+          <tr><td>HGC Redeem Link</td><td><span class="mt">{{custom_values.hgc_redeem_link}}</span></td><td>Your intro / first session booking link. Same link the QR code points to.</td></tr>
+          <tr><td>HGC Member Reward</td><td><span class="mt">{{custom_values.hgc_member_reward}}</span></td><td>$100 off next month (a thing: “$100 off next month,” “a free month.” No “you” or “your”)</td></tr>
+        </tbody>
+      </table>
+    </li>
+    <li>Tech: load Member Text 1 (Jan 4) + Member Email 1 (Jan 18) into a workflow on your active member list. Or send them by hand on those days, it's two messages.</li>
+    <li>Tech: save the Friend Text as a snippet in Conversations so the desk can send it in 10 seconds.</li>
+    <li>Sign-out sheet on the whiteboard (Member · # cards · Date). Blank friend column to the right.</li>
+  </ul>
+
+  <div class="phase">1 week out · Nov 16</div>
+  <ul class="check">
+    <li>Cards arrive. Count them. Check the date and the value on an actual card (the proof lies).</li>
+    <li>Staff meeting: cheat sheet printed + posted, everybody reads the desk script out loud once, decide who pays the member rewards.</li>
+    <li>Sign the letters (all of you), stuff the envelopes w/ the cards, sort by member name behind the desk.</li>
+  </ul>
+
+  <div class="phase">Send · Nov 23 to Dec 4</div>
+  <ul class="check">
+    <li>Every member who walks in gets theirs by name. “Got something for you, open it when you get home.” Mark the sheet.</li>
+    <li>Fri Dec 4: mail everything still behind the desk. Mark the sheet.</li>
+  </ul>
+
+  <div class="phase">The window · Jan 4 to Jan 31</div>
+  <ul class="check">
+    <li>Mon Jan 4: Member Text 1 goes.</li>
+    <li>Mon Jan 18: Member Email 1 goes.</li>
+    <li>Every card that comes in: booked before they leave, friend's name on the sheet, member thanked same day.</li>
+    <li>Member rewards paid the day a friend joins.</li>
+  </ul>
+
+  <div class="phase">After</div>
+  <ul class="check">
+    <li>Mon Feb 1: read down the sheet. Count cards back, joins, rewards owed. Pay anything outstanding.</li>
+    <li>Friends who came in on a card and didn't join: one call from the owner. “You came in on <span class="blank">[MEMBER]</span>'s card, wanted to hear what you thought.”</li>
+  </ul>
+  
+
+  <h4>Related resources</h4>
+  <a class="card res" href="https://gmm.circle.so/c/plug-play-marketing-calendar/sections/791224/lessons/3012960" target="_blank" rel="noopener">
+    <div><h3>Winter is Coming</h3><p>The Q4 video + doc this play comes from.</p></div>
+    <span class="res-go">Open in Circle →</span>
+  </a>
+  <a class="card res" href="https://gmm.circle.so/c/referral-playbook/sections/265189/lessons/986633" target="_blank" rel="noopener">
+    <div><h3>Referral Playbook</h3><p>Give/Get tiers, the advice script, the three-way text.</p></div>
+    <span class="res-go">Open in Circle →</span>
+  </a>
+  <a class="card res" href="https://www.canva.com/design/DAFOrLVtahE/CEt1VZiVo4iGS5CLCDYJ1A/view" target="_blank" rel="noopener">
+    <div><h3>Quick n' Ugly buddy pass template</h3><p>A starting point for the card if you don't want to start from scratch.</p></div>
+    <span class="res-go">Open in Canva →</span>
+  </a>
+</section>
+
+<!-- ============ 09 CHEAT SHEET ============ -->
+<section class="pb" id="cheat">
+    <div class="printable">
+    <div class="kicker"><b>09</b> Print + post · fill in the blanks first</div>
+    <h2>Staff Cheat Sheet</h2>
+    <div class="print-bar"><span>Type in your details (optional), then print. Leave anything blank to write it in by hand.</span><button type="button" data-print="cheat">Print cheat sheet</button><button type="button" class="ghost-btn" data-clear="cheat">Clear</button></div>
+    <p style="font-weight:700;margin-bottom:4px;display:flex;align-items:flex-end;gap:8px;flex-wrap:wrap"><label for="cheat-dates">HOLIDAY GIFT CARDS · good through </label><input class="fillin inline" id="cheat-dates" type="text"></p>
+    <p style="color:var(--ink-2)">Members got a letter + gift cards for a friend. When a card walks in, it's a new client. Book them before they leave.</p>
+    <div class="fill">
+      <div><label for="cheat-0">Gift card value (say it exactly this way)</label><input class="fillin" id="cheat-0" type="text"></div>
+      <div><label for="cheat-1">Expires</label><input class="fillin" id="cheat-1" type="text"></div>
+      <div><label for="cheat-2">Cards per member</label><input class="fillin" id="cheat-2" type="text"></div>
+      <div><label for="cheat-3">Past members: yes / no</label><input class="fillin" id="cheat-3" type="text"></div>
+      <div><label for="cheat-4">Member reward (when friend joins)</label><input class="fillin" id="cheat-4" type="text"></div>
+      <div><label for="cheat-5">Sign-out sheet is</label><input class="fillin" id="cheat-5" type="text"></div>
+      <div><label for="cheat-6">Booking link / QR goes to</label><input class="fillin" id="cheat-6" type="text"></div>
+      <div><label for="cheat-7">Questions → owner + phone</label><input class="fillin" id="cheat-7" type="text"></div>
+    </div>
+
+    <h4>Card walks in</h4>
+    <div class="flow">
+      <span>Take the card, read the From line</span><b>→</b><span>Book session 1 right now</span><b>→</b><span>Friend's name on the sheet</span><b>→</b><span>Send the Friend Text</span><b>→</b><span>Text the member a thank-you</span>
+    </div>
+    <div class="script">
+      <span class="who">Anybody on staff</span>
+      <p>“Oh awesome, <span class="blank">[MEMBER]</span> gave you one of these! Let's get your first session on the books while you're here. Mornings or evenings?”</p>
+    </div>
+
+    <h4>Handing out envelopes (Nov 23 to Dec 4)</h4>
+    <p>By name, every member who walks in: <em>“Got something for you, open it when you get home.”</em> Mark the sheet.</p>
+
+    <h4>Member asks for extra cards · circle one</h4>
+    <p style="font-size:15px">◯ &nbsp;Yes, if we've got spares &nbsp;&nbsp;&nbsp; ◯ &nbsp;No, same number for everybody</p>
+
+    <h4>The rule</h4>
+    <p style="font-size:18px;font-weight:700">Every card that walks in gets booked before they leave.</p>
+  </div>
+  
+</section>
+
+<div class="end">Gym Member Machine · Holiday Gift Card Playbook</div>
+</main>
+<!-- edit-mode: shown only on file://, localhost, or when the URL has #edit -->
+<style id="edit-css">
+.edit-ui{position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;align-items:center;gap:8px;background:#1c1726;color:#fff;border-radius:999px;padding:8px 10px 8px 12px;box-shadow:0 8px 30px rgba(0,0,0,.35);font:600 13px/1 Inter,system-ui,sans-serif;max-width:calc(100vw - 36px);flex-wrap:wrap}
+.edit-ui .eb{font:700 13px/1 Inter,system-ui,sans-serif;border:0;border-radius:999px;padding:9px 14px;cursor:pointer;background:#fff;color:#1c1726}
+.edit-ui .eb.primary{background:#ff7a1a;color:#111}
+.edit-ui .eb-tools{display:none;gap:6px}
+.edit-ui .eb-hint{display:none;font-weight:500;opacity:.8;padding:0 6px}
+body.editing .edit-ui .eb-tools,body.editing .edit-ui .eb-hint{display:inline-flex}
+body.editing [contenteditable="true"]{outline:1px dashed rgba(255,122,26,.45);outline-offset:3px;cursor:text;border-radius:3px}
+body.editing [contenteditable="true"]:hover,body.editing [contenteditable="true"]:focus{outline:2px solid rgba(255,122,26,.9)}
+body.editing .copy-btn,body.editing input.cb,body.editing .fillin{pointer-events:none;opacity:.35}
+body.editing a{pointer-events:none}
+.edit-restore{position:sticky;top:0;z-index:9998;background:#fff4d6;color:#7a5200;border-bottom:1px solid #efd48a;padding:10px 16px;font:600 14px/1.4 Inter,system-ui,sans-serif;text-align:center}
+.edit-restore button{font:700 13px/1 Inter,system-ui,sans-serif;border:1px solid #7a5200;background:#fff;color:#7a5200;border-radius:999px;padding:6px 12px;margin-left:6px;cursor:pointer}
+@media print{.edit-ui,.edit-restore{display:none!important}}
+</style>
+<script id="edit-js">
+(function(){
+  var show = location.protocol==='file:' || /^(localhost|127\.0\.0\.1)$/.test(location.hostname) || /(^|[?#&])edit\b/.test(location.search+location.hash);
+  if(!show) return;
+  var parts = location.pathname.split('/').filter(Boolean);
+  var slug = (parts[parts.length-1]==='index.html' ? parts[parts.length-2] : parts[parts.length-1]) || 'page';
+  var key = 'gmm-edit-' + slug;
+  // Only text blocks are editable, never the structure (sections, cards, kickers, buttons).
+  var SEL = '.cover h1, .cover .sub, .cover .foot span, main p, main li, main h2, main h3, main h4, main h5, main td, main th, main .subject, main blockquote';
+  var regions = Array.prototype.slice.call(document.querySelectorAll(SEL)).filter(function(el){ return !el.closest('.edit-ui, .edit-restore, #checklist ul.check, .toc, .kicker') && !el.querySelector('p, li, h2, h3, h4, table'); });
+  var editing = false;
+  var ck0 = { count: (document.getElementById('ck-count')||{}).textContent, bar: (document.getElementById('ck-bar')||{getAttribute:function(){return null;}}).getAttribute('style') };
+
+  // Restore unsaved edits BEFORE the page's own scripts wire up buttons/checklists.
+  try {
+    var saved = JSON.parse(localStorage.getItem(key) || 'null');
+    if (saved && saved.h && saved.h.length) {
+      if (sessionStorage.getItem(key + ':restore') === '1') {
+        regions.forEach(function(r, i){ if (saved.h[i] != null) r.innerHTML = saved.h[i]; });
+        sessionStorage.removeItem(key + ':restore');
+      } else {
+        var b = document.createElement('div'); b.className = 'edit-restore';
+        b.innerHTML = 'You have unsaved copy edits on this page from ' + new Date(saved.t).toLocaleString() + '. <button type="button" id="er-yes">Restore them</button><button type="button" id="er-no">Start fresh</button>';
+        document.body.insertBefore(b, document.body.firstChild);
+        b.querySelector('#er-yes').onclick = function(){ sessionStorage.setItem(key + ':restore', '1'); location.reload(); };
+        b.querySelector('#er-no').onclick = function(){ localStorage.removeItem(key); b.remove(); };
+      }
+    }
+  } catch (e) {}
+
+  var ui = document.createElement('div'); ui.className = 'edit-ui';
+  ui.innerHTML = '<button type="button" class="eb primary" id="eb-toggle">✏️ Edit copy</button>'
+    + '<span class="eb-tools"><button type="button" class="eb" id="eb-save">⬇ Save page</button><button type="button" class="eb" id="eb-discard">Discard edits</button></span>'
+    + '<span class="eb-hint">Click any text block and type (structure stays put). Save downloads this page w/ your edits.</span>';
+  document.body.appendChild(ui);
+
+  function setEditing(on){
+    editing = on;
+    regions.forEach(function(r){ if (on) r.setAttribute('contenteditable','true'); else r.removeAttribute('contenteditable'); });
+    document.body.classList.toggle('editing', on);
+    document.getElementById('eb-toggle').textContent = on ? '✓ Done editing' : '✏️ Edit copy';
+  }
+  function autosave(){
+    try { localStorage.setItem(key, JSON.stringify({ t: Date.now(), h: regions.map(function(r){ return r.innerHTML; }) })); } catch (e) {}
+  }
+  document.addEventListener('input', function(){ if (editing) autosave(); });
+  document.getElementById('eb-toggle').onclick = function(){ if (editing) autosave(); setEditing(!editing); };
+  document.getElementById('eb-discard').onclick = function(){
+    if (confirm('Throw away every edit you made on this page?')) { localStorage.removeItem(key); setEditing(false); location.reload(); }
+  };
+  // Build clean HTML: undo everything the page's own script added (copy buttons, checklist inputs) so the saved file loads like the original.
+  function exportHTML(){
+    var root = document.documentElement.cloneNode(true);
+    root.querySelectorAll('.edit-ui, .edit-restore').forEach(function(n){ n.remove(); });
+    root.querySelectorAll('[contenteditable]').forEach(function(n){ n.removeAttribute('contenteditable'); });
+    var body = root.querySelector('body'); if (body) { body.classList.remove('editing'); body.className = body.className.replace(/\bprint-\S+/g,'').trim(); if (!body.className) body.removeAttribute('class'); }
+    root.querySelectorAll('.msg-head .right').forEach(function(w){ var when = w.querySelector('.when'); if (when) w.parentNode.insertBefore(when, w); w.remove(); });
+    root.querySelectorAll('.copy-btn').forEach(function(n){ n.remove(); });
+    root.querySelectorAll('#checklist li').forEach(function(li){
+      li.querySelectorAll(':scope > input.cb').forEach(function(n){ n.remove(); });
+      var txt = li.querySelector(':scope > .txt'); if (txt) { while (txt.firstChild) li.insertBefore(txt.firstChild, txt); txt.remove(); }
+      li.classList.remove('done'); if (!li.className) li.removeAttribute('class');
+    });
+    root.querySelectorAll('#checklist ul.check').forEach(function(ul){ ul.classList.remove('live'); });
+    var c = root.querySelector('#ck-count'); if (c && ck0.count != null) c.textContent = ck0.count;
+    var b = root.querySelector('#ck-bar'); if (b) { if (ck0.bar) b.setAttribute('style', ck0.bar); else b.removeAttribute('style'); }
+    return '<!DOCTYPE html>\n' + root.outerHTML;
+  }
+  window.__gmmEditExport = exportHTML;
+  document.getElementById('eb-save').onclick = function(){
+    if (editing) autosave();
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([exportHTML()], { type: 'text/html' }));
+    a.download = slug + '-index.html'; document.body.appendChild(a); a.click(); a.remove();
+  };
+})();
+</script>
+
+
+
+<script>
+  // "Copy email / text / post" buttons on every message card.
+  document.querySelectorAll('.msg').forEach(function (msg) {
+    var type = msg.querySelector('.msg-head .type i');
+    var label = type.classList.contains('sms') ? 'Copy text' : type.classList.contains('post') ? 'Copy post' : 'Copy email';
+    var when = msg.querySelector('.msg-head .when');
+    var wrap = document.createElement('div'); wrap.className = 'right';
+    when.parentNode.insertBefore(wrap, when); wrap.appendChild(when);
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'copy-btn'; btn.textContent = label;
+    wrap.appendChild(btn);
+    btn.addEventListener('click', function () {
+      var body = msg.querySelector('.msg-body');
+      var parts = [];
+      body.querySelectorAll(':scope > .subject, :scope > p, :scope > ol, :scope > ul').forEach(function (el) {
+        if (el.classList.contains('subject')) parts.push('Subject: ' + el.lastChild.textContent.trim());
+        else if (el.tagName === 'OL') parts.push(Array.from(el.children).map(function (li, i) { return (i + 1) + '. ' + li.textContent.trim(); }).join('\n'));
+        else if (el.tagName === 'UL') parts.push(Array.from(el.children).map(function (li) { return '- ' + li.textContent.trim(); }).join('\n'));
+        else if (!el.classList.contains('stage')) parts.push(el.textContent.trim());
+      });
+      var text = parts.join('\n\n');
+      function ok() { btn.textContent = 'Copied ✓'; btn.classList.add('done'); setTimeout(function () { btn.textContent = label; btn.classList.remove('done'); }, 1600); }
+      function fallback() {
+        var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); ok(); } catch (e) {}
+        ta.remove();
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, fallback); else fallback();
+    });
+  });
+</script>
+<script>
+  // Print just one sheet; clear its typed-in fields.
+  document.querySelectorAll('[data-print]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var which = btn.getAttribute('data-print');
+      document.body.classList.add('print-one', 'print-' + which);
+      window.print();
+    });
+  });
+  window.addEventListener('afterprint', function () { document.body.classList.remove('print-one', 'print-cheat', 'print-signup', 'print-letter'); });
+  document.querySelectorAll('[data-clear]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#' + btn.getAttribute('data-clear') + ' input').forEach(function (i) { i.value = ''; });
+    });
+  });
+</script>
+<script>
+  // Interactive setup checklist, saved per browser in localStorage.
+  (function () {
+    var KEY = 'gmm-hgc-checklist-v1';
+    var items = Array.prototype.slice.call(document.querySelectorAll('#checklist ul.check > li'));
+    if (!items.length) return;
+    var saved = [];
+    try { saved = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) {}
+    function save() {
+      var on = items.map(function (li, i) { return li.classList.contains('done') ? i : -1; }).filter(function (i) { return i >= 0; });
+      try { localStorage.setItem(KEY, JSON.stringify(on)); } catch (e) {}
+    }
+    function update() {
+      var n = items.filter(function (li) { return li.classList.contains('done'); }).length;
+      document.getElementById('ck-count').textContent = n + ' of ' + items.length;
+      document.getElementById('ck-bar').style.width = (100 * n / items.length) + '%';
+    }
+    items.forEach(function (li, i) {
+      var txt = document.createElement('div'); txt.className = 'txt';
+      while (li.firstChild) txt.appendChild(li.firstChild);
+      var cb = document.createElement('input'); cb.type = 'checkbox'; cb.className = 'cb'; cb.id = 'ck-' + i;
+      cb.setAttribute('aria-label', txt.textContent.trim().slice(0, 80));
+      li.appendChild(cb); li.appendChild(txt);
+      function set(v) { cb.checked = v; li.classList.toggle('done', v); }
+      set(saved.indexOf(i) >= 0);
+      cb.addEventListener('change', function () { set(cb.checked); save(); update(); });
+      li.addEventListener('click', function (e) {
+        if (e.target === cb || e.target.closest('a, input, button')) return;
+        if (getSelection && String(getSelection()).length) return;
+        set(!cb.checked); save(); update();
+      });
+    });
+    document.querySelectorAll('#checklist ul.check').forEach(function (ul) { ul.classList.add('live'); });
+    document.getElementById('ck-reset').addEventListener('click', function () {
+      items.forEach(function (li) { li.classList.remove('done'); li.querySelector('.cb').checked = false; });
+      save(); update();
+    });
+    document.getElementById('ck-progress').hidden = false;
+    update();
+  })();
+</script>
+
+
+</body></html>
