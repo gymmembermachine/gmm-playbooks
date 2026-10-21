@@ -324,6 +324,14 @@
 
 /* theme:blackgold */:root{--night:#000000;--night-2:#171717;--orange:#b8860b;--orange-deep:#8a6508;--orange-tint:#fff4d6;--orb-hi:#ffe08a;--orb-mid:#d4a017;--orb-lo:#6b4f00;--accent-rgb:184,134,11;--paper:#f7f6f2;--line:#e3e0d6;--paper-2:#efece3;--paper-3:#f2f0e8;--paper-4:#e6e2d6;}.cover::before{background:url("../assets/gmm-gears.png") no-repeat center/contain;border-radius:0;opacity:.38;width:1040px;height:1040px;right:-300px;top:-250px;pointer-events:none}@media (max-width:720px){.cover::before{width:620px;height:620px;right:-230px;top:-120px}}@media print{.cover::before{opacity:.22}}
 .hl{background:#fff4d6;color:inherit;font-weight:700;padding:2px 6px;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+details.seq{margin:14px 0}
+details.seq>summary{cursor:pointer;list-style:none;font:700 15px/1.3 Inter,sans-serif;padding:14px 18px;border:2px dashed var(--line);border-radius:12px;background:var(--paper-2);color:var(--ink)}
+details.seq>summary::-webkit-details-marker{display:none}
+details.seq>summary::before{content:"▸  Click to expand: ";color:var(--orange)}
+details.seq[open]>summary::before{content:"▾  Click to collapse: "}
+details.seq>summary small{display:block;font:500 13px/1.4 Inter,sans-serif;color:var(--ink-3);margin-top:4px}
+details.seq>summary:hover{border-color:var(--orange)}
+@media print{details.seq>summary{display:none}}
 </style>
 </head>
 <body>
@@ -694,7 +702,8 @@
   <h2>3 emails + 3 texts</h2>
   <div class="note">Merge tags are set for your GMM / Ops / GHL software. <span class="mt">{{contact.first_name}}</span>, <span class="mt">{{location.name}}</span> and <span class="mt">{{user.first_name}}</span> fill themselves in. None of these six say the offer (on purpose -&gt; curiosity). The offer comes up in the chat when they ask, or at the VIP session (section 08).</div>
 
-  <div class="msg">
+  <details class="seq"><summary>3 emails + 3 texts, already written and copy-ready<small>You don't have to read these to run the play. Open them to review or copy; your tech setup is in the checklist.</small></summary>
+<div class="msg">
     <div class="msg-head"><div class="type"><i>Email</i>Email 1</div><div class="when">Day 1 · Mon Nov 16</div></div>
     <div class="msg-body">
       <div class="subject"><span>Subject:</span>Should I save you a spot?</div>
@@ -768,6 +777,7 @@
     <div class="msg-head"><div class="type"><i class="sms">SMS</i>Text 3</div><div class="when">Last day · afternoon</div></div>
     <div class="msg-body"><p>Hey <span class="mt">{{contact.first_name}}</span>, <span class="mt">{{user.first_name}}</span> at <span class="mt">{{location.name}}</span> here, last few hours of our Black Friday spots being open ⏰ After tonight, we're back to normal pricing. Should I <strong>save a spot for you?</strong></p></div>
   </div>
+</details>
 </section>
 
 <!-- ============ 07 REPLIES ============ -->
@@ -1164,4 +1174,5 @@ body.editing a{pointer-events:none}
 </script>
 
 
+<script>window.addEventListener('beforeprint',function(){document.querySelectorAll('details.seq').forEach(function(d){d.setAttribute('open','');});});</script>
 </body></html>

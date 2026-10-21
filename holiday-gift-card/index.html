@@ -333,6 +333,15 @@
 
 /* theme:holiday */:root{--night:#0f2a1f;--night-2:#174032;--orange:#c62828;--orange-deep:#9a1f1f;--orange-tint:#fbe9e6;--orb-hi:#ff6b6b;--orb-mid:#c62828;--orb-lo:#7f0000;--accent-rgb:198,40,40;--paper:#fbf7f1;--line:#e8dfd3;--paper-2:#f6efe6;--paper-3:#f3ede5;--paper-4:#efe7dc;}
 @media (max-width:720px){.cover::before{opacity:.45;top:-200px;right:-200px}}
+details.seq{margin:14px 0}
+details.seq>summary{cursor:pointer;list-style:none;font:700 15px/1.3 Inter,sans-serif;padding:14px 18px;border:2px dashed var(--line);border-radius:12px;background:var(--paper-2);color:var(--ink)}
+details.seq>summary::-webkit-details-marker{display:none}
+details.seq>summary::before{content:"▸  Click to expand: ";color:var(--orange)}
+details.seq[open]>summary::before{content:"▾  Click to collapse: "}
+details.seq>summary small{display:block;font:500 13px/1.4 Inter,sans-serif;color:var(--ink-3);margin-top:4px}
+details.seq>summary:hover{border-color:var(--orange)}
+@media print{details.seq>summary{display:none}}
+.cover h1 span{color:#ef4444}
 </style>
 </head>
 <body>
@@ -629,7 +638,8 @@
   </div>
   <div class="note">Merge tags are set for your GMM / Ops / GHL software. Set the four custom values once (Settings › Custom Values, see the Setup Checklist) and the member messages fill themselves in. The friend text is sent by hand from the gym phone the day their card shows up.</div>
 
-    <div class="msg">
+    <details class="seq"><summary>1 email + 3 texts, already written and copy-ready<small>You don't have to read these to run the play. Open them to review or copy; your tech setup is in the checklist.</small></summary>
+<div class="msg">
     <div class="msg-head"><div class="type"><i class="sms">SMS</i>Member Text 1 · Reminder<span class="mode auto">Can automate</span></div><div class="when">Mon Jan 4 (~4 weeks before deadline)</div></div>
     <div class="msg-body"><p>Hey <span class="mt">{{contact.first_name}}</span>, quick one from <span class="mt">{{location.name}}</span>! The gift card in your holiday letter is good through <span class="mt">{{custom_values.hgc_deadline}}</span>. If you haven't handed it off yet, this week is perfect (everybody's thinking about January right now!). Snap a pic and text it to them if that's easier. Any Qs, just reply here :)</p></div>
   </div>
@@ -659,6 +669,7 @@
     <div class="msg-head"><div class="type"><i class="sms">SMS</i>Friend Text · Booked<span class="mode hand">By hand</span></div><div class="when">The day their card comes in, right after you book them</div></div>
     <div class="msg-body"><p>Hey <span class="mt">{{contact.first_name}}</span>, this is <span class="mt">{{user.first_name}}</span> from <span class="mt">{{location.name}}</span>! So glad <span class="blank">[MEMBER NAME]</span> passed their gift card to you :) You're all set for <span class="blank">[SESSION DAY + TIME]</span> and your <span class="mt">{{custom_values.hgc_value}}</span> is locked in. Nothing to do before then, just come 10 min early, wear whatever you'd wear for a walk, bring water. Need to move it? Reply here anytime!</p></div>
   </div>
+</details>
 
   <div class="note" style="margin-top:4px"><strong>If they text the gym number instead of scanning:</strong> same text, but swap the middle for “Grab a time that works here: <span class="mt">{{custom_values.hgc_redeem_link}}</span>” and book them the second they pick one. Don't let a card sit in a text thread for three days.</div>
   
@@ -1003,4 +1014,5 @@ body.editing a{pointer-events:none}
 </script>
 
 
+<script>window.addEventListener('beforeprint',function(){document.querySelectorAll('details.seq').forEach(function(d){d.setAttribute('open','');});});</script>
 </body></html>
