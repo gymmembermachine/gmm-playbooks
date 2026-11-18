@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="GMM's Free A/B offer: a true free 30 days or a legacy rate that starts today. Price it, project it, set the Netflix close dates, plus word tracks and targets.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free A/B Offer">
+<meta property="og:description" content="Two ways to get started: a true free 30 days, or a legacy rate that starts today.">
+<meta property="og:url" content="https://gymmembermachine.github.io/gmm-playbooks/free-ab/">
+<meta property="og:image" content="https://gymmembermachine.github.io/gmm-playbooks/free-ab/cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="player">
+<meta name="twitter:title" content="Free A/B Offer">
+<meta name="twitter:image" content="https://gymmembermachine.github.io/gmm-playbooks/free-ab/cover.png">
+<meta name="twitter:player" content="https://gymmembermachine.github.io/gmm-playbooks/free-ab/">
+<meta name="twitter:player:width" content="960">
+<meta name="twitter:player:height" content="1400">
+<link rel="alternate" type="application/json+oembed" href="https://gymmembermachine.github.io/gmm-playbooks/free-ab/oembed.json" title="Free A/B Offer">
+
+<title>Free A/B Offer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+[hidden]{display:none !important}
+/* Layout: navy masthead band, then a two-pane "offer sheet" (inputs | live results), then reference sections in one reading column. A = cyan (free), B = yellow (fast action). */
+:root{
+  --bg:#F3F6FA; --surface:#FFFFFF; --surface-2:#E9EFF6; --ink:#0E1B2B; --ink-2:#4A5B70; --line:#D5DEE9;
+  --navy:#0b1622; --navy-2:#16283c; --hero:#16283c; --blue:#1E6FE6; --blue-ink:#1659BD;
+  --a:#0F93D1; --a-soft:#DDF1FB; --b:#B58E00; --b-fill:#FFE500; --b-soft:#FFF7C2;
+  --good:#1B8A4B; --good-soft:#DDF3E5; --warn:#B26A00; --warn-soft:#FDEFD6; --bad:#C2392B; --bad-soft:#FBE1DE;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif; --body:"Inter","Helvetica Neue",Arial,sans-serif;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0b1622; --surface:#12233a; --surface-2:#1a2f4a; --ink:#E8EEF6; --ink-2:#9DB0C7; --line:#26405f;
+  --blue:#5B9BFF; --blue-ink:#8DB8FF; --hero:#1d4f9c; --a:#4FC3F7; --a-soft:#0f3550; --b:#FFE500; --b-fill:#FFE500; --b-soft:#3a3610;
+  --good:#4CC983; --good-soft:#123826; --warn:#F2A93B; --warn-soft:#3d2c0f; --bad:#FF7B6B; --bad-soft:#401b17; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b1622; --surface:#12233a; --surface-2:#1a2f4a; --ink:#E8EEF6; --ink-2:#9DB0C7; --line:#26405f;
+  --blue:#5B9BFF; --blue-ink:#8DB8FF; --hero:#1d4f9c; --a:#4FC3F7; --a-soft:#0f3550; --b:#FFE500; --b-fill:#FFE500; --b-soft:#3a3610;
+  --good:#4CC983; --good-soft:#123826; --warn:#F2A93B; --warn-soft:#3d2c0f; --bad:#FF7B6B; --bad-soft:#401b17; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(24px,3.2vw,32px);font-weight:850;font-stretch:88%;text-transform:uppercase}
+h3{font-size:18px;font-weight:800}
+p{margin:0}
+a{color:var(--blue-ink)}
+.num{font-variant-numeric:tabular-nums}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+
+/* masthead */
+.mast{background:linear-gradient(160deg,#16283c 0%,#0b1622 70%);color:#fff}
+.mast .wrap{padding-block:28px 30px;display:grid;gap:18px}
+.mast img{width:150px;height:auto;display:block}
+.mast h1{font-size:clamp(40px,7vw,72px);font-weight:900;font-stretch:80%;text-transform:uppercase;line-height:.92}
+.mast h1 .ab{display:inline-flex;gap:.12em}
+.mast h1 .ab span{display:inline-block;padding:0 .14em;border-radius:6px}
+.mast h1 .ab .xa{background:#4FC3F7;color:#0b1622}
+.mast h1 .ab .xb{background:#FFE500;color:#0b1622}
+.mast .lede{max-width:62ch;color:#C9D6E6;font-size:16px}
+.mast nav{display:flex;flex-wrap:wrap;gap:8px}
+.mast nav a{color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:6px 12px;border:1px solid #2f4d70;border-radius:999px}
+.mast nav a:hover,.mast nav a:focus-visible{background:#1E6FE6;border-color:#1E6FE6;outline:none}
+
+section{padding-block:44px 8px}
+.sec-head{display:grid;gap:6px;margin-bottom:20px}
+.sec-head p{color:var(--ink-2);max-width:68ch}
+
+/* the offer: two options side by side */
+.offer{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.opt{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:12px;align-content:start;min-width:0}
+.opt .tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:900;font-size:22px;text-transform:uppercase;font-stretch:85%}
+.opt .tag i{font-style:normal;width:36px;height:36px;border-radius:8px;display:grid;place-items:center;color:#0b1622;font-size:22px}
+.opt.a .tag i{background:#4FC3F7}
+.opt.b .tag i{background:#FFE500}
+.opt ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.opt .who{font-size:13px;color:var(--ink-2);border-top:1px dashed var(--line);padding-top:10px}
+
+/* calculator */
+.calc{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:20px;align-items:start}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;min-width:0}
+.inputs{display:grid;gap:16px}
+.inputs h3{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);font-family:var(--body);font-weight:700}
+.field{display:grid;gap:6px}
+.field label{display:flex;justify-content:space-between;gap:10px;font-weight:600;font-size:14px}
+.field label small{font-weight:500;color:var(--ink-2);font-size:12px;text-align:right}
+.field .row{display:grid;grid-template-columns:1fr 92px;gap:10px;align-items:center}
+.field input[type=number],.field input[type=date]{width:100%;font:inherit;font-variant-numeric:tabular-nums;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);text-align:right}
+.field input[type=date]{text-align:left}
+.field input:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+input[type=range]{width:100%;accent-color:var(--blue)}
+.field.a input[type=range]{accent-color:#0F93D1}
+.field.b input[type=range]{accent-color:#C9A400}
+.presets{display:flex;flex-wrap:wrap;gap:6px}
+.presets button{font:inherit;font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);cursor:pointer}
+.presets button:hover,.presets button:focus-visible{border-color:var(--blue);outline:none}
+.presets button[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:#fff}
+
+.results{display:grid;gap:16px;min-width:0}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:grid;gap:2px;min-width:0}
+.kpi .v{font-family:var(--display);font-weight:850;font-size:clamp(24px,3vw,32px);font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--ink-2);font-weight:600}
+.kpi.hero{background:var(--hero);border-color:var(--hero);color:#fff}
+.kpi.hero .l{color:#C9D6E6}
+
+.flow{display:grid;gap:10px}
+.bar{display:grid;grid-template-columns:120px minmax(0,1fr) 64px;gap:10px;align-items:center;font-size:13px}
+.bar .t{font-weight:600}
+.bar .track{height:22px;background:var(--surface-2);border-radius:6px;overflow:hidden;display:flex}
+.bar .seg{height:100%;transition:width .25s ease}
+.bar .n{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.seg.all{background:var(--ink-2);opacity:.45}
+.seg.sa{background:#4FC3F7}
+.seg.sb{background:#FFE500}
+.seg.sm{background:var(--good)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--ink-2)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+.score{width:100%;border-collapse:collapse;font-size:14px}
+.score th{text-align:left;font-size:12px;color:var(--ink-2);font-weight:600;padding:6px 8px;border-bottom:1px solid var(--line)}
+.score td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.score td.num{text-align:right;white-space:nowrap}
+.pill{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.pill.good{background:var(--good-soft);color:var(--good)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.pill.bad{background:var(--bad-soft);color:var(--bad)}
+.tablebox{overflow-x:auto}
+
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.compare .panel{display:grid;gap:4px}
+.compare .big{font-family:var(--display);font-weight:850;font-size:26px;font-variant-numeric:tabular-nums}
+.delta-pos{color:var(--good)} .delta-neg{color:var(--bad)}
+.note{font-size:13px;color:var(--ink-2)}
+
+/* tools row */
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tool{display:grid;gap:14px;align-content:start}
+.say{background:var(--surface-2);border-radius:8px;padding:14px;font-size:15px;line-height:1.6}
+.say b{font-weight:700}
+.copy{justify-self:start;font:inherit;font-size:13px;font-weight:600;padding:7px 12px;border-radius:8px;border:1px solid var(--blue);background:transparent;color:var(--blue-ink);cursor:pointer}
+.copy:hover,.copy:focus-visible{background:var(--blue);color:#fff;outline:none}
+.mini{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.mini div{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px;display:grid}
+.mini b{font-family:var(--display);font-size:20px;font-variant-numeric:tabular-nums}
+.mini span{font-size:12px;color:var(--ink-2)}
+.check{font-size:13px;font-weight:600;padding:8px 10px;border-radius:8px}
+.check.good{background:var(--good-soft);color:var(--good)} .check.bad{background:var(--bad-soft);color:var(--bad)}
+
+/* reference */
+.ref{display:grid;gap:14px}
+.script{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;display:grid;gap:10px;min-width:0}
+.script .when{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-ink)}
+.script blockquote{margin:0;font-size:16px;line-height:1.6;border-left:3px solid var(--line);padding-left:14px}
+.script .src{font-size:12px;color:var(--ink-2)}
+.script .src a{color:var(--ink-2)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.list{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;display:grid;gap:10px;align-content:start;min-width:0}
+.list ul,.list ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.timeline{display:grid;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.step{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.step:last-child{border-bottom:0}
+.step .d{font-family:var(--display);font-weight:850;font-size:15px;text-transform:uppercase;color:var(--blue-ink)}
+.bench{width:100%;border-collapse:collapse;font-size:14px;background:var(--surface);border-radius:var(--r);overflow:hidden}
+.bench th,.bench td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.bench th{font-size:12px;color:var(--ink-2);background:var(--surface-2)}
+.sources{display:grid;gap:8px;font-size:14px}
+.foot{padding-block:40px 56px;color:var(--ink-2);font-size:13px}
+
+@media (max-width:900px){
+  .calc{grid-template-columns:minmax(0,1fr)}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:700px){
+  .offer,.tools,.cols,.compare{grid-template-columns:minmax(0,1fr)}
+  .bar{grid-template-columns:86px minmax(0,1fr) 52px}
+  .step{grid-template-columns:minmax(0,1fr);gap:4px}
+  .mini{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){.bar .seg{transition:none}}
+
+/* v3: step-by-step calculator */
+.stack{display:grid;gap:18px;align-content:start;min-width:0}
+.panel input[type=number],.panel input[type=text],.panel input[type=date],.panel select{width:100%;font:inherit;font-variant-numeric:tabular-nums;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);min-width:0}
+.panel select{cursor:pointer}
+.panel input:focus-visible,.panel select:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+.field label small,.cell label small{display:block;font-weight:500;color:var(--ink-2);font-size:12px;text-align:left}
+.panel input[type=number]{text-align:left}
+.chartbox{max-width:780px}
+.field label{display:block}
+.pricebar{display:grid;grid-template-columns:minmax(0,1fr) 220px 140px;gap:16px;align-items:start;max-width:820px}
+.unit{display:flex;align-items:stretch;border:1px solid var(--line);border-radius:8px;background:var(--bg);overflow:hidden}
+.unit span{display:grid;place-items:center;padding:0 10px;color:var(--ink-2);font-weight:600;background:var(--surface-2);white-space:nowrap}
+.panel .unit input{border:0;border-radius:0;background:transparent}
+.unit:focus-within{outline:2px solid var(--blue);outline-offset:1px}
+.panel .unit input:focus-visible{outline:none}
+.mrow{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,.8fr) minmax(0,1.2fr) minmax(0,1.2fr);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.cell{display:grid;gap:8px;align-content:start;padding:14px;border-right:1px solid var(--line);min-width:0}
+.cell:last-child{border-right:0}
+.cell label{font-size:13px;font-weight:700}
+.cell.is-out{background:var(--surface-2)}
+.calcd{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;padding:4px 0}
+.calcd b{font-family:var(--display);font-weight:850;font-size:28px;font-variant-numeric:tabular-nums;line-height:1.1}
+.calcd span{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-ink)}
+.calcd em{font-style:normal;font-weight:600;font-size:14px;color:var(--ink-2)}
+.cell .eq{font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+@media (max-width:900px) and (min-width:701px){.pricebar{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.pricebar .field:first-child{grid-column:1/-1}}
+.kpis.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.chartbox{margin:0;display:grid;gap:8px}
+.check.warn{background:var(--warn-soft);color:var(--warn)}
+.projbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:760px}
+.assume{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding:14px;background:var(--surface-2);border-radius:var(--r)}
+.assume label{font-size:13px;font-weight:700}
+.projbar label,.pricebar label,.dates label{font-size:13px;font-weight:700}
+.field{min-width:0}
+.proj{width:100%;border-collapse:collapse;font-size:14px}
+.proj th{text-align:right;font-size:12px;color:var(--ink-2);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+.proj th:first-child,.proj td:first-child{text-align:left}
+.proj td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right}
+.proj td.cash{position:relative;min-width:120px}
+.cbar{position:absolute;right:10px;top:7px;bottom:7px;background:var(--good-soft);border-radius:4px;max-width:calc(100% - 20px)}
+.cval{position:relative;font-weight:700}
+.panel.dates{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px;align-items:start}
+.dates .mini{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){
+  .mrow{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .cell:nth-child(2){border-right:0}
+  .cell:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .assume{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .panel.dates{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:700px){
+  .kpis.three{grid-template-columns:minmax(0,1fr)}
+  .pricebar,.projbar{grid-template-columns:minmax(0,1fr)}
+  .mrow{grid-template-columns:minmax(0,1fr)}
+  .cell{border-right:0;border-bottom:1px solid var(--line)}
+  .cell:last-child{border-bottom:0}
+}
+
+.flowsteps{list-style:none;margin:0 0 16px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:fs}
+.flowsteps li{counter-increment:fs;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;gap:6px;align-content:start;min-width:0}
+.flowsteps li::before{content:counter(fs);width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--hero);color:#fff;font-family:var(--display);font-weight:800;font-size:14px}
+.flowsteps b{font-family:var(--display);font-weight:800;font-size:16px}
+.flowsteps span{font-size:14px;color:var(--ink-2)}
+.sec-head p + p{margin-top:2px}
+@media (max-width:900px){.flowsteps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:500px){.flowsteps{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAAC2CAYAAAABdF7LAAAAAXNSR0IArs4c6QAAAOZlWElmTU0AKgAAAAgABgEaAAUAAAABAAAAVgEbAAUAAAABAAAAXgEoAAMAAAABAAIAAAExAAIAAABOAAAAZgE7AAIAAAAHAAAAtIdpAAQAAAABAAAAvAAAAAAAAABgAAAAAQAAAGAAAAABQ2FudmEgKFJlbmRlcmVyKSBkb2M9REFFUEhQN0FtQ00gdXNlcj1VQUJITmN5ZFpncyBicmFuZD1CQUJITlZvNEhOYyB0ZW1wbGF0ZT0AZ3Job2ZmAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAB4KADAAQAAAABAAAAtgAAAACs3MzTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAC7WlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNi4wLjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iCiAgICAgICAgICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyI+CiAgICAgICAgIDxkYzpjcmVhdG9yPgogICAgICAgICAgICA8cmRmOlNlcT4KICAgICAgICAgICAgICAgPHJkZjpsaT5ncmhvZmY8L3JkZjpsaT4KICAgICAgICAgICAgPC9yZGY6U2VxPgogICAgICAgICA8L2RjOmNyZWF0b3I+CiAgICAgICAgIDxkYzp0aXRsZT4KICAgICAgICAgICAgPHJkZjpBbHQ+CiAgICAgICAgICAgICAgIDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+Z21tIC0gMzwvcmRmOmxpPgogICAgICAgICAgICA8L3JkZjpBbHQ+CiAgICAgICAgIDwvZGM6dGl0bGU+CiAgICAgICAgIDx4bXA6Q3JlYXRvclRvb2w+Q2FudmEgKFJlbmRlcmVyKSBkb2M9REFFUEhQN0FtQ00gdXNlcj1VQUJITmN5ZFpncyBicmFuZD1CQUJITlZvNEhOYyB0ZW1wbGF0ZT08L3htcDpDcmVhdG9yVG9vbD4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+ClQcqLoAAEAASURBVHgB7Z0HnFXF2f/P3V0WUDooYAMrKvYOYu+V2LAkMfXVFBNjLDEmJvq+Ro0x/qMmmmISS0yxIyJgJRYQFCsWFAWxoKL0uu3+v7+796x3754yc+65u3dlnv389pR55pk5z5kzz/PMzDnX8xw5DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgNOA04DTgN5DWQ6cyayGazXan/OmBd0A3Ugmqg68qCRlAPVoNVYKW2mUxGadZEeTl9meYXvymvTWVs5IbV2VSGKZ9N/X1eU9mmfL7cNLYmZZrwlFIXE/kmPH4dbHj9PEm2puWY8JnwJKmjn8dUvimf5Nrw+vVor2171M2kDBOeMJ2UkjdMZked73QGGOXL0A4A/cGmYAswFAwGfUF3UAVkfGV4F4MFYB6YC+YAHX8KlmAgm9gaEWVvAOMmwNSAS79LwetpGWLqoPJVD5s66DpfJ0+OkDGEHenLVMZs8n/WnDud/9RhIyQJJnWQHudQh4/TKT1cCvVS+9oBqMw4Es8y8Fpa91cFUgc5ktuDGh0bkJzLV6LqgMyB8GwKTPRtUGQsyxvUZ0kYF/XZkjQ9w6b10TOkZyk1og7Sh/RiWoe3qMPCsAogT/3OjkD3Lyk1kFFBQx3QfV0uUO4atomJuikwUd26JBZil3ExdZ5VnCVfDz1fpejIFytdCdKNgis9i9KV9NcpyPQB7/CL4cYpyt0Q6ObtD0YCGd+ewJTUqD8AL4GnwFTkvsv2I26aDHYcDYfh/wEZeRNSBy353wRzTDJE8VDXXqRfDA4Cpp2G+P5I3llco+9sfIdzJxvK0DX8BtwIUiHqoo7qh+BEYHIdqsPl4CZQbpKDcysw6ahUr3ngOLAIpEXDEHQL0OhOnH5Uh/fAEUCdUBgdSsKlIE5eWH6b86rTN8B/IzJdSNoBwKQ+4vkJuBukQrRB3V89S/sDkzromtRmHwBhpH7hemDjIBfK0vMpg7ICLATvg7fA69R3NtuPwGc8xyb1hbUV9eDoD2AgSJK/lbCYA+nqCfD1AD7p6PfAJgAIEJO7BulKDoqCAz2HMvgz0dUctvPRU6oOGzJTp4o3wChTdVSnOAqMAfsCG6MLewvJ69o0jy+xVaMeD8ZSzqvcsE/YjyIZ7RfAqUAepQmpvB8h/6fIj+ogI2WRvwqGY8HpwMZ7lLNxN2Xr4fZpG3ZUL1P6KuXfjIxVphli+NQJnAx0X01pC1PGEvnWJ78MoClJj2qTY00zGPCdAI+cPVPqDaM62Kj2JR6be25adhifHOZAoi1lSNgW2NRHbfB+2mBa0c3mlC/HqQ8wpaExjLouXZMMcJokQzITTAIPoQc507YOn/oP1U3PXnuQ+tYgUr+pesgAl4MWIPRZ8CB6epytRs7S6rdSr69uSsUSCuxF5fYG/wduBEeBpMaXrG1InfrZ4O/gLMrbBoQat/yN/F943wA29E2YD0a2HtCkpA7jIhBavwDB8qIvpd7yCHOUr0Nf/9hwuzN8uxnymrAdCpON8ZXMASaCU+DRsKgtnYpe5SiWTMiRQTjeUpCiCj0rUZSNSixDWqHDVyxebdjG8Cm/nJw0nTA54LZ1kHMWR4rK0ibd25HgUvBX8A3ayRC2tlSOuoXVIWpEsZz1WI8KHQmuBRqNOBZdmdw3WNufKtYAozR5aqeAm8BpQMNx5SI1Zg1H6YYdQNmKJgIJY6YhoSvAkkCG4JOS9zOwUXBy9Nl8fc6DS5GrKamR3w7uL8qgobd+RefiDjUvejL1KLm9IKMrsjSCYEvt9RAlKedALmao7QWF8KujVXRoQzJotvfURn7avIqO4xyG4jLlNB5XfDLJcf55OjFB3vaKHqOqprZxFfgl1zE0inEtT1OkrefyBvB9dLVhJeqj5A61HBeVV9YPkH0NSNPrjavuQTD8EZxEHaK84zvhuRdEeXkkt6I9OFJDkDEzJvgVNR8OvmqcqZnxRTa/wWEorqOipahrCytGow9JjFOxPDkRMjK21C+vC9t8tvzyoG1JeUbbZirm5/rUacjZ1NaGxN+ZDLCMb5KRrBPRka3hDtLjXpzcPigh5lx7jcLEVCPXPr4B0y/QhxwTR+Ea0HOh4Ocn6CqN/iu8pAQpFWeAUdIGUha4EMhTbm8aSoFXgy9Tl95BhWPU6jj/K/B6UHrEuTNJ2yciPShpKCfVgGQ4TWkhjP9HPd8LyKCOL0nnp1GCQwLkGZ9Cn3ImNL+ZpHwNDdsMvxvXq4gxaZQj41Bqe9Ww/MFF9TE9TOI4mMpOm08OoE179svfjh0Zz8TEPZKzohGYJG2pUgywf/2ns3NC/rnyz7ltWw3onn8fnIGurAKgtqLSPVNRBhjlqIGfC84CUlpHkbwmGdjjwho3xm026VcCm6FodTzyWo0WIMCnYfcfgp2AKdXD+A8wPiSDPOYknZ+Mp+Y6k3RcflXk0CQdRlTkU6qB8+sRtU3qJe+M0N2jBBukHQNPUgdgkIH8SmFRG6xJUBlNn5xCGyylb9Czd1iCspWlP2WrDpVC0oP6B+nTUbQGZOtkW0py4KKLsE+tGAOcNzbf5BJ+ANTZdzRp3vYIEPXA3Un63aB4mJdToTSKFHlimguNowNg+FYcU1H6ixwHDT37bHpYkxrRvcm7jS8owVYLabZOkE9ZFDUL5aakkaTuZ+J5ctqDnKIxJVxcpUVnUZeS1MmRTBnPDaOEx6QdWUJ+OZBpOoGfIW8B0IjVcmDTj8Ceo+H8V59SaZRWH67RxjV5KLhIoiNfNwqAzuFZq5goOIkX6l9MalsUIkfgEPBTEGXwospUA14MtNUNE0mWlK3oSQ+PqewmeJ8DV+WHm9ltS0qj7leQsgfQ8JgpfR/Gx8ETYRmQuxFpvwA2RkcP9GXU6/0wuZwvpaOWHo8HL0XID0zietTWTgVJoxcZKDkP74KyUL6OpcylqnNXJPphggruSp5dEuTzsySNnP38hVt1dKtBKZ2onqEwKqUNaopKev5jmPCw89xf9QUnh6UbnNezKKifKZWk41vBEqC2Lcdvkzw2zp9jE0vqOw8E98dy2jGsgF33MGkb8Ptgu1Jbc8vYTgbLgK5TfYgcID2j6s/Vjmz6R9hzUzzbs31WBx1NFWGAUcJQ8L9AHootLSWDOmUpVEbzbfAZUOORwRgMFLWpgxsG1LgVrUTRqySehyGbEcWkNHhm82Bfzu6NQI3ChPSwXUy+U8n/aXGGfEchIy3Dbkp6oP8BxsdkKCX6kOjjqd//o962nZDmkA+KqVtUstqqHrxykjpoGfmkpA70UHCzjQD0qc5lDFBHnJRKMWrFZc7hxOTik5bHH0Twl+osaBj6ZtqgnAQbkpO8p02GIl7dHz3j7xWdT3LYQKbruIa5ysz1yDFVv6BnXo7qEcC0P9mR/IhK9IEOimlDqpsMugxfEpLRnpkkY1EeGfELwGwgmXpONC2n9jMc7AfUp2wGlG5Cyi8HzhlgaYuGI2N4NthBx5Y0D/4Hwa3gORqgjFAgUY467wPBaWBvsD4Iorc4eSGyngpKDDl3N+fVEL4O9CCZkPi/Sb1kzIrrvQ9pZ5oIKeB5kf2ooWefNey6/fS4rZwZ1W9cHGNR+rEcq4MphUrNH1d2TxiEUkjz5P/intpEALquo0splLwDKJdiU+mEpyDvu8C0UwuquhzgMCrVAO+O4B3BtLACis9LN5wbA9YtTrM4roU3TUenZUSO+9aI7I/A/dRVfc9vwemgCsSRRl3Uj9o6JGFy1XYvAupfk7aBbJhwy/Mr0M2KgjwKuKSnl9DTnWy/BH4NNgWmNIq8VciNaqOmskriM7m5JRVgkFmR6dcM+IpZZCh/BX6EIqeCYiPWip/0heAuTv4PuB6814qh+UAN7mL4ZNSNCX7NU1wBXjPO1NywfwT/LoV5aBh6mH4ObCKxz+D/X+oRFXX4xZTa+cnB0FynIlIjgldepzq/Umn9UgXE5NeISSkdtMSPBNtqx4IOhneoBX8Qq9pL96CEJOdoS02gsQREdcClGjG1J70qaGMc+pNHnXWpJEe+rITOF1LA5UBbE+oBU4sxN8lgwKP7X0obSMu4hdoo6lcPZISvAeqDTWkLGNWGOpxCL649asYDJI/ye8B0qMWv1hx2LkL5fwY2kYaGjGWs1LgvAx8Cn+azo/nT//gnbLbkext+GWHN6ZjSYBh/jh5yD3VeH2dwbl9TAfDJ8bgNmDoNaUSRh1DeJsCU5GTtbMocwVduAywjpjZZCqkz1CtJRsYhf89PI48Rf0TF5DxURKcSUUc/KY02OBphNob8APg39ytQwrZUB9a0aPUnCjJMSG0n7b681PZoUu+0eP6BoLkWwvScyyHrcEr7ptle0DZksB16k1eod1wVzSYi8sqz+zOZNcyzDMgoy4u6CZRCqpM8Mg0nmdIRMOqd4xq2e4KzTDPm+V5ge7WuyTBfGp2fDOExJuVxXWpjp4CuJvwxPOXu/KSbNJ6J45DTJ+Za/OSt2dnbPyhh24O8PUvI3y5Z8w5HGlHkZlT4QJNKU6aiQ7XBNO5tuZ3A3CXln+elJtcHzyoQOQJoKKdTsqGrxVR8mkXltdajuwV/2VjTaJClVG4MmW2iXy0OULR3aymFFuT9A/symjK8WhARNWxWkC14l/x6CK4ErwVzBJ7VkO55QJ3wT4GNgZTjYDr0rPl2dURpdH6I8cYgz6QRy2gerQwpkI1ukhRnE1FFyd+KxP2iGArSjmff5hkoyNpqV/cirXvbSnDKB4rS07he9V1ajGUy9KrId3+QBrWLAea65JCb3s9P4LUaCUxDERUm4z3L+nS07ctVt8MqQQOTx27bMc8ij6I9mwgz9L4gR432IqChZ5s5hCiZGjq6HMgrMyUN58oZONg0A3wy9reACRZ55PmZRmZxYneBYbc4JtIPBRsb8Jmw5BYamTAm5Emrc5VTJeOgTjSUSNe9kAFOg1SmaYedRnlJZShKTytSl5OzpUFFvgRPWrpJq43EVVtOw2ZxTPl0/RZ0Kn2iYXmdnU2BXCr9famK6DADTMU19DbM4gLUwG6kob1vkSeWFXn6LeDlsYx2DHfDrsja5qEYDr+JN+/XZAY7v6XupkPPyqd5wrQ6PxlzRcGhbYg0DTtr6C+t+aQ05mipTiilOcR9IKUMDS2pOUGjHtvG8Ngkl3uEwKYuYbxyOkxGTsLyF55Xe9BwfyjRBtXeTwplsE9Ia5REJQeOuFFnlfFtYDJPKWPyKFjbaWMLBayAd6kFf9lYQzvPspX4ueAR7NrMC86DX4at4gmjqOj0CjCzTJX9DLmK2j+0lK+hvzQX6mgEI6rT34Z0GZm0SPWX4S8XpRndSC+jwypKJ6vo+FSgyDUtSsuBCDQMKVVSRqU2JVkSo28hy7EMoz1J2C4sMcF5/SiIjaMcVUQVsqolD6wL1gdyxL+TR1ReP+0tdib7BylubRz7FIu1F4XO5IjtYpHzA3gXW/CXjTVyiKxspTYL3t1S/sMYnI8s83QYO3V9h4YhI/xHIK8/LZJxvxnYDD37Zasepp2fovc44zAEnsPAraAVce2Kek8EJhG3SVmSr45WRniJDspAptGNDJQQ58BqNfQfaQvyuItJHvvBxScDjk11o6xpORA9qPeWAXUxPbWYa14QwmwzFGxy7TKue4GHisvjGtR+5eTEtXnT+6ki1NkrgtdzWAqp7cg52AjIKZZjIp3vBxScxD17sHgrgUYFw3QtniSkZ3dj9JfU2dV9e5d6aVtWoo5dKOB4MMyioJeoW0UMQXeIAc4/GDYK0wPS5gGzUHhHsd5DwQeCbwGTB8qkns/BZDv07MtVB206HPwmvJuDqM5LsjTX+e+ABi1j/yUQRzKmiug3i2MkXR2C5M4z4LVi4RrUIZoa4IXwavX8UBBF8srlaE4OYDqWcyYRqyKcocCkM0zLAMswXAVM2wqsLaQ844AWNgaRyTX7+Waxo34i6tlRB6w2+GhAhz+YNDmIcfQpDKuA1mLEUQ8YhKVxjDHpeq6uAYo0uwIZYV2LKa2BcQK41TSDBZ/q9ksgA5+kDSjfWUDPSakUGInnbYicoZ3ABcDUlskpeBhUBJlWOu3KKirSw2FKuqGvmDJzc9aHVx21DHdapIaor7J8YCoQ3nrqciX86tB2NM0XwaeOQkPP8yN4opI0LGpKt8D4NaBh5Cjam0TxvFTEtA/HWxedCzqcxkkN1f84KLHonDoG3ddykKIaRdcmNBumSeAXMcyqrz5a8gT3rKUj4VhlnRSTV8mKsm4AFwMTA2xzfxEZSpuQIiSl9yMy6tk0IT27fwYXgkExGQ4nfUNQ7JgdlT8fk917BAbp+vQ4RtLXBer4PzTgjWJRf2Lq8BXLkfP3FNAX++TApk2yC4eWIFT99Xkl5PezSkca8t+ArfblJMtJ0fMjR24kUB+1BTCl92CcbMpcbj4puiNIHV0vi4I/gdfG6Khzk+ebpgFWdWUofqYdU+IBmUMDuhz+P4FSjIc6iJvBRJCUTDs/yX8eqFPbRgcRpPt4AmgxwFyv2tVpICpyITl3f8ay1YNlSjbXYCpTfIpqTA2wOr17gJwG5YuiI0mUASnssHflWIijt2EYD2SETEg/l0eTK+11OpOCYnjUVsPI5v49hRDhxDBh+fNy5qXnP/p86EEOyxj/OGKriOgusFsET2GSDEDfwhPtvP8x5T0AruA+q31UIq2mUmn0vepHvgsWA/Ul0r2e0Y3BFkDPlQ01wHwreit8Fm3yp86rC+wI0nCLvBhTWgjjSlNm+NS5HWPBb8qa9MFTZ30A+B8QZ5TC6vIcCUmHnn2Z8hpNSY1exvE7QA0/ivS7ydfQsJVHNAQcmNuL/qdhPA2j7R3N1io1rSivlVAONCoTZ0z9PMvYeRU8D/b1T4ZsFUnKGfy70tGTnA0ZBpOI9iH45oHlwIT6wdQVqAOsVDI1wHVcgOY21QaPB3FOmkYaCn+gYXvyaOQpjmTQJgN16CakSKy/CWOZeGYg9x+Ay8325JlTW/yikvqdr6d4ca8g668pyitZVFyjLrmAEAEy/DaGSEO/8lRNKcoDN5URxKdOwZqouzyvq4AaQBL6lEz6+tdHSTIX5BlQsB+1q+tcAaaDd6IY82nbsN2ngO9Y9k0MpeTPBb7hZjeWbJyIWGEFDL7xKjgVursof0/vg8PE09ccpQyjSHo5OrcX/U/3YGy+HDkqJtQHJjm3lUwm7UL1V/tbAx4HJouMZGx3BLJMMpInAQ0Xx5HmjuXgL4ljLEgvVxssKCJ0dyQpivQvA2pXw4Gp4xgqdC1I+IBrvJR7LYe2YqijDLBtuU0Vo7GEFeHGzyGrhqIXWYpQR6zoSXOOpZJp9KEIahl1lnc90aBQOVPqDPRahQyAIrw4kuG6lzK0ten8TK8hrvzi9P6cMG2Xn+UzT2Br4jyo09w2n+cQtkPz+1GbWSQ+m2cwbTMyOBqiq0iibSii6WtYOUX9K2kf6jgnG+TRiJrf7nQvv2SQR47xvXk+GWFTKlcbNClfTtYwcCr4A7gBaLX9YLaOgjXwPqevpC1pNKWiyLTDSbvSilBtjOo6NDB5tZ2d9LD/B+jBNyUNOWl410ZfbWSjPxlJRXkmlOv88oz3sV1jkOlgeDYAO4GdDfhlxCbl+RazNR21MI2gDKrQisV0dECZ/IjsLfantZISfKAIRe+rKgo+BZi05Qe453KARKbGQUaoYg0wdVP9ZEBMSNfut7u72TcZATsWHfeCV6Mxm4M4eg+Gp/JMGmUypY40wIV1lEOzL7genMO1b1iY6PZzX7uahR6uADdWoj46ygCvRBmKskxJHq3JcJKpvA7ho0OV4f0NMO1QFR3q94JLHXrW9arzM40+1PlpCFD0HHgjtxf9T53SMeAE4A+3RuVQxzc3zyADvCq/H7cplwEeFFdwQXqus+a+yCjIqTJxjqSbPcEoEEd6NsYVMJkahxrymN7jAvHtttuTkgQTWgST75Q9wf77Bpk2g+cwcBIw6dsmcg99Z0pt0MTIw5ba+9aSlQb1QMh5AkbY1MFJo9xKlaF2o5GTR8GPucc35J/ViquvHtiOIM1pCaYPo6ITdbyKzEzIJMIwkVMOHjUMdS4mXrQ69tdSqoRN57eEMnPRBw13OQ/1AxzvaFCPM+DpbcCn69Lws2+4ZHxl8BW9xFHuS0Tk9TvnOH7TdBvDrvvn08PsfAbi8m8Fzy+AiX5ege9F4JNvJPzjqO3AqESLNP/eWGRpYZXjGEQyDqaOtObZc3LYfkwbVGf6zSChBedkdM8BmxacC9vV1M7YgkT1R2rzJnPo6o9KJV3bJ6BwNEz1V5+sBXpymG36Z/V53wOvoKu/+7rjOCmpfmH3MU5m0nxxck3SFazo2XkQ3IUe5ptk6igemxucZh3V2KWYDQ2FqmPeDswx5FejNo2wpYP21IOJZ154mRo6ToOkQ+vOL1/w/Wx/DNQpRNFOUYkFaXpI1KH6JOOrqHuwfyJiq05cnaSchDTJxnDJ4Pr0LjtPAEX+UaRO9aAohoI0Lb6SU+KT6YiJ+NMwDh8j502/8ATbd0Ly9OW8hk1NqFDH4r8HfBXE5R8hZgN6G55nCvjUJ6kdGhlgjFwN96jQeBaIMtpV3j8C/zplQNUP6TlVW9QQ+hCwETCpE2xeLTgfTAClGB45X8+BnBPO1paky6R5C8tSPeRody08GbOve/pD7o2mFyqe2tPwtChDDZcGPIsTu7WcjN5R4zyYPJoXM/GunodfHVEcr26wDLvwRaf+XKBpQ/Y7BV8nisheBnv6J0rcTib/hwUy5CwtLjiO2u1BYk+QtgGOi2D9Oilyaqkr7bGJdnkv574E0nCWliPnAVBINhHwoMKMCfcnk08OV1KSIQsitUE9yyZU7HRMJdNcsKVJZgOeB7l3hW1IDs8yYNIONIohZ1T8SUkG+G/UYV6xANqTdKR66Hk7DRwO5Hia0NYwHQH+ZsIcwqPn8fug8BkNYQ08rX61ULeBTAYnV8IzHYwCci5MaA+YdkGH89GtdFzR1CEGOK8ReVhfttDOYfDKqJp0RrfC908QZ4BhyX1ybW0wwP241kSdHw15FQ36PvKnYYD1UNyDzJZ7o32ocFgXllBSFK8O8P1QDssEypZepB8TUuckI1lIj3PwETAd0SnMW7w/gxOvF50sNkZFya0O1291lOxAr/0l7XyjShwYlViU9knhMfVZyH2ayLk0DLCiM7XnQtK5pYUnIvYVpcoRLMUAS3ygQ5x/NnT947jmp9j+CvwPMO2vR5NP70TLECYhPZv6lbhytAGb+qj+l4FfgP2ASf+1AXxXg0/RwZS8LjmsTLIdDk3zKh5CmGmDV7lbgbNQauxNQOl1QK8wrIoC8tSZymM0pTS8OtOy0uazMQ7zAwr/N+c0NFkqzUTAwwFCTGXXkndQQP5STqkzNYl8VIbawGLt+EQbU0f1H/+4hK06nJuQpyi7kD7loLHwRMS+OqBSqVz9gk0bDGoPf+fCSjV60s0T4Fnt+ITO69mXnk1IIzAKBspO1EuO6c/ACxaFKQostX5pjOZYVDmQVQ7HXPAdoHtmSlvAeBM43DRDR/GV60EzuZ53YNJQsSnJ8H4F7GyawYBvsKU8m/oaFN+uLDbRR1BH9D61tXkIwi5uPJ1KkONVPOwdll/nS+1cimVrjk1RtQmp7qsCGMeGnA9gDT31ASmTA1Jl8OUsmtAAEyfVRFAZeGwcp6D28AZ1SuMZvJ82qIi3mILKLObRsQxD36CEcpzLG2GbZ68f9TB1KMtR5TRlduH6ZyFQowCzLQQrsPo5z8JuFnnanbXDDDBKVYdyN9BwhyltBqOW2qcxzKYyxwBTr1wP7H+VqZOSzQPZpiPifmno+F5gGokFqWkFJ8cFJXCuTZkhfDptcy0RYlqS+rAnI2xCioCli2JShFI8dFzME3f8OAyKpotJeltZfDLkWIYhcGgzhL89T5s6TuoT2rQH2qAcHzk6pZCcy0khAtqUGcKnYMD0WkJEWJ+eY5GjC7zt5iBY1KsU1sfI/FuwyELISHh/hr3QgraKpA4zwHltPMD2XUvNjIb/OyhV8zCJifx7kvkMYDrUIu/7lcQFdnxGG6dlYUh15YAoEk5KL5NxZkjmVnN+ITz+aZtr8fNEbW2M1mcYAg0VtyLOaWhU7TkpyajfFySb8zLApkOvveHtCSqKeN5sjJaGg4NGSXRNMp5h7VPpcTQFhrkhTCbrS/ysabdBX24aW+m6Ng1BlSKD50KO/z/BLSDIAQ6r6lEknEv7S9tpDyvP6nxHG+B51FZKtSFFKt8DZ6LURF4o+fYi/y/ANsCU1DkuMWWuQD5TXalxh3mZH5GmKC0pjUOHMiZBZNOppt35acjO9FmIqud45CwPujiDc+/C83QInyK/MINUnEWL1CrOAFMnRWXSswlFXe9sBEwzERLAo8ha75/LwAdR1L0t5k+7DRbLLz7eqvhEzHHxOoIY9spP5r7pGbgWTLCordrdV4Dshekol4X40lhNO53SSgnJjUIVScijUXRpQwNhPgf8GKXuCOTxxRJ8mh87EcZLgM0EvQzPXaBTEtesOav+hpXX1EBgZ5+/X1o9auOB+sVKpgxUGIUZ/SD+tDs/tSdTihqmnImQl0wFFfE9xHFgBIbe5f23WvhVlLfwsDsHGlIvhWSo0iabeslJC4z40YUMi9pgkjpqcaGGMsMoUP8hzGm3wZBiuNDmIdSDQxnaJugZjmqnbXO0PVPKVFNbaSmd4f7PRdTl4GULkXJIFbTpF7NMRzwtxCdnVcfc0fQWFbgBXAW6WVRmMLxnga3Bgyj2ebZzwVJuUs5AcE4OhiKCQUDR7r7gMLAdsCEZX1snwUZ+uXmlA9NOeSW8UVGcorQ5YEtgQ8/B/GZEBhlgPfQmD8iACDlJkmw609BOmna3kjY3jgrsbVkJGRV9fCPKqJh2qNJfqfrRt9c3sryGQnY5xAu4HhkCn3qx08M/iNnK+BbmLWZ/mBOfABvHSTKeAB9oJ4RMdazsNm0mpLhoJ4J7ID0OBz8ANhGw2ujHICmp3MGUX0p+vYHyaVIBMfmmkX4luAaobzch2YsLgIIpmwjaRHZing43wOp0oH9xBaPAGMsrkWdzHNgVvAhmg/eR50dwGnLQg7Ip2BbICNsYedhzMv9EPXNGXSc6IckAqwM0IXV+UQZYnZSiNVsDLAMT1akuQabSVdc40ucoa5Enw5UG2XSmcZ30g1Top0BzsaYkJ3R6DHNcuYXZ+xceJNjfmTy/BOqIk9LvyDizILMcQJN7qyxqC2u0E0Lvcf4pcEJIetBpOXd6/zwqslO5GpUzGRlcL6gQy3NydNSH+aRyuwA9qxsA9VeHgiOATV/9Avy6lqRUS8ZzQVQ/ECdb915tIHXiHqK23HcJ1AddCLobFqJg7WLyyjlUQNDhZHNTy1ZZlKGXpq+igM3BrgkK2oQ8gjrkZWAVkPvWFaiBm94gWFuRhsKuB6+1Otv5DmQM5IyYkJyX0M6voPF/Gz7p14RkPCbFMErXK4FJJ63rEV9aBtgmkoozhG9SLxnTQ4ApTUCvi2KY48otzG5zPYX5/H1FWzYRl5+vcHsXB4UGuC/Hpv3NQvQhQxhIpOlLeveSeBwwMZaSI6P9pHYiaDFpalMmTnpf6lDK5yhlaM8EC4FP0o+eU+lqA6B7sDGwIelNay2iHI04earHyXFMMel63stigFUu16ePA/2ZXenoyzpnSCPg08ro85DxtmGesrGZPhBlq0CB4OfZvxz8GmxRcN5mtxbm/jYZInjVkP8DbudGhXYGEfkrKakfldEDb0IyBHHXK+9RhmZ7E4HwTAXvxPDK25bzZBJZ9IRPBjjOaMFiRAOMuJqZIg0hbWUND/dYWE0NsJzF+w3KX2DA47PYRPR+nnJvpWPTiNrkvv4XeR8AUwP1KLwfgyiS8ykn0MgAwydjqTxJqJpM3wR61ny9aKs+uZR++Q3yTwQdTYnHr00rzrP2Ec/aVfBvCkaa5oPvKDCfvL9ARrmGyY2qY+o9GgkrhQlF6IaNAzLAc0FHkuryALiaekV2uB1ZSYuy5ZSY3mu9ZhP58JCuSGGCYfmSpRXk9TH8Gn5eEsPjJ/tRgn+ceMtDqI7Q1GnTNZjU8SH4TA2mRldeBHFk0w4r0QDb1MlEdx+isMfjlJZP133T6ufIdg2PjK8cQROSEygkJRlbGXq15e556LgU4ytn7kYgx2StIO7py1yoArc5FhesYOQrQK+zSv8dRqadcrtUMN9J305hMsJvtUuhbQvRXK8cgcuoz+ttkzvlmYEWtS4cEovKpqhNHVYcfQSDoo84UiRgEvlIjjopU6Mp/ihSp9cniqEgTUPzJhHPXPimFOSL2tWXwZZFMeTTTO+L2G2MnUHRqbDY1CnW2UBnai/3AZO1GRpqfMbgKtSeTe6vRKnj7qWdCiHpQ8P+/0E3cY5GhVQ5tWpouPtaYHrvVLCcp++BU/JOuM61O1WUAdbV03jkxd0CLgPPgvYkdXK3gf+lHu1ddjmv02RY1y/fdEjmJTK86meK2D5B2nsR6bmkfKdhaoAVPaRlgNdFVu+4+uXTjTporkURl4yDOsUoUrQlZ8+E1DZNO9b+dCrSUSWRjQE2bYNPc4HvGlykRiRMHBgZ88UG8sSS5nSXYZGhbKr3WHAVbc9k9CBUUGdM4Jp1/bcC9d2NFtcwGN7zwaEWeVJlrTgDrKtDoTLC/wKXAnVkJhECbIlJHdsL4BrwK8qfkVhSZWa0iYCNOj90ZGI89DBo+Nn0oYiNfArUa9OhF2RrsyvjKyNsQmqHapsm9ChMiv6jSG3utSiGgjQZBhl2E+oLkwxEJZHN/TI1IuKTcY0iTW2oDcY6L3meRVHCCtLk4AwoOO6oXT2vMj7/R/1ndlQlOrpcrl337XfgEcu6bA1/h30zuiINsBSIQuvBeHYvAVLs80CeTto0B4FqwDL211Hm22kXUAHybDo/GyP4ANcW5Ry9T/p/La7fyPjn5dk4FVFV6ENi1yiGgrQl7GsY2oQ+hGlyDKNWq66M4fGT5fCY8uqaevgZK2RrY6yMjCC6k1G9D9RFXOMs0tR3mJJN+7cZWTIt35RPz90T4CqgoEHO3FpN6GA2CvgVeM1SESPh75BvRmsuraIJpb7EcNq7VPJZoKGCvYC8llI6GEUx7wA1WnlMT1KOjtuLtAjAhORlC6WShlpMyWSozpf1Bjvq3PbzTxRtFQXGrTwtzGLT+W1QmLGEfTknWohlQur0jKJ52lMj7VbGYQwIes5kZCYAU1LZpsa/N7w9QaE+Ta/RtD5xfC3tFj2ovQ+Ky1CQvrhgP25X/YKM7PYhjA9wL+Q4mZJN+w9qg6bPtml9fD5NZ8gJmw/eBDPAk+AZrs/EMdP9KFfdEN2Ggtq8mGzqofq2tKM2JQSfeJrTckp+A2wcpKPg/4y2qpXRcp7bhcKU1C6FmxaCQvRA6sepn2O7K9gNbAc2B3oI1OFERTEahtIEvRqvIt7XgQyHDPA7yJcn3V6kB0kLQuYaFKh66aFLTOhMoxx6YI0MB3zzTAtDb3oX70/wa9QgSIe2r3DJoD9mWP4HhnxxbHUWZU6zbCvqIP8MitumOhU95DYLDdXJSjemkb/ueyG9x4GpbgvzJd0vNGTqZ14Bev7iSO30kzgmP537sYg2eAPHu4OgNni3z2u4fRk+Uz19WiSzieMpQFMApZKuRfLUPuV8yWF7H8wBcjje4tp13pQ0ffEU6GOaoUS+l0Lyqx4ykiY60vWbOBctRaGTJtrDXZzYDIxqSTDb2RA2BXftZoBtvQuzyygzFwruQRGbAhlgKW0jIG9nXVAL1Pno5iliWAEWAHXYghrwXG6UjVdMlnSIuqtuuwC9emBCz1NXXUMiype3M5nXMRTwos2DjXzpvB8o7vzUtj5Blu6BESFrfRiHGTGzqAbZrxryhrJRpiKzLUMZWifoCzpyEowI2dKB5MsAFepH560+1ZeXpXaT6D6SfwPy6nlpL3oVXeWMMGXr+uU469mMIz23M8i7Oo7RT0d+L/blhBfrWMcfI0udvhEhS32J+hYTmo/s2T4jeavZ13UWO1w+i+1WzogMsJxwBSGLbfQCfwtZ3oOWfCXsLKKuM4vz5+uhdmyiI7UF9X8asbQiyrHpS3zZ6pvVXoyfcT9j0q06gk5N+Ubfk4uQURaKDbAabw4o1jQKJIsjpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAaeBitRAp18FXZFadZVyGqhwDfD2gJ59vTHQBeg1Ib2Codd29OpHA1jt3hpAC46cBsqoAWeAy6jccojOv3al162S0DI6VXWwZSXq2I0ChML3Mk3KbKR+emWsXYh66vU1GR4T0rOyhvpZv5NoIrycPHljq/dkBwO9D9w/D53T++i6VzLGMrxqH/r4gd6Tz717yvZToHfp9VWzJejA6r5Svgy83he3pRWUpTqVTNRB70/rGm3q3kT5oR+7QKZ0p/dZ05SZ5NnJUs+l1KMsxHXKSTN9/7ywDsupV+CrnyW0iUL5pe53+DOtB8NRhAayb/OCfzdvOF1T91z3JF5prYl3iz/zXsnsZvelloiiTJM2gfFMU+Yivjs51ifsyk2nUsCwBIXoB7avD3toE8gLzUI5A0g8C6jDM6V55PtTe9TPtEJRfNRVBncbsEUeQ9jqnAywvkSkTjUoAtaHK/QhDH0ARkbYN8Dvsj8XuW+z1QcoPkAX+lBEHKnNnhHHFJD+N869GXA+yaljyKQP0tiQ2qO+Dy+nJIgO5eSIoISIcwuR+f+QGfZxkAPJu29E/qAkffb0H8jUF/7KQdsh9GRLwXJKrgcfhuTbivOnh6S15+lnKOy+9iywsCxngAu1UbSfncWvnVTRSVd7I0nq3vJF3wweb3Xu4x4PZ1/1/pIZntsvyl22w62RfHZC6d15UPVlGRuP3aoo5A8kw3lAX12yKUfe6BzwF5D4y1/kNaUDYDwXyACZ1FP1UwT4EJDxqUhC/7VUTEZXXxvaHQwHMsAyuiZfH4Itx9eDrZyUITqRpzVsPwNzgXQwk/JeYvsKbWo+2zDahIQfARM9+zKk78dAWgb4cGSdCkzroPJfA78HTSCIZCzPBDYy58AvmWEGeF/SbHSleqp+A7gXP+Y+lOPZUZ9jUyfYc/Rv/ocZ4M1ISyKzWXI6/6W7m8B96Yizl+IMcJTOqrwv0RWdzaPSh0+Cfz6UosetCRPcFY+6KddBjI8Sk3KaPrHWLaHMo8l3JYjqLBOKbsmmTmkY0Gf5bEkdvoYqy9GJtNQlb6S+zAkZGRvaBObR4Lc2mdqDN39NivAUkakTlwHeCCS5D2QLpK6c3SAPOaX61OQs8CLlP872CQyAnJRiUkenvLakfGmR+jrbOsiZiaIkMuPqoPsVxxNUp5M4+Si4IyixxHNV5E9SJ+ULo6TXGSYv6Xk54B1GzgCj+uxH3voY0m50+x9ntiz4xZlq7xi6rz4Mxi3CAN8GT7MRzmAkst7X+L2ZQUTIhyKixQATD6zLV6kH8Pn0FZlhuaG7tG+uDHBSGkLGQ8CtSQVE5aMTVmPWUFXSTl/Gtw/4BJSTtkX4PgkLGMN13oShWZIwf+rZqI+uR/f1MLAbWA+0B/WjEBn83cF+YBJ1uYvtc+injm1nJ7naaVM5ZKqOfcG56F+6fyftSieQF3edcekJikyUpUPrsVYbYIaPa5kFO5LPnR/ErVsXH+/V7FzvHgztSgYmFd1ukze5CzC4l8PtDxv1Y+8k5oS7cn5PfizxIHK8iKyBGOrjybcZKYuzc7xJ3lDv4UyGM+lRKQZYhvFkHtJ/l6mDHIb8USVcqiIOGeByk6IFGY8ktAOZFP1NSJI5zTzcR12DjO6XgKLeQaAjSP2InIDNgIa8Lwf/BY7aVwNyvr5Lu/hZmZ7v9r2ataC0tdYAZ9/CRNYwJ1TLPEQTP22YIWrLErHK6PJLNRztzvEm+TWyTQy2LWTBVc4AZ9/LtYzm4bEafoe02rsEOdPJuwH7R5Lai3z1YIT3rrdONuvdjxH+fAi7tIZVigFWyTIeukbN3aVNGp7VXGNSkoNQSv7YcumcpL/jYxnDGTT8fxpycKzSWaEbXlR4CuVvT+op4AQgx6cSSLrZD2iO01H7a0BDvqcDDUVPbP/iXYm2GlgrDXCL8e3i/RQjuRWm8mOM8QcY4V04/hrQHK908xHn3gbT+ZGxz4cquhIz13tjSd+GtM3AKLj3gEN5ZJinsb81cvbizC8wwl6KRrjU4UVFmDJAqRpgDIIvF9ElUanXF1f4wTBsEccUk67hXkV7b8bwpZ6MnuWkHAi+A1SPnqCSaBqVmVJJFVrL6iIH83zaiRbGfbCWXXunu1wZjE5He9yT7V/Tte0Cmpoar6m+p/fp1JHh72piCDPeOxigLt5FGMgtiUs1vHwtJnUm0euFYCTn52Bgn0YxzzD/+yY5ZhPBNrQo6gYGnL/KMFsjK30bcj/gPCJnhKsYAmxglWwd8qoYlq7m1YuMtxNG+GJvbu51pUktMhLs8FDJNdBCpVLpS8i6lgc093utpQrL59dcoIYfS6VSI/zQ8rnmXPQKQ6ntXiu9jwO/Di2sDAnUfx3Earj5+0AjGZVGq6nQn2lXWintqOM0oOmIb9BeruzIUZqOu/zOU3KpHVG7XulJd2Rr3+vpHY5h25cItc1QZb0WSS3z3h4xPvvA1KMyrwRW7m0WqFR5F+SN70cY39+z/8fMEG8Rc7b1yD4NA/o42ycwv3MzY9oOHWcuofRLctHPm9nnvEeQKMN6ENgNA/xHFnJN5RWml5Grge1vgp0p51wWez2VGVTSCl8ZEEWapdLWCNgbjCtVkPLzoCsq0+KrrjoukcpmgKnXdkDXnQZpMZaMzaI0hMXJyBvfr8H3Q6D7V4k0nUo9WIkVW8vqpH79f8Bk8BRwVKEa6FQG+P0e3pFVXbyLs43ednT5WrDThhj/Xcx3d3bea0L2gmeOyMxtw9CNDxHUeztgED1M66veUu+GzA6schYNxZDOw7AOxfAaLpzKzwu/xoKu2SzjegDjO0eiMsO8D/hcwbWY4EMwxDKae/JJg95sVyg9IWmVcK+EeQuzSXcyIA9iQNKYm94EeYcUFlDCflkMMNdK02DhXDoOjC5PxlwLzlJxYiQwjKi7HK+vggvAUFCJpOhXHylpF4ekEhVQYXXSM3kebecN7smnFVY3V528BjqNAd714WzvbIN3bqaKedoGbxHbJ7mGRgypOlbNvGaJS/tmm3LzuCew/wxnr8mlFf6r5hN7dbnP6mnF8mAGsvfBeE7MDPfqMLoyy+8UsmufyLgbvH2JZHvoEAO+rHBRlniUn03O+Oo49zpSxtsf4yujq/p9yKc8VuX2k/+T8U1rzu9gZA0Fb4NSSQvPBpcqJJ+/LAYY2Ro21vBtWiQnRouxJtLB+avj05LdIgf5mnY4EfwEDAWVSop+J1Rq5dbSemmF/Km0oT/QRpvWUh3EXbaerw6jTmOAa1d7g4l6d89gImlJjzWu8q5lt7GmS7PuGugCq3hnl2b2t2peB2qs92Rg2hrghRjCdfnaUhNfa6ri1QmtYG7KGd2ZxXch+xnR5nIiV33CLkvnl8WYZvmrIWLu772Tnec9573PO48jAwxrL1ZRd/V+jouwCfKXIuNG9pYUl2F53Bd+RUNpkAzS0eDaUoTxcGteUpFlsyNUirDmvP2RWU2HkUZkXlibQznYvPBECvuadtgCvJ6CrDAR+5JwIdg0jCHl83JCbe+li35TvgkpiVNf8QPwFHghJZkdLeYTKrAmpUqonXfoiE1NShdSkpgRE3mfMevtXFXj9W7Meh/3ynovPnRY4SfVshk+8bARhqxWXUNTk/f89KMzioBbEXPE1cwRf4IsRbfr7z022/Pp0a0/pq5IlVXQ95J+NgZYDXQ9FmSp02lFDB9vhfE9FWN7KKnbgt7kae6YFGvXEANnmOfdyHuA15LuyGzMKuq21LxgqhFJTd59psPabcW0nJG8tDw2XcuJGDt9VKKUYfGdkLNrSw1L39G7rYouV5UuqlkC19idvdNAdVoy83LWY6sV5b9KWW5OHPXeip2LQRqL2wqrKN0uBPOBFkzJMVwJFMnL8VG/IMdKDt+Geei+NLd/dorIRb9FCqmgwy2pyzm0pbN4zhUIdHb6KxfwdooX8UaKsqxFdbgB3ntCdlhTxvsac7ujsIJ9qjPex0vrvIf3H5+9tXvGW7SYF/wzNd6OTQ18cEAGkC4AnsDhlHcWeVW1DBKz0lm0cVMX7/yRE7MzajLe808cJgOZH4bJMAcs41uFWV3j/ZuuqNXrJBjfLemCfkZZX4KnF0PeH9F1v0TXtCBXgyqGW/WaUTWvg2SZC2zwhmTner/ODC34xONS71lyTsSUnEpdFDlvy3YeKIWaDXopElrn3ZnDXUAbZ6Y1W/ARD7U6ZEW/GppPizTELnmpGWBk7QBGgHLQSejhRjo3GbTUCJlyGhS97J+SUD0zc8BLQJ3OXBBlgFW+jK4M8FCwDdgayCkonCZQ9Ntui9Eoy5G9BjT18hi42T5rxeXgmwqZZyquVgkr1KEGeNT47Fb1We+iqox3AnO362I46zB42zO/u/OqJm+91VlvfqbW2xd7ulOmCx0BXYh4MNh66NtQz/ledtXG3nIGL5sy1d765OPj5N6bK9d4z3/rkWmP3LRF9TIc/EHI+TrGswv+/qdsb/Y/sCGBRMe9OHcO9ZDhFM9TGN47MdSvYEQ/YVhZM8WDkaE3g0+Gbye4vk36YvJekcl/yjKzo7cCQ/5X+EaTQ5+u/B5D1oPZn88yrKczWzOPbE+FHZ997rY5tKhLUfBTNOpmt6UtT9QZ1eeoKIYEaTK+vcCCBHnbZMk7CSfnZbZJT+GEDNN+4N4UZBWKOJwDRe1pjHi8jpwpYDJ4GbDI0DwaQoddyDMQDAPbATkz+4ANgKLfB4GjytWAnNofcR+nct9nVW41jWoWNgpjlLnSmDrMAO85LrtlQ7X3U4zvKRilWiLcpzFST7Pk5Ggi3m2rqrwzia/qMMb9WfWsBVKzMaqvNzV6s6vhC1LkZEanRzTx6xZZfp2l2tuSeHdrbPbOPWpX7Dx6/b/vTTnLvaqqgV5V00CMrH5wbRofyWjdILswd9zF+zKpXYhs1WldwiDdE4VGmnMzef3oaeKANzDOlxEtD4f7TIztJNKmgmaS/Cqi624Y6ercaugd4f0QI/4fjPWNvrH22Q22aRtgFXk0uBIoGrKlg8iwmW2mGP5upPeJ4bFJlpE41iaDJW8t/FqMNZ7Orc4ybyA7snSfzwGKQEshzW89BO4Bz1C/RCMw5NPQ9PsCdfsvW8k8ABwPbia9Q+fRqIOjeA3sAMsPuH/nc7/SHF2KL9lxhGqgQwzwyAezm7Og6ie4MqdicGsxmFOIgC9dU+c927279xLnL8Kg6Td46zg/DSM3panKm9aU9d5Y1eDNe+W5kMVMl2Sa6p7L3tZtoTcRo70FBnE73g3eb+++U/c9sPfdGGONmWYWIP/TvEYmZA6glDzlvg3d5H0Do9mLyHch5V6Z2Sz3WTefpWWLQV5JND6WQb0BGPbrqO8gBk3piNXRcUUQ883LiYInka45aZ3ricy9MMaaz36U41fEZ0GKQtKmIQg8GNxmI5gHWYbnZCBXJk2SvP4pCjwMWZumKC9I1AGcVHRoez+DZOnccWCvsETD85onuxXcQYerIedUCFl6Xl7n/s9mq+t9LRXBTki5NUC3lxvV01C0HDJHFaCBdjfA+9+b7bM64/2YyPcrWEP9mMHTTfXepdOOyjwsfez6p+yd1ZiEmlrvWxjfmRisiWv4dZUXDssYDUnO2C3nrX+IqA+9O7JPb9nkPX7cxtddsk71wjFNq+k8qvSD6njz9ZjEqpwn//lt6J4bIh6RO6Hod1Uuov08vWhPhpZXlO7ChH+fyFaLkQ4iLtYQ6rIW1oz3T4ztHK5Dry/tiLn6Hle9EceaE7btsLXoJ22SwdM7weqoUbUxyeDoPdhyUCrXyTWtQ+VOBWkM40ZdZ38STwC297ONTOo8iJNnAA37JqU3yfgbcCf3dElSIVH5kKuo+MkoHpdWcRrQiIp+MUm/CT634mq3Flao3Q3wqm7eyOoa73TCwVpmHaewovkSjO8jvu5nnJmp3//x7B3M276HAX7r2aMyH/lp1tsxmca38Nb3nu29mWUlVlVVtimTzd5JVPsK5WM/myPVArn68YXmYb9qvlrV/G5vQXLb3cymzP2+7c0g305I25gXXdQZL/M5KetlynpFZWGsD4fve/k0LXIxJh4aGRHJLgftjdCtgRbomJIWdpQ6RBpWVlpD7XKK9gwrJOS8DMs7QA6GDZ3APfo9HZs/umKTt5D3SA40XJiU5HxqSuF26pLKkHjSirh8FakBjaycQVu9xLWPjr8/5Y4M2lwh87IjmOPtQQTYhIH9wzOHf258febJB2Qaph+eebIk4+sL05ZPQmqNEQGr1k8zLZx7nwK72Ia6w6ShGo+o1iZy0Kscoq4sxmpjWFsMfZar9unzPf9M3LYrDH3jmBKmS64MqhHx8PaBUfN/5aKSI+C8w6LoVwtQbGgezNeC1TaZ4JXB3t8yTyt26qyI/TSQ1DFWnW8A/3KdK1pwFKQB9flfB/sGJbpz7auBdjfARInLmSfNEdHvBruOy3U67XXVLPfy+vDebr8cmn+96POys7yUnc3PCSuaNaUqhpR1TRnWNzew0KuAuNba7OssJKNMHIFeLUlNeUPfciJ2Z104ZPjKRcdhAEwN/EgqodW/5aI05ro3pHJaYGZLj5Lh3+B1y4waMv4yOqy1zFfIniRiL8w/kYO/YHxtnYdCGW7/i6+BwVyifjFp0Bf/Uiv7CpN62omvqrrWe5RPSr6Hj79xVZP3fXqtFXww4x/FH8yIK+CSS7JVU0Z43Zdlva5dV3lN3bt6qyYcGTKHmc19bEAGspoY9EzwCYaYddXePyjnhZay1mVN9Cp+mlDvPtZ4+zNk3CfDEHNLesAOw8+bcHqvvAF+mxJaz1W/yzxpb17VqSPy1sIwxdcy1rXRcgOKUiQnI1wukkHVUPQDUQXw0ObmjOFRRF4uKjkCpmIaytW9saFVMN+NAVvEdd7H/s42meHdD2wLXrTM57PLYdAagiQ0n0xXU/dPkmR2edY6DezPFX+Ndq42Yz8et9apqzwX3O4GePFi7+UePbxr+PDGhUzCDuU935/wOpKM1l0ml7jng9mNeMVo+0kZbxNWOg9iZLnH6q5e46qMt5iPbnzAO8JvVq/2Xmtl0LuwWKSOeb0uvDKTZYivAWMoM9Il9xmyzw3wExjq3fh1Ixom0erOcJ2WfZyPDBSslC6sI6+C/nG2AAAlwklEQVQirQPfdzDWQ5oHtr37Mdito4+m3CKgr5OPWBhuGeA63sXMWM23qtg+oM3wthJSIkVuJ/NAToh5IGXUDkmpzDAxA6hHFfVoCmOIOk9eOSpJFl+9Sr5n8rJlgM8GNvPcGkE4EVgbYOrcjXz7g6R0NxmnJc1cofkaUqxXoraUYvnlFCXHUf2O6QiW6qLn/Tvgv8Bv8+xWPKXZJjr8YtvdAL86JlM36oHsLQ0NzENU83oOX5Wqboifp9vjkWz/Lo3ewQxbH4jx2gnNbUze3qCGcXT6L281y5Q+xSC/1dTVmz5iUnbSRku8aXeyEIslUS9jui4Hx2EG1ycS3ZqtXgk6lCj3at9o6qcH+VjGXzHQh2BUN2D7I2LWpdl3vIczm+Ui45Yblot8q3m/tIrXlqr5q+d1jDrvjhYGdnLDzvXMtWioO4Nxr+ETallWZ2e824nN5hbyGuxrAZbcBhvKD/ZTohkdBNtQ8HYE+1GkaQjLlJoH5025m/nUkWhId41dthbu3dgTbEnR79J8pjfYPg2OsRRyPI3xOuTYRqJybBQ9JyG9h3sLZX6hOieuaVt02dqhTaKd5jGnNEZVkpVe/ly6/3IYzwA2ffpQ+M9Dx2fQdhay3xloe+pbyjRP4TUu5rrldHcY2dys1CpZV+NtgiUZSCTrZeu9aWuq+WRjBI0Yl90aY/k1olt9GnIrPs5RRcTJhyf5vGQmt+K4GgvTF+O2Iec2xxiP4njEvF7ebfvfkb03MzyznHd8b6NpvkS+gUAN9Vi6+B0xmruyr462mZYRRXT3/oDc8+HfknIvJmEPDO405C/knN7oXY//o9g/jPL0Za35GOur+UjfLF9MblvPa0k13qbw6xckxmJO7mb7AT/hMJPfH7b1yAe0km12MAc2rerVAiETGgTTkeD6IGYaviJLRXimBl1XPhXIGNo8NL3h11CstQGmjlrXcApQXW3oU5jv9zPwYNYhSw7VEcDmOdkSfjky/wI2pJXPuu4kNJ1MLyfJWOF5vkH9bB2gsEvaLizhC3Bez/gfwI5A00g2pOddryHqpyT1vFY6KWpfnEIl1Ye9AC5IQVZiETYdS+JCijNWNXqnZbp5g1gFXY8ZumnGkZn5xTz+8R58rpK47yK6/OMxvPqk4wdNjbwi1MSrPxgzjO1yRaAYZ/0S0jBWWGs+dk/OHYJVHrq6p9d3xJTsXzDCGqZ5TnKJaGXA9Tu9+uzkGdk3vJf9T0Pq1aPsLO/PsK3DLOdp8GyVM6JVuVeIFpJPHfx6lKGIRfuvYXz/Ri14jzZnajlFGbOJtDP8KLY+edlIg8nyW6mb5j7bl0tP8C/JqznqlF8CvzQsT41SD+PfeBhXBOTRyINNZKlo8k9gOLAxwJrv1oK1z4AtbUwGdSq29AQZ3irKpOmId8HmReejDvVM6ctY96BDGwdCc/BJKbWvcCWtQJny7VwmuV80sWpzcravBmpH/YApdYfxbKAg5BXTTB3It3uKZav/7lBqNwOsIWQMUS8KXJdh5GN11US/s+u7h39HVr+ShJHWzwYqotFvFj1D3lsx25OXrvTe1nB2ofZ2ejzbp9vq3PD0cRi/k4mwt+STludnF+nLV1kikryH18hxA39E4OAYYq1r2JOhylFmmPcpRvh3GF6Z6iPBjsgbSP2HsJWXuIpz+gzli0TQY8EEffs5n93f7ILJ2QeDreh3FbkW+QkJt0kMMNed++rNuWx7GJarTm8X8GQhPwZFxlnRr01kKQ/zMSAP3YbUKfS2yVDAezT7MsI2pKFbfYikVT05/ojrHk/aD22EwTsKbAdmWOTbyoK3kFVGfkrhCbe/VmpAfblGEv8Nvgv0vJrS1jDqF5N+SJtfbprpC8DX4VM2ZTfARzyY7bqYaJSVz/vTItbDHqkD9yOKB2ccEP7hAszliZjd02hKXVhwNb2x0bukcZ73mD7WEXTzXzwgo6GJybuPz75R08QvGDG/gYHdiHIvGDHRmz71cG929kMi21X8eEI1X2jW275agLC6jfH0ckb4Du8WBqifxZDugJEdgtHtg9HVjK4is7kcv5DZrE3URBLUJffLSc/CvTf8yvdNFm39ouib0s28Zv8HmrG14lrC0RtAkbBeHTIh3Z+gH2iQAyDjZkPjYNZ9kHMywCKjXCMb/pxoOhA5GXLWbDof5dWc9+PaCaA7OfctYON49IFfIwn64pAcNhPayIQpgOdTzin6cbR2a0CLFlfT5q5DDXuDHS3VcQL8j4LbLfM59hI0UPYQHEt1BL/zy1dX+Gm1au90otITgAxqlqHoh8LqjhEdhLH+noadGVqejwG/fPoRmUlhxrdQjj7gUVfr3cBQ9e2giVnBHTG1pxMFZ7ylREcZfkKvChPZRAS72rs0swUvJAWQFmVlNucrVhvTKDNEyRnvCvJdwXDz75jD1W8AvxWQrfnU35lfWOVdShlzyKMPfHyFmE4dc1JKEgEv5KHUKIEMoQ0dBfOgogwHc7xp0bmoQzlDEylfTo4cAVuyNsAUsAdQ9G5LD1DPT0IyKYp/PiQt6vRoEo3uGZ2mnsNeUcIi0lTvpRHpLmkt0gDteBaX+zuwzPKy1f4UBWsNg6N20kBZDfChk7LrUsDZmL1dCQOWE5aMB2OZpx1LRHhnde+Cd3CLLpj524Pg205DuI313p0NA8OHqouy5g5nHJJZUpX1riX+eAsj7vFjDidv8TeiqiYMr75BLdKvAVfnfpi8+XCO1y3Le7ugb+5Ewb8MrxdhdBexXax54oIkP++g7FxvJHPSOZ1mLqGkqlykXE85ism6EwkrsrOmfAfd3zrj53OoGkaVQTSloTAe6DNTvuZvxwCb+k+H33dsbMr2izUyXj4zdVTdFP2u458z3KqjuiuMlw5N0bvSTSNZX9QW7BzqH8Rsu5De3CZjGAOSl+adnIAkd2ot1cA9XPf9Ca5dzuv3eJY0OuioHTSQMxblKmfRqtxigF1yg3CN3tP1RIT1dd4lvFhwaUPG+98nHwtZZMN8I4b6SCLlaiLYpUTAt+R/ZMGqqlOOzOi1n3HqOonCN+vZm0h4JR8ByfLum7rTat715VeZMJybMjysiPhUBqZ/yfZ8zh2YfT/+28u8xiTDewTG9qfkvQTpx8gIs9BrB2RfDPTusbrviQxaJzFEumZ10P20Y0n+IqY3yWczH5kzZjyIvlHYmvz7WJStK74Pw+A7Koss8vqsVgaYTEPAkX5mi6308lIM/4OkayjdhqRDLcbSfHYc0dxpKY6cBlLQAM+dRkSuAXrubUjt8CtAo12O2kEDNeUso6p5nrWLYkKM8KvPHpt51qS8/W/2uq4e5G0v74B8sxdUe6+a5AviaeBn/2oa+fWlLvzAUndvJ+ZgH2GF8hXw9iAqHUHdvsISoXpM7Ut0gedgfLXqWef3Jj5+lmj4JaL1WSz9ei4X1ZIRA1vjzWFOtYa57CaGPGsY+mxi8VcTs8VNSHo3Z7gPQ/5oDG81eJjz/y9zQNFHOoIqHHxOUV3v4KTIswuVygO5BkMwll1FtXrITEjzSMPAy0DDqW1GBTgXRpqXfLggUce2ZDvnfQwFbGBZCOMrucVXWiEfRXNIfAx8OYopIG0k53YA0wLSCk81cqCh+iTUk3tbzT2WDEdOA74GXmDnD+DXwCai1dSPPlP5Em3qPfYdlVEDZY2A8/VWNOQRzaqzM6I1gxlGbH7XVsbu3dlhn5g0kIa1eYeV1GtkdoikN1GWzBYsuOEnENmdiqHtSnx5Okb0Z2ArOPXKkPj3xXT+AJN6Cftns/zo8wjlndyCnJ9x/hLyf4ftHshawsD0cmTtwrlfwn0c55qNL1E/ZdpEoGRtRTK+PVudiT9Qh7yogG0S+58VHMftyuCO5kHsxfb4OOai9Kc5nltwLokBNp4DztdRw8+mzoVftfnsTPAPwrZ54/Yf0v2IPoy1+Lx0p8VYcfWS8V1enNnwWHqybRuGoh1bZ9UAbVb97j/BQwmuQY7jt2i3ZQ3QEtTrC5elPQxwTmkY0rhOqEW5jSsJ2vwhOf2KbglECyL6azb+CNVcZo4ym/JbvzLCWRpoJmdw+7GvV4uuo5v9Nfv3UYuVTV4NRjuzC6uhP3cg+pGjifeNq3IGXQb7DvL9inN/Yv8dzO4A0pbkZNTnjO8Uv9yEWxlgk6HMQvGrOdBQlE/vsDPVPzDcHg2fsI0hv9ikJw0/F0Z0NobfL0qfozRtM3uRaUc/o8VWndM8Q/6n4HvDkLeQ7VgOBheeKN7Pd5afFJ83PJYB3tiQ17GtRRqgXcnxvRqYtnFfOzK83waj/BNuWx4NSNHtQvhjuUjYpLA+63qrlzL3Sw59cWp9/fDCJZcQvyYgvrLVvzZLXErpdOetDIGMcHYu5VTT0PimNKbjNQynIsXV9Su7PNxUVbNpdaZh28Ymlm2/17AN873NRmU5w8FV5JD7Us8QdRZD/hkrorsz9FzNkG2GL2hpAVaDN5nI98UE1S7O0o8TtvdKi4daVkLKIGLQ7uWcVjibOl7D4T0XdAWmpKjysSJmdQS2pGvW3Hdk1Mk1aWTiVGDroKwkzz/Qi1G7gk8/0HAnebYHpo4BrKwB8PiIi8fHWqJpbnRyaKqmJzQC80ooh0tYmzUg5/8mcDHQ82RKG8J4Lm3+ZbZf1OmNz0c1TbWSMp9tp25VfJeM14jF4h5yBzNe//0fz3Zb9iY3c1fGzJZ5Wf3ub5DAhw71Vu31IEPHvC9MT7fluO35CIbH5x4TEC1uV0xXLcPQMsCvF4vIDPWmZt/ynv/04wG1h7+6QFFjjj5a4y2458DDanfv+khNQ6aWL181MtzMy1CibK6z1w8xKN6bmtkMw91MWqhza/YTjPk8bw3zzSVF73mZ2qxXsG+6KwMsFJIM48cgMiIryLAu+7sUHJvsTobpgyLGJAZYUb/KjzTApMvAHQZsaSkZNH96iEVGOTRqAzYdmVrJqZTzb4y4jH4YtWmbYYwB5w9H/i3ID3yeAvg7y6lpVDTpyEDhNcr5VzveqPDk2rBPm2ikbfyVaz0gD5vL1rMxBiyyyVRm3qdSqo+caDkXHUplNcALGr0FfTIsScrykfkm74RVq7wBNRvRoS7Qp6S8pbs+nP2JXhdqowGikuoJ2bsxmofQ1Q2ubvK+Ac/lbfhiTvCjD31ZhPVdXmfyMJ0f1tS1icxyEjJbemtGTVgwouum3pm88qSH1RvU6G183YLfbHlRzXczW9U81483l09oiXt063AuuJKJbNW4W1Fm/cTzea3kFBzIG7UlGT3U3IrmcXQP+H6rs+kdyFjexENfHFWqLjonY2RKfWAU4h7+M+AxdSgKy9Yc9/WFJwz25TEneWb2Jd9BYFxEGYpUdL9sI3mJPAKMAE/q4AtEV3MtT6d0Pdci56SUZHUqMTyPH2KEf0Cl7wdyWE1JI1+XgslA/aJ6vo6my6hAWoZzTUdfTJLOxLjOs471lo+Y4P0WQ3pNTTfmRTWfyHwsn5PU6uaGmnrvZs49EyRwdYM3gaHjdzO13pCaLt63Ro3Ljn/qmMxLQbxh5xqqML5d+A6xuv0m756n17T+RaPCfPVZbzTljOb9Yy8DP0a/dm522+rrPr5qxm83OeqOGq9OC8NyxplmqL1P6C4ns2xrXqGcMu2vn0CufumjlSHkmOcwKwMso2UTxZkWrznSGQHMev1KowF6oE1JKzf7gTlhGbiWgaQdH5Yec1512TiGJ63kWgR9lfrqm82t7klBAW+zPxtoiNuWNFKg9zenIv+LFAXrHef5tsoI4kc3LaNbQelrwTk9m1eBPwCboVf1PYeBSjC+VIPvMKTUJiSso0mmqXxEh1/XxVMk+30+I3kPhvf5pgbvLb6C1Z3uv2djc1QQWP6Mo733+T7QjbJ4/NDC0MZa78p9HzL/SgvfkT6NlddnaeFV0xrvg3otkNJPEwbQMc9l18EhOID6dad+dYyby8Oa0tRY8/uXl+35w8aV2Zt4gegP4IYcVno38j7x7Zlh3hvID+tQA0pKfEqGxpYWhmR4jvOzQtJKPT2Oh0PDtMW0lBPF0XgxT/GxOglFqVGkudVNohgqKE0R8FZh9UFvmi54PCzd4PyR8AhfJEqz009TVqfTMe1Lfd8d4IEEldd0UKVQeW1WO19l2S9GQ8x8fONe/P6fMGR7JkbuTK7xw1wsmfGOPWZcdp3AayZSWL7Gu5kfbBjH+8T6IfsD6pq8G/Z6MHsEc8mhkftBY7MD956QPZ/53svIM5hyVrO9rMe64StYFyzw9mCYeuvcE8rqZ2KI/6lv9L7bVO/9eupzNdN7D1+6kGHqBa2w9ecLnALrn+7J9RKI+ywoDw+ijOH4oLQSz8nAhg2xyrgsTyA/NPInolFU+RUQ2hYSlFfOLHImToopYCzpSdcN9CLvz9FLZ3FIYlThktPWAM++pnMuB6mMKqRdv7VRXrt0XjOOyS0+0fCax3ewqkbs4T2CUTwdw7rDx425xQGBBmHm6MzHIydlLyIq7caXrLQgYD/ybbx6jff4XpOyk/Hp3uxS7S0mvQtrYQc2NHq7rKjxDiXy3YXPUA6S8SXtytWrvX8/c3jI0ByvumQf9L7Bhzq6Mk/cQDn/nHJo5pVcXSvgHx2q/IL+Caqiedcwup+Es4GGedMijRqE6U3GWYbflkINMIJ2BnvZCuxAft1HvRN8PR2hhuSDaDonXwS7ByUanNsJnkspg5GfXERtkMWxrGUaeIHrvRZcAdbqUYFKuO9lj4DbXCSvEzG0fBvR5Uri2m78XOD3RtwR/rm+KVO916q7eOdgSG+htTQSqQ7DSH4Z4/0rTNPfiVRvZ673Ng1XV3fzzmdI+BDmcAex8nouC6ouXJP1bnjxuNAOzxs50duNeeLc0B1D5dM+W2X9rmybS0z5hCI9RU+2FGWA1cmHGUvbcnz+sXT6K/2Doq0WZy0pOmdyGGWAT0VADxMhFcSjIegDwuqD/jRKcGtYusF5zesfDy7ACJdjjt+gCo6lkjVAG9MIy9/A5Equ59pSt/Y3wGi2vp7fL21q/rwki6z2a+rpnRCqcAz20wfymk8TsXOjdxZGciLbBrabV9V6O2a6enux3QNjPpwIdhBy3mf7R+Zxv7WmzrvlhSMzrLkOJr0W1Zj1LqjK5BaI5RZqzRodOIcZLKB9zsrI9ElQVOAQtOTkDeW4BDLDsshwBI5iKAPlaSo/bE5aLGEUOPeNcRlMhtFhmSr4vJwpLcaKWgRzNzxaMJOUNBT9HXAR5WhxliOngVYa4HlUn3gZ0JC0ow7UQIcY4K7V/NBClTcEQ6rF7Sx2jlsdm8k+c0Rm7tJl3n+YBz6HXKcTDZ/LfPL1vAz0H4ztrayEupwh6e+yvu8rDVnv8nW6e09ERb7S+ZotsA1ZhmERhkHX5zKPHDk+O0RpFUQ9qUuSSC/O4GkxRpJ52SDVPMvJOKMRV58guesFneScRiw2Dkmr9NP7U8FtIir5EWk3AjktSUkjB98Hv8UIb5FUSFQ+ORGAHx7JRo1SRIlwaR2rgSkU/+eOrYIrvV3mgAvVPGJcdmuGi/8Po8fHLbw6otWr+M0cGYNYenVMbojujeF3ZN+pWsd7ukfWW6eenxas5jvTvGSwakkvb8Wr/2Vo2/CrWVP/6q0ZOdK7GEegGw7BwRjvvTHEF+36p+xZJr87HFvhdBgU/dq+G4o7ERtxvgbP82BfUCoV/vJRmKzQiDwsA+f708Hrh8Z1PTniuCs7WnwVFUU2M1fmf00njAEzg6qn0QLon6SdBEYF8Riek/OiYfphyLuFraYISo54kCWnfRdwGjgKXAtuAI46kQZoC6u5l7+nylqdv1snqvoXqqrtboDpNg9n2HkYq5sVdF5TXeVdP2V06I+hByobQ6w5RaG0DgVDPeWS7Mt77Oqdxzzzjcwvj2Be+YTqod6VyJ4TWHj7nxxAkbbGZg15IudceQD1C0n3wVeqAdY9mAjiSMNetiRjpWHb1QUZ1VnsUXDcGXdPRPe/4x4Ejgpw/lPSL+fC/gV6l3CBvci7D9gU6Ic1HmL7XzCbMvT8GBN5B8G8O2heDNn8+pecwzNIu0N1NhbmGCtFAx9QEQ1F3w7WrZRKrU31aHcDzGjvYBZK4eZ7TXzs4nF+s/eTDlU4Rng63zvdc5L3ek0VBrjJ60uIpWHfSiEZYFuSwVpmkEmG85eglE5+KvlNnJUkHbQf/RcaYEV164DOTFtQeUUed0ZcxGTSNBR9YQSPSZKctyFgENgVfAPMxGjOZPsWmA8WA61UbwBZoAVcmvbQHLzqOhzsADYBOlfYXrblWNG66uqoE2kAp4lmkH2EKt8GtG6gM5Da6BeG2t0A803oV6o191vFl5WrvB+PGp+d+9RRmTeLNbrHPdn+04/PJBm2LBaVOz6JldZL+AmFhw5r+3rGiAe9U4h+D8nNA1d5HzSusv7x9cAyUzq5fgI5K8iz3CDfbHieAYcZ8Iax3MODbPLuamC0FyY0f15euTr7RTqms9iIzbHatyQ5I9cDGZk0ScZK0eW3LIXKwGkx1r3oLrBD4fwq0lXnHYE+NVkq4Vfm5s01dy6jqXuuNiLnRnoR9GT6Bli619SHDLHugbZB/YWu5Uzqeid1TuJkkd1RR2mAe7aCe3cN5e8HotYmdFQVi8tVWzuGk8RyJZNkTEcH95csKaGAoAcqoSizbAw5P8Sc6wQM3hE87vs3VHu/wwj/qNAI7zEuO6K61rtor4nZqU113r+mH5uZYya9LReGt/rDXt7I96q8b1LeSr4P/fOnjv58LmzE+Oyp+PuX0etsxIKsNeCaKQ2tfzWprdR2PZPEACuiKYwaAytMw6unMd9DYlID/DF5HwkU3vZkEgOsSFdRsE9Hs7Ohf2CxnQrvdUAGJm3SMPnhwLZeGvrfDrwIAon7o2/4/pxEOR7bBzIlOynjKvgko8uMUAupY7JZoOmi4BbVdcqdt6m1pt3+AjTlU8l0IpUzcfhNrkHtXI7l2mOApxzmLRgx3vsJT3uNPq7BK0AHEgL8js9Mnv3EoZm3RkzKjkQh1+Df7My7vrtjEA8dOZFPZWC4ezd4r084MqP5zVjiU5T9YNrj/SYWivAVLTQ9FEPb0NjkVfP60YX8EtNi3/jCtxnpa3jX+Iqm1QzHhHyyMrbQ8jAkMcCa/zVtpJoXXAC0aMeWniDD+4aZZIBlADUkakpyEPuLGUOkaOw0YGMYlFWkOUo5C6kT9dIozcPg65bCFVWOAaEGOC/vJbYXgD8BDQGXg9QR2dyX4jooCtZcsIuCizXTCY55Npq4d/dR1SPAKRVeZT03aZL6lQ6jdo+AGTnITj0yO3PPid55GLyrMbKH8PrPgXWN3nV7Tcg+zKroU/gwxi4MhFXjlg8kbQBD1cPgPXUxw9cjHs4+X7XSm/D06MysNlrjq1EMJx9GdD2KV5R2xsBvzhuXg5hz7p175Uk+fq13yuqVXu2ICdm3OPw2vXmz8W30rtBHO15Icdi7Tf2SnUhigPXBckU1JiQD+iQ43oS5gEfyNYRqGlUuhV9ReWHkVSAudDdngEnVAqDdQrnCEz4gaVJ4cmkp0jN0B1K+CmyN2AnkvQYZoUO30i88jyP7x+B3QNFwJdJwKuXmgivxzhjUiXa2lHZ2BawKgMrl6BnUpN1ZTPvJslQsSTRRekXotKYd7r3CnOt54CG+htUVI3kgK5HP45OQuxCx8mIRkWi99xuM5NvsD+JVo50wxCdUdffOb+jKK0MBxNPPFyi9czHgZxInHYKUYRjyWozvYyz6+hnb1zDKvflwx4nwnI3MzUiva/KNb8RHOwKKK/spHghFJgMSFBTaoRfL4sFjAMK7t/i8wbEMtwyDKWm+cYUpcwGf74Ao+k3irT5CvvkF8sqxqyHuNxII3ow8h8bl4x5p1GcCOAfMiePvoHQ/CvYdpg6qhiu2BA28Rt6rgalTXUJRLqs00DEGWCXnjTBG9jyi1duwNEuIcvthZOdz+3+HIf0Fv+V7TVUjQ3t8rYrjyWzXYZ3mBoTtgcMQCyYjlagZYyujtRLD+nf9+APbHzTVeH/COv+AT2A+pBXYGP5eGPpZTVnvolzkW2HGVyqCNB+jOUZb0rCoDT0GsyJFG3oU5k8sMsgAL7Pg91n74YgM5OBo/4TFVh2JhkXL2qEgfzHljLWol89KU/a+zPVpG0mUsRKGB8FZ4LlI5o5LVBQ8puOKdyWXogHamJzx24GmpRy1gwZiH/yy1gEjPJXXIfYY5/0y0837B91kX34j+OMVdd6bL4zOfJgrO5v9eNR47w0Wa83CAO8HMszjqqG0ockHeI0MQTfyUQ29UDGXzaVrmrwF+R+D8HZ9Lvtk7Wf8EpNereCnB/kM5XtVyylrTPD7mG0KaP8TWoQU6GzEVMXWAH+EPEWzX4mR6yfLoGn4mQEKY1IUl8QAywE5Cgw2LulzRkWlT39+WNY9LWY7G9gOsY8izw7geRBJMsIY60dgWgDOAxry1ShJpZAfBd9FXVVHR51MA9y3hbSxy6j2bmC9Tlb9TlfdjjXAUhdGeDrDaiyMem9uF69m7gJi4sJFUKQ/xWsoe47NzmV4WpFrNV3OllpkRXTbyhB3rfEG1hNFY6QVCi/mHeN3C+/IjN1yr8vkvqS1YoVXNffr3hqVX8hTYfs9qU+vBHX61CaPDCkP3d3kMV3kNBdeK8NGGZrLXGhTrzzvMLY7gSSjNfp9YkWn7UEzKUSR6X6When+ngpiDbDkcj116HEGuxcBlXkm2BBUCg2nIlrMc2ulVMjVw1oDasfXgf+zzukyWGmg4w1wvrqsSpYxbWVQC6+EXzz6sEvGm4e7vynnRzOfu1F1Jvc1rBa2ugY+XZjxBlXBhFUNHabLf0mr+ZMELbkrckfRX7cENUsSfcigymGRfuNoIgxJjOmiOMEB6XtwLokONN8sp6JdCMOoL4vdSWG2Blj1O468v0GG0ZA+fBp5eJs8N7JVO/82OBpoyqIjSSvvNVf9ckdWwpVdmgbyTt5fkHIYGFWaNJc7SgNJooooeWVLmzHDW0i382si4IW8I7xedXe+JNSV9y8LwOKqETVdvVp+hnBGti73k1tlq087CZYB1rCeLSUxdJ9SyCSDgtTJ6tvPSUYOVIYt9SPDuraZ4JdhUoTYnqQ52iTOzxDyHW5bUe6B9Km5+J+As8DjQPenvUlTElqI9iNwPngNOOrEGqBtfUz1FQEv6cSXUfFVr5gIOFZTfDJy1b3Z/3Sv8hY28vu9GOO+LKYi1v2cmPttJDKezTzy3U/VMWfc+SnJHIxGEayHXWVQoXvJqyHNVnotUuNbHD9bdM708DNTxgK+qLoUsLXZ1TykXntqT3qPwrSg7WTLQvUcajHWv6lznU3ePP9s8qrD1CiGIpZjwD6gNygnqXNmBin3U5RyBOZRn6XlLPALIDtpe4669HLIVHlPgr+CH+vAkspVJ8tqVDZ75zHA6FE/LzjijuwDVf296SzEajPcxiB2lleUlk89mNW5dguEKvUurZ+gYjI6Sb3WaeRVR7oxCIpw9VDJSCSVnyQ6pEhrkjFSNNquhF4aMIR3UOiJoNqy8JHw7wKescyXY6dsLXB7jfLlBEwG24J98tiabU+QBinq1uI2Rbwy+G+CD0toE2SvWCqHEQl6rkpVQDlkar2B/znU/amg2qYNlaVONhXoDLzlaGCd4bo7RR3pTHekortbVlZDkHr1ZqVlPn1tSu1BnXXUkO/7yP7IVrb4kS/Z7TGnpCF4/fyeRgPalbjGfhQ4GtgaYOl+MnXWCEPJRD26IkTv5A4Am4HhYDuwJZBjp8Vf3YGccH8qqpF9QW1Ic+hytGRw9ebAnDzeYSsjrzUAC6nvGraRRF02gOHISKbgxInIfz84ye4sddifHFvY5cp9gzx0tT8y90beNpYyl8Ov0ZnAtonMPUnf3lKmnnXJtBo9MSmD+qhdypHbyoS/iEe6Cxz1Qu4QeA8p4u+Iwzeo41MdUbDKdAa4ozRvUC6NVFG+YEPyPFfSqCrOA+V61Nl3s7mYhLyNXP+qhHlLzsZ1yoFJ8mzVUe9ydKIyxj2AhqT9bV/2FRWrrl2A6iudaQTFH0WRAfbPySALaluBxoO0QEIfckZk7G1pFWXJISiZqIPandqfDTVRfqgji0zpVbqzoTiZiZ556ql7UxbiOpM+t2orga8qltAm0r7GeuoY60SmXagvL0kn4ed1W6cBp4FOqAE6P0W86lRlGAU/AlZnKYOX29IxWRla8jlyGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBpwGnAacBoogwb+Pz+q4SAn0OYYAAAAAElFTkSuQmCC" alt="Gym Member Machine" width="150" height="57">
+    <h1>Free <span class="ab"><span class="xa">A</span><span class="xb">B</span></span></h1>
+    <p class="lede">Two ways to get started. <b>Option A</b> is a true free 30 days with no catch. <b>Option B</b> is a legacy rate about 15% off that starts today and puts cash in the bank on day one. Start with how the offer works, then price it, project it and set the dates. The word tracks from the Tuesday SSS Sales Coaching calls come after.</p>
+    <nav aria-label="Sections">
+      <a href="#offer">The offer</a>
+      <a href="#price">1. Price it</a>
+      <a href="#project">2. Project it</a>
+      <a href="#dates">3. Set the dates</a>
+      <a href="#scripts">Word tracks</a>
+      <a href="#targets">Targets</a>
+      <a href="#thirty">The 30 days</a>
+      <a href="#fit">When it fits</a>
+      <a href="#mistakes">Mistakes</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="offer" aria-labelledby="offer-h">
+  <div class="sec-head">
+    <span class="eyebrow">The offer</span>
+    <h2 id="offer-h">Two ways to get started</h2>
+    <p>Free A/B is an offer for group and semi-private gyms. You market a true free 30 days. At the end of the roadmap, you show two ways to get started side by side. A is the free 30 days. B is a legacy rate about 15% off that starts today. If they want the free 30, they get it.</p>
+    <p>Why it works: a true free 30 is an easy yes, so more people book and show up, and the "what does it cost?" objection goes away. B gives the people who already know they're in a reason to start today, so you still collect cash on day one.</p>
+  </div>
+  <ol class="flowsteps" aria-label="How Free A/B works">
+    <li><b>Market it</b><span>Run ads and old-lead texts for a true free 30 days. G.R.: "Who else is marketing a true free 30 days in your area? Nobody."</span></li>
+    <li><b>Book the roadmap</b><span>On the booking call and again in the roadmap, tell them you'll go over two ways to get started.</span></li>
+    <li><b>Show A and B</b><span>A: free 30 days, card on file, $0 today. B: the legacy rate, paid today and locked in. Then let them pick.</span></li>
+    <li><b>Day 30</b><span>Trialists roll into the membership at the regular rate unless they cancel before the date you gave them.</span></li>
+  </ol>
+  <div class="offer">
+    <article class="opt a">
+      <span class="tag"><i>A</i>Free 30 days</span>
+      <ul>
+        <li>30 days completely on the house. No catch and no bait and switch.</li>
+        <li>They "use and abuse" it and train like a member from day one.</li>
+        <li>Netflix close is optional. If you use it, card goes on file, the first invoice is $0, and you tell them the exact date of the first bill.</li>
+        <li>Miss the date and they roll into the full rate. The first gym running it does the trial at 2x a week and rolls it into a 2x a week membership.</li>
+        <li>No cash for about four weeks.</li>
+      </ul>
+      <p class="who">G.R.: "if they want to take you up on the free 30 day trial, by god you will give it to them."</p>
+    </article>
+    <article class="opt b">
+      <span class="tag"><i>B</i>Legacy rate</span>
+      <ul>
+        <li>Start today at about 15–16% off, locked in for as long as they're a member.</li>
+        <li>B breaks even with A around month six, so a B member saves money from month seven.</li>
+        <li>Cash on day one.</li>
+        <li>Name it for your stage: legacy, founding member, fast action, Thanksgiving special.</li>
+        <li>The B rate has to hit your profit goals even if it's the only thing you ever sell.</li>
+        <li>One gym's B extras: a 30-minute starting point session, a quick-start nutrition guide, a welcome box.</li>
+      </ul>
+      <p class="who">G.R.: "now you have a way to turn that into cash day one and put them into a membership."</p>
+    </article>
+  </div>
+  <p class="note">Below: price your membership, project the first months, and set the Netflix close dates. Then the word tracks.</p>
+</section>
+
+<section id="price" aria-labelledby="price-h">
+  <div class="sec-head">
+    <span class="eyebrow">Step 1</span>
+    <h2 id="price-h">Price your membership</h2>
+    <p>Use the one membership your free trials roll into. Your minimum discounted price is the minimum recommended price from the <span id="diag">Gym Financial Diagnostic</span>. B can't go below it, because B has to hit your profit goal even if it's the only thing you ever sell. If you bill weekly or every 28 days, pick that under Billing and enter prices the way you quote them. The diagnostic's minimum is a monthly number, so each price also shows what it comes to a month.</p>
+  </div>
+  <div class="panel stack">
+    <div class="pricebar">
+      <div class="field">
+        <label for="mode">How to calculate</label>
+        <select id="mode">
+          <option value="back">Backwards: I know my minimum discounted price</option>
+          <option value="fwd">Forwards: I know my regular price</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="bill">Billing</label>
+        <select id="bill">
+          <option value="month">Monthly</option>
+          <option value="d28">Every 28 days</option>
+          <option value="week">Weekly</option>
+        </select>
+      </div>
+      <div class="field narrow">
+        <label for="disc">B discount</label>
+        <div class="unit suf"><input type="number" id="disc" min="0" max="50" step="0.5"><span>%</span></div>
+      </div>
+    </div>
+    <div class="mrow" role="group" aria-label="Your membership">
+      <div class="cell">
+        <label for="label">Membership</label>
+        <input type="text" id="label" maxlength="40">
+      </div>
+      <div class="cell">
+        <label for="tpw">Times per week</label>
+        <input type="number" id="tpw" min="1" max="7" step="1" inputmode="numeric">
+      </div>
+      <div class="cell" id="cell-full">
+        <label for="full">Minimum price <small>regular rate, A rolls into this</small></label>
+        <div class="unit pre" id="full-in"><span>$</span><input type="number" id="full" min="0" step="any" inputmode="decimal"><span class="per">/mo</span></div>
+        <div class="calcd" id="full-out" hidden><b>$0</b><em class="per">/mo</em><span>calculated</span></div>
+        <small class="eq" id="full-eq" hidden></small>
+      </div>
+      <div class="cell" id="cell-bmin">
+        <label for="bmin">Minimum discounted price <small>B, the legacy rate</small></label>
+        <div class="unit pre" id="bmin-in"><span>$</span><input type="number" id="bmin" min="0" step="any" inputmode="decimal"><span class="per">/mo</span></div>
+        <div class="calcd" id="bmin-out" hidden><b>$0</b><em class="per">/mo</em><span>calculated</span></div>
+        <small class="eq" id="bmin-eq" hidden></small>
+      </div>
+    </div>
+    <div class="kpis three">
+      <div class="kpi hero"><span class="l">Break-even</span><span class="v" id="be-month">Month 7</span><span class="l" id="be-sub">B members save from here on</span></div>
+      <div class="kpi"><span class="l">B saves a member</span><span class="v" id="be-save">$0</span><span class="l" id="be-save-sub">every month</span></div>
+      <div class="kpi"><span class="l">Price per session</span><span class="v" id="be-sess">$0 / $0</span><span class="l" id="be-sess-sub">A / B</span></div>
+    </div>
+    <figure class="chartbox">
+      <svg id="chart" viewBox="0 0 560 230" role="img" aria-labelledby="chart-t" style="width:100%;height:auto;display:block"><title id="chart-t">Total paid by a B member vs. an A member who converts</title></svg>
+      <figcaption class="legend"><span style="--c:var(--a)">A member: month one free, then the regular rate</span><span style="--c:var(--b)">B member: discounted rate from day one</span></figcaption>
+    </figure>
+    <p class="check" id="p-check"></p>
+  </div>
+</section>
+
+<section id="project" aria-labelledby="project-h">
+  <div class="sec-head">
+    <span class="eyebrow">Step 2</span>
+    <h2 id="project-h">Project the first months</h2>
+    <p>This is a projection, not a report. Free A/B is new for most gyms, so start on target and adjust as your real numbers come in. It uses the prices from Step 1.</p>
+    <p>Note: It's totally fair to set Roadmaps a month higher than your current marketing brings in, because this offer is so much more compelling than what most gyms are running right now.</p>
+  </div>
+  <div class="panel stack">
+    <div class="projbar">
+      <div class="field">
+        <label for="roadmaps">Roadmaps a month</label>
+        <input type="number" id="roadmaps" min="0" step="1" inputmode="numeric">
+      </div>
+      <div class="field">
+        <label for="months">Project for</label>
+        <select id="months"><option value="3">3 months</option><option value="6">6 months</option><option value="12">12 months</option></select>
+      </div>
+      <div class="field">
+        <label for="scenario">Scenario</label>
+        <select id="scenario"><option value="slow">Slow start</option><option value="target">On target</option><option value="strong">Strong</option><option value="custom">Custom</option></select>
+      </div>
+    </div>
+    <div class="assume">
+      <div class="field">
+        <label for="b">Buy B on day one <small>% of roadmaps</small></label>
+        <div class="unit suf"><input type="number" id="b" min="0" max="100" step="1"><span>%</span></div>
+      </div>
+      <div class="field">
+        <label for="a">Start the free 30 <small>% of roadmaps</small></label>
+        <div class="unit suf"><input type="number" id="a" min="0" max="100" step="1"><span>%</span></div>
+      </div>
+      <div class="field">
+        <label for="conv">Trials that convert <small>plan on 50–60%</small></label>
+        <div class="unit suf"><input type="number" id="conv" min="0" max="100" step="1"><span>%</span></div>
+      </div>
+      <div class="field">
+        <label for="churn">Members who cancel <small>% a month</small></label>
+        <div class="unit suf"><input type="number" id="churn" min="0" max="50" step="0.5"><span>%</span></div>
+      </div>
+    </div>
+    <p class="note" id="scen-note"></p>
+    <div class="kpis">
+      <div class="kpi hero"><span class="l" id="k1-l">Paying members after 6 months</span><span class="v" id="k1">0</span><span class="l" id="k1-sub">from Free A/B</span></div>
+      <div class="kpi"><span class="l" id="k2-l">Monthly revenue in month 6</span><span class="v" id="k2">$0</span><span class="l">from these members</span></div>
+      <div class="kpi"><span class="l" id="k3-l">Collected over 6 months</span><span class="v" id="k3">$0</span><span class="l">cash in the bank</span></div>
+      <div class="kpi"><span class="l">On the free 30</span><span class="v" id="k4">0</span><span class="l">new trialists each month</span></div>
+    </div>
+    <div class="tablebox">
+      <table class="proj">
+        <thead><tr><th>Month</th><th>Bought B</th><th>Started free 30</th><th>Trials rolling in</th><th>Paying members</th><th>Collected</th></tr></thead>
+        <tbody id="proj-body"></tbody>
+      </table>
+    </div>
+    <p class="note">Month 1 only collects from B. Free trials bill about 30 days in, so each month's trials start paying the month after. Trials started in the last month haven't billed yet. People are rounded to whole numbers.<span id="proj-bill"></span></p>
+  </div>
+</section>
+
+<section id="dates" aria-labelledby="dates-h">
+  <div class="sec-head">
+    <span class="eyebrow">Step 3</span>
+    <h2 id="dates-h">Set the Netflix close dates</h2>
+    <p>Tell every trialist the exact date of their first bill. This uses your membership and minimum price from Step 1.</p>
+  </div>
+  <div class="panel dates">
+    <div class="stack">
+      <div class="field">
+        <label for="start">Signup date</label>
+        <input type="date" id="start">
+      </div>
+      <div class="field">
+        <label for="days">Free days <small>A is 30</small></label>
+        <input type="number" id="days" min="1" max="90" step="1" inputmode="numeric">
+      </div>
+      <div class="mini">
+        <div><b id="d-first">–</b><span>first bill and agreement start</span></div>
+        <div><b id="d-last">–</b><span>last day to cancel</span></div>
+        <div><b id="d-rate">$0</b><span id="d-rate-l">first bill</span></div>
+      </div>
+    </div>
+    <div class="stack">
+      <p class="say" id="d-say"></p>
+      <button type="button" class="copy" data-copy="d-say">Copy this</button>
+      <p class="note">Card on file, first invoice at $0 so they can get into the app. The waiver is dated today. Date the agreement to the first bill.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="scripts" aria-labelledby="scripts-h">
+  <div class="sec-head">
+    <span class="eyebrow">Word tracks</span>
+    <h2 id="scripts-h">What to say</h2>
+    <p>Lightly cleaned from the transcripts. Make them sound like you.</p>
+  </div>
+  <div class="ref">
+    <div class="script">
+      <span class="when">Plant it three times</span>
+      <blockquote id="s1">"At the end, if I feel like we're going to be a good fit, we're going to talk about two different ways to get started. Does that sound good?"</blockquote>
+      <p class="src">A gym owner running it says this on the booking call, again when laying out the roadmap, and again when opening the offer. Tue 11/17, 1:03:40</p>
+      <button type="button" class="copy" data-copy="s1">Copy</button>
+    </div>
+    <div class="script">
+      <span class="when">Lay out A and B</span>
+      <blockquote id="s2">"Option A is our free 30 days. It includes this, that and the other. Option B, if you want a little more value for the money, you can claim our founding member membership."</blockquote>
+      <p class="src">G.R. Tue 11/17, 45:54</p>
+      <button type="button" class="copy" data-copy="s2">Copy</button>
+    </div>
+    <div class="script">
+      <span class="when">Make the case for B</span>
+      <blockquote id="s3">"I've been in the industry a long time. Most of my clients stick around for years, not months. So if you feel like you're going to be like our typical client, it makes sense to just take us up on our legacy member rate. That's option B, where you save X amount of money for as long as you're a member with us."</blockquote>
+      <p class="src">G.R. Ask about their training history first. Tue 11/17, 48:42</p>
+      <button type="button" class="copy" data-copy="s3">Copy</button>
+    </div>
+    <div class="script">
+      <span class="when">Worst case, best case</span>
+      <blockquote id="s4">"Your worst case scenario here is you use and abuse it for 30 days. You've learned some things you can take off and do on your own. Let us know before the end of the trial and you never get billed another penny. Your best case scenario, you find your new fitness family and change your life forever."</blockquote>
+      <p class="src">G.R. Worst case first, then best case, so you finish on a positive. Tue 11/17, 54:01</p>
+      <button type="button" class="copy" data-copy="s4">Copy</button>
+    </div>
+    <div class="script">
+      <span class="when">No bait and switch</span>
+      <blockquote id="s5">"There's no bait and switch. It's literally 30 days for free. We take a credit card down just because we have to build a profile, but it is 30 days completely on the house. We treat you like a member. If you don't like it, you let us know. We never bill you a single penny."</blockquote>
+      <p class="src">G.R. on why a real free 30 gets people to book and show up. Tue 10/27, about 27:40</p>
+      <button type="button" class="copy" data-copy="s5">Copy</button>
+    </div>
+    <div class="script">
+      <span class="when">The Netflix close</span>
+      <blockquote id="s6">"In order for us to do this 30-day trial, we're going to need your credit card to unlock a spot in the app for you. You can see right here, this first invoice is charged at zero. If at any point before this date you feel like this isn't a good fit, all you have to do is let me know and you're never going to get charged a penny. On this date, you get your first bill that rolls you right into your membership, and that's when your agreement starts."</blockquote>
+      <p class="src">A gym owner running it. G.R.'s rule: if you Netflix it, do it "with heavy transparency." Tue 11/10, 22:38 and Tue 11/17, 52:23</p>
+      <button type="button" class="copy" data-copy="s6">Copy</button>
+    </div>
+    <div class="script">
+      <span class="when">A member's full close</span>
+      <blockquote id="s7">"Worst case scenario is you get some great workouts and walk out of here more fit than when you came in. Best case is you found your forever fitness family, and after week four you just roll right into that two-time-a-week membership. We also have some founding membership rates left, if you're open-minded to hear about it. If you plan on being with us for longer than six months, this founding membership rate just makes sense, because you're going to start saving money on month seven. Which one of those is best for you?"</blockquote>
+      <p class="src">Then stop talking. The owner gives the month-seven math last and says it gets people "psychologically already locked in for six months." Tue 11/10, 21:23</p>
+      <button type="button" class="copy" data-copy="s7">Copy</button>
+    </div>
+    <div class="script">
+      <span class="when">Reactivate old leads</span>
+      <blockquote id="s8">Text 20 old leads at a time with the free 30. If nobody answers within half an hour, text the next 20.</blockquote>
+      <p class="src">G.R. calls it a "very strong reactivation offer. Easy offer to say yes to." Tue 11/17, 1:01:32</p>
+    </div>
+  </div>
+</section>
+
+<section id="targets" aria-labelledby="targets-h">
+  <div class="sec-head">
+    <span class="eyebrow">Targets</span>
+    <h2 id="targets-h">The numbers from the calls</h2>
+  </div>
+  <div class="tablebox">
+    <table class="bench">
+      <thead><tr><th>What</th><th>Number</th><th>Who and when</th></tr></thead>
+      <tbody>
+        <tr><td>Walk out with A or B</td><td class="num">75–80%+ of roadmaps</td><td>G.R.'s target range (the first member gym's dashboard aims for 80%)</td></tr>
+        <tr><td>Buy B on day one</td><td class="num">25–45% of roadmaps</td><td>G.R.'s target range (the first member gym aims for 28%)</td></tr>
+        <tr><td>Start the free 30</td><td class="num">35–50% of roadmaps</td><td>G.R.'s target range (the first member gym aims for 52%)</td></tr>
+        <tr><td>Take neither</td><td class="num">15–25% of roadmaps</td><td>G.R.'s target range (the first member gym aims for 20%)</td></tr>
+        <tr><td>Trial to member</td><td class="num">Plan on 50–60%</td><td>G.R., 11/17. On 10/27 he said it should be "upwards of 50%."</td></tr>
+        <tr><td>Trial to member, a win</td><td class="num">60–65%</td><td>Member gym owner, 11/17, because their B take is so high</td></tr>
+        <tr><td>Trial to member, James Pratt</td><td class="num">83%</td><td>G.R.: "I do not think that is a number that we should be considering."</td></tr>
+        <tr><td>B discount</td><td class="num">15–16%</td><td>G.R., 11/17: "people can break even about month six"</td></tr>
+        <tr><td>Member gym, Nov 1–10</td><td class="num">16 roadmaps: 6 B, 6 A</td><td>75% walked out with A or B</td></tr>
+        <tr><td>Member gym, Nov 1–17</td><td class="num">27 roadmaps: 13 B, 7 A</td><td>74.1% A or B, 48.1% bought B. G.R.: "this is perfect."</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="thirty" aria-labelledby="thirty-h">
+  <div class="sec-head">
+    <span class="eyebrow">The 30 days</span>
+    <h2 id="thirty-h">Treat them like members on day one</h2>
+    <p>Pratt's one-liner on converting free trials, as G.R. tells it: "they just treat people like members day one." Under a Netflix close the trial ends with a bill, not a sales call, so the selling happens in the experience.</p>
+  </div>
+  <div class="timeline">
+    <div class="step"><span class="d">Roadmap</span><p>Card on file, $0 first invoice, agreement dated to the first bill, waiver dated today. Book their first session before they leave. Don't let policies be the last thing they hear. Finish with the welcome gift.</p></div>
+    <div class="step"><span class="d">Before session 1</span><p>Hand off their goals and injuries to the coach. G.R.'s "magic trick" is to have the trainer bring up something they shouldn't know about the client. It shows the handoff is tight and that you care.</p></div>
+    <div class="step"><span class="d">After session 1</span><p>Ask for feedback right away: "How'd that feel intensity-wise? Do we need to turn things up or turn things down?" G.R. expects missing these early feedback conversations to be the biggest miss in most gyms.</p></div>
+    <div class="step"><span class="d">Weeks 1–4</span><p>Act on the feedback and keep the sessions great. Watch attendance. If a trialist never shows, reframe and restart their trial date. If someone's showing up but on the fence, extending a week is fine.</p></div>
+    <div class="step"><span class="d">Billing date</span><p>They roll into the membership. If someone forgot to cancel and gets grumpy, refund them, have a feedback conversation and try to save them. Fighting it gets you one-star reviews.</p></div>
+  </div>
+</section>
+
+<section id="fit" aria-labelledby="fit-h">
+  <div class="sec-head">
+    <span class="eyebrow">When it fits</span>
+    <h2 id="fit-h">Use it, or don't</h2>
+  </div>
+  <div class="cols">
+    <div class="list">
+      <h3>Good fit</h3>
+      <ul>
+        <li>Group or semi-private training. G.R. sees it becoming the offer for a lot of the non-1-on-1 gym industry.</li>
+        <li>Your product sells better than your salespeople do. Let the product carry the sales load.</li>
+        <li>You need butts in seats now and have the room for them.</li>
+        <li>Prospects compare you to cheaper gyms. That objection mostly disappears once they see how good the food is.</li>
+        <li>Your B rate still hits your profit goals on its own.</li>
+      </ul>
+    </div>
+    <div class="list">
+      <h3>Think twice</h3>
+      <ul>
+        <li>1-on-1 training. Tougher to make the financials work. In a one-on-one training business, if folks are taking you up on longer-term trials, capacity is tight.</li>
+        <li>Capacity is tight. Consider running it as a small reactivation offer test, as opposed to a heavy, aggressive paid traffic offer.</li>
+        <li>If your current offer is crushing, don't do this. Keep running the play. It's working.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="mistakes" aria-labelledby="mistakes-h">
+  <div class="sec-head">
+    <span class="eyebrow">Mistakes</span>
+    <h2 id="mistakes-h">Where it breaks</h2>
+  </div>
+  <div class="list">
+    <ul>
+      <li><b>Discounting B below your margin.</b> G.R.: "the spot where this would break is if you discount off of rates that do not give you a margin."</li>
+      <li><b>Hiding the terms.</b> Say the billing date out loud and put it in writing. A Netflix close needs heavy transparency.</li>
+      <li><b>Planning on 83%.</b> Plan on 50–60% and be happy when you beat it.</li>
+      <li><b>Fighting refunds after an auto-charge.</b> Just refund, then have the feedback conversation.</li>
+      <li><b>Skipping feedback after session one.</b></li>
+      <li><b>Ending the signup on policies.</b> Finish with the welcome gift.</li>
+    </ul>
+  </div>
+</section>
+
+
+</main>
+<footer class="foot"><div class="wrap">Calculator inputs are saved in this browser only.</div></footer>
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  // Paste the live Gym Financial Diagnostic URL here to turn the Step 1 mention into a link.
+  const DIAG_URL = 'https://onboarding-diagnostic-wheat.vercel.app/';
+
+  const SCEN = {
+    slow:   {b:15, a:50, conv:40, note:'Slow start: a first month while the team learns the close.'},
+    target: {b:30, a:50, conv:50, note:'On target: 30% buy B on day one, 50% start the free 30 and 20% take neither, with 50% of trials converting.'},
+    strong: {b:40, a:40, conv:60, note:'Strong: 40% buy B on day one, 40% start the free 30 and 20% take neither, with 60% of trials converting. A team that closes well and a product that sells itself.'}
+  };
+  const BILL = {
+    month: {per:'/mo',      word:'a month',       every:'every month',   perYear:12},
+    d28:   {per:'/28 days', word:'every 28 days', every:'every 28 days', perYear:13},
+    week:  {per:'/wk',      word:'a week',        every:'every week',    perYear:52}
+  };
+  const DEF = {mode:'back', bill:'month', disc:15, label:'2x a week small group', tpw:2, full:400, bmin:300,
+               roadmaps:20, months:6, scenario:'target', b:30, a:50, conv:50, churn:5, days:30};
+  const S = Object.assign({}, DEF);
+  try { const sv = JSON.parse(localStorage.getItem('freeab3') || 'null'); if (sv) for (const k in DEF) if (sv[k] !== undefined && typeof sv[k] === typeof DEF[k]) S[k] = sv[k]; } catch(e) {}
+  if (!BILL[S.bill]) S.bill = 'month';
+  // A preset scenario always loads its current numbers, so a browser that saved older preset values picks up new defaults.
+  if (SCEN[S.scenario]) { const sc = SCEN[S.scenario]; S.b = sc.b; S.a = sc.a; S.conv = sc.conv; }
+
+  const money = n => (n < 0 ? '−$' : '$') + Math.round(Math.abs(n)).toLocaleString('en-US');
+  // Period prices keep cents when they have them ($69.23 a week); everything else rounds to whole dollars.
+  const cash = n => { const r = Math.round(n * 100) / 100, a = Math.abs(r), c = Math.abs(a - Math.round(a)) > 0.001; return (r < 0 ? '−$' : '$') + a.toLocaleString('en-US', {minimumFractionDigits: c ? 2 : 0, maximumFractionDigits: c ? 2 : 0}); };
+  const whole = n => Math.round(n).toLocaleString('en-US');
+  const num = (v, lo, hi) => { let x = parseFloat(v); if (!isFinite(x)) x = 0; return Math.min(hi, Math.max(lo, x)); };
+
+  function prices(){
+    const d = S.disc / 100, k = BILL[S.bill].perYear / 12;   // k turns a per-period price into a monthly amount
+    let A, B;
+    if (S.mode === 'back') { B = S.bmin; A = d < 1 ? Math.ceil(B / (1 - d) - 1e-9) : B; }
+    else { A = S.full; B = Math.round(A * (1 - d)); }
+    return {A, B, d, Am: A * k, Bm: B * k};
+  }
+
+  function niceStep(raw){ const p = Math.pow(10, Math.floor(Math.log10(raw || 1))); const m = raw / p; return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p; }
+  function shortMoney(v){ return v >= 1000 ? '$' + (v / 1000).toFixed(v % 1000 ? 1 : 0) + 'k' : '$' + Math.round(v); }
+
+  function drawChart(A, B, startMonth){
+    const svg = $('chart'); const W = 560, H = 230, L = 58, R = 14, T = 16, Bm = 34;
+    const N = Math.min(24, Math.max(12, (isFinite(startMonth) ? startMonth : 12) + 2));
+    const fa = n => A * Math.max(0, n - 1), fb = n => B * n;
+    const ymax = Math.max(fa(N), fb(N), 1), step = niceStep(ymax / 4), top = Math.ceil(ymax / step) * step;
+    const x = n => L + (n - 1) / (N - 1) * (W - L - R), y = v => T + (1 - v / top) * (H - T - Bm);
+    let g = '';
+    for (let v = 0; v <= top + 1e-6; v += step) g += '<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(v)+'" y2="'+y(v)+'" stroke="var(--line)" stroke-width="1"/><text x="'+(L-8)+'" y="'+(y(v)+4)+'" text-anchor="end" font-size="11" fill="var(--ink-2)">'+shortMoney(v)+'</text>';
+    const every = N > 12 ? 2 : 1;
+    for (let n = 1; n <= N; n += every) g += '<text x="'+x(n)+'" y="'+(H-Bm+18)+'" text-anchor="middle" font-size="11" fill="var(--ink-2)">'+n+'</text>';
+    g += '<text x="'+(W-R)+'" y="'+(H-2)+'" text-anchor="end" font-size="11" fill="var(--ink-2)">month</text>';
+    const line = (f, col) => { let p = ''; for (let n = 1; n <= N; n++) p += x(n) + ',' + y(f(n)) + ' '; return '<polyline points="'+p+'" fill="none" stroke="'+col+'" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>'; };
+    g += line(fa, 'var(--a)') + line(fb, 'var(--b)');
+    if (isFinite(startMonth) && startMonth <= N) {
+      const cx = x(startMonth), anchor = cx > W - 150 ? 'end' : 'start', dx = anchor === 'end' ? -6 : 6;
+      g += '<line x1="'+cx+'" x2="'+cx+'" y1="'+T+'" y2="'+(H-Bm)+'" stroke="var(--ink-2)" stroke-dasharray="4 4" stroke-width="1"/>';
+      g += '<text x="'+(cx+dx)+'" y="'+(T+10)+'" text-anchor="'+anchor+'" font-size="12" font-weight="700" fill="var(--ink)">B saving from month '+startMonth+'</text>';
+      g += '<circle cx="'+cx+'" cy="'+y(fb(startMonth))+'" r="4.5" fill="var(--b)"/>';
+    }
+    svg.innerHTML = '<title id="chart-t">Total paid by a B member vs. an A member who converts</title>' + g;
+  }
+
+  function renderPrice(p){
+    const back = S.mode === 'back', bl = BILL[S.bill], monthly = S.bill === 'month';
+    $('full-in').hidden = back; $('full-out').hidden = !back;
+    $('bmin-in').hidden = !back; $('bmin-out').hidden = back;
+    $('full-out').querySelector('b').textContent = cash(p.A);
+    $('bmin-out').querySelector('b').textContent = cash(p.B);
+    document.querySelectorAll('#price .per').forEach(el => el.textContent = bl.per);
+    // Monthly billing shows the weekly price for the same money a year; weekly and 28-day show the monthly amount.
+    $('full-eq').hidden = false; $('bmin-eq').hidden = false;
+    $('full-eq').textContent = monthly ? '≈ ' + cash(p.A * 12 / 52) + ' billed weekly' : '≈ ' + money(p.Am) + ' a month';
+    $('bmin-eq').textContent = monthly ? '≈ ' + cash(p.B * 12 / 52) + ' billed weekly' : '≈ ' + money(p.Bm) + ' a month';
+    $('cell-full').classList.toggle('is-out', back); $('cell-bmin').classList.toggle('is-out', !back);
+
+    // Break-even runs on monthly amounts, so it lands in the same month whatever the billing period.
+    const be = p.d > 0 ? 1 / p.d : Infinity, start = p.d > 0 ? Math.floor(be) + 1 : Infinity;
+    $('be-month').textContent = isFinite(start) ? 'Month ' + start : 'None';
+    $('be-sub').textContent = isFinite(be) ? 'B pays the same as A by month ' + (Math.round(be * 10) / 10) + (monthly ? '' : ' (about week ' + Math.round(be * 52 / 12) + ')') + ', then saves ' + bl.every + ' after' : 'With no discount, B never saves money';
+    $('be-save').textContent = cash(p.A - p.B);
+    $('be-save-sub').textContent = bl.every + ' (' + money((p.A - p.B) * bl.perYear) + ' a year, ' + (Math.round(S.disc * 10) / 10) + '% off ' + cash(p.A) + ')';
+    const spp = S.tpw * 52 / bl.perYear;   // sessions per billing period
+    $('be-sess').textContent = spp ? money(p.A / spp) + ' / ' + money(p.B / spp) : '–';
+    $('be-sess-sub').textContent = 'A / B at ' + S.tpw + 'x a week' + (monthly ? ' (about ' + (Math.round(spp * 10) / 10) + ' sessions a month)' : S.bill === 'd28' ? ' (' + whole(spp) + ' sessions every 28 days)' : '');
+    drawChart(p.Am, p.Bm, start);
+
+    const w = bl.word, eqB = monthly ? '' : ' (about ' + money(p.Bm) + ' a month)';
+    let msg, cls;
+    if (back) { cls = 'good'; msg = 'B sits at your minimum, so every B sale hits your profit goal. Charge at least ' + cash(p.A) + ' ' + w + ' as the regular rate.' + (monthly ? '' : ' The diagnostic’s minimum is a monthly number, so check that ' + cash(p.B) + ' ' + w + eqB + ' is at or above it.'); }
+    else { cls = 'warn'; msg = 'Check ' + cash(p.B) + ' ' + w + eqB + ' against the minimum recommended price from the diagnostic' + (monthly ? '' : ', which is a monthly number') + '. If B is below it, raise the regular rate or switch to Backwards.'; }
+    if (isFinite(start) && (start < 7 || start > 8)) msg += ' G.R.’s sweet spot is 15–16% off, so B breaks even around month six and saves from month seven.';
+    $('p-check').className = 'check ' + cls; $('p-check').textContent = msg;
+  }
+
+  function renderProjection(p){
+    const N = S.months, R = S.roadmaps, b = S.b / 100, a = S.a / 100, cv = S.conv / 100, c = S.churn / 100;
+    let bPool = 0, aPool = 0, total = 0, rows = [], maxCol = 0;
+    for (let m = 1; m <= N; m++) {
+      const newB = R * b, newA = R * a, rollIn = m > 1 ? R * a * cv : 0;
+      bPool = bPool * (1 - c) + newB; aPool = aPool * (1 - c) + rollIn;
+      const col = bPool * p.Bm + aPool * p.Am; total += col; maxCol = Math.max(maxCol, col);
+      rows.push({m, newB, newA, rollIn, members: bPool + aPool, col});
+    }
+    $('proj-body').innerHTML = rows.map(r => '<tr><td>' + r.m + '</td><td class="num">' + whole(r.newB) + '</td><td class="num">' + whole(r.newA) + '</td><td class="num">' + (r.m > 1 ? whole(r.rollIn) : '–') + '</td><td class="num"><b>' + whole(r.members) + '</b></td><td class="num cash"><span class="cbar" style="width:' + (maxCol ? r.col / maxCol * 100 : 0) + '%"></span><span class="cval">' + money(r.col) + '</span></td></tr>').join('');
+    const last = rows[rows.length - 1] || {members:0, col:0};
+    $('k1-l').textContent = 'Paying members after ' + N + ' months'; $('k1').textContent = whole(last.members);
+    $('k2-l').textContent = 'Monthly revenue in month ' + N; $('k2').textContent = money(last.col);
+    $('k3-l').textContent = 'Collected over ' + N + ' months'; $('k3').textContent = money(total);
+    $('k4').textContent = whole(R * a);
+    $('proj-bill').textContent = S.bill === 'week' ? ' Weekly prices are converted to monthly amounts (52 payments a year ÷ 12).' : S.bill === 'd28' ? ' 28-day prices are converted to monthly amounts (13 payments a year ÷ 12).' : '';
+    const neither = Math.max(0, 100 - S.a - S.b);
+    $('scen-note').textContent = (S.scenario !== 'custom' ? SCEN[S.scenario].note + ' ' : '') + 'Neither: ' + (Math.round(neither * 10) / 10) + '% of roadmaps (target 15–25%).';
+  }
+
+  function renderDates(p){
+    const v = $('start').value; let base;
+    if (v) { const q = v.split('-').map(Number); base = new Date(q[0], q[1]-1, q[2]); } else base = new Date();
+    const first = new Date(base); first.setDate(first.getDate() + (S.days || 0));
+    const last = new Date(first); last.setDate(last.getDate() - 1);
+    const short = dt => dt.toLocaleDateString('en-US', {month:'short', day:'numeric'});
+    const long = dt => dt.toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric'});
+    $('d-first').textContent = short(first); $('d-last').textContent = short(last); $('d-rate').textContent = cash(p.A); $('d-rate-l').textContent = 'first bill, then ' + BILL[S.bill].every;
+    const plan = (S.label || 'regular').trim();
+    $('d-say').textContent = 'Your first ' + S.days + ' days are completely on the house. If at any point before ' + long(first) + ' you feel like this isn’t a good fit, just let me know and you’ll never be charged a penny. If I don’t hear from you, on ' + long(first) + ' you roll right into your ' + plan + ' membership at ' + cash(p.A) + ' ' + BILL[S.bill].word + ', and that’s when your agreement starts.';
+  }
+
+  function render(){
+    const p = prices();
+    renderPrice(p); renderProjection(p); renderDates(p);
+    try { localStorage.setItem('freeab3', JSON.stringify(S)); } catch(e) {}
+  }
+
+  function setUI(){
+    for (const k of ['mode','bill','disc','label','tpw','full','bmin','roadmaps','b','a','conv','churn','days']) if (document.activeElement !== $(k)) $(k).value = S[k];
+    $('months').value = String(S.months); $('scenario').value = S.scenario;
+  }
+
+  const NUMS = {disc:[0,90], tpw:[1,7], full:[0,100000], bmin:[0,100000], roadmaps:[0,10000], b:[0,100], a:[0,100], conv:[0,100], churn:[0,100], days:[1,365]};
+  for (const k in NUMS) $(k).addEventListener('input', e => {
+    S[k] = num(e.target.value, NUMS[k][0], NUMS[k][1]);
+    if (k === 'b' && S.a + S.b > 100) S.a = 100 - S.b;
+    if (k === 'a' && S.a + S.b > 100) S.b = 100 - S.a;
+    if (['b','a','conv'].includes(k)) S.scenario = 'custom';
+    setUI(); render();
+  });
+  $('label').addEventListener('input', e => { S.label = e.target.value; render(); });
+  $('mode').addEventListener('change', e => {
+    const p = prices(); S.mode = e.target.value;
+    if (S.mode === 'fwd') S.full = p.A; else S.bmin = p.B;   // carry the current numbers across so nothing jumps
+    setUI(); render();
+  });
+  $('bill').addEventListener('change', e => {
+    // Same money a year, re-expressed per the new billing period (cents kept so switching back lands on the same number).
+    const from = BILL[S.bill].perYear, to = BILL[e.target.value].perYear, r2 = x => Math.round(x * 100) / 100;
+    S.full = r2(S.full * from / to); S.bmin = r2(S.bmin * from / to); S.bill = e.target.value;
+    setUI(); render();
+  });
+  $('months').addEventListener('change', e => { S.months = parseInt(e.target.value, 10) || 6; render(); });
+  $('scenario').addEventListener('change', e => {
+    S.scenario = e.target.value; const sc = SCEN[S.scenario];
+    if (sc) { S.b = sc.b; S.a = sc.a; S.conv = sc.conv; }
+    setUI(); render();
+  });
+  $('start').addEventListener('input', () => renderDates(prices()));
+
+  document.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', () => {
+    const el = $(btn.dataset.copy), text = el.textContent.trim(), label = btn.dataset.label || btn.textContent;
+    btn.dataset.label = label;
+    const flash = t => { btn.textContent = t; setTimeout(() => btn.textContent = label, 1600); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); flash('Selected, press ⌘C'); };
+    try { navigator.clipboard.writeText(text).then(() => flash('Copied'), fallback); } catch(e) { fallback(); }
+  }));
+
+  if (DIAG_URL) { const s = $('diag'); const a = document.createElement('a'); a.href = DIAG_URL; a.target = '_blank'; a.rel = 'noopener'; a.textContent = s.textContent; s.replaceWith(a); }
+  const t = new Date(); $('start').value = t.getFullYear() + '-' + String(t.getMonth()+1).padStart(2,'0') + '-' + String(t.getDate()).padStart(2,'0');
+  setUI(); render();
+})();
+</script>
+
+
+</body></html>
